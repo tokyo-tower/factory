@@ -56,6 +56,22 @@ export interface IResult {
 export type IError = any;
 
 /**
+ * 返品理由
+ * @enum
+ * @memberof transaction.returnOrder
+ */
+export enum Reason {
+    /**
+     * 購入者自身の都合での返品
+     */
+    Customer = 'Customer',
+    /**
+     * 販売者都合での返品
+     */
+    Seller = 'Seller'
+}
+
+/**
  * object of a transaction interface
  * 取引対象物インターフェース
  * @export
@@ -66,6 +82,7 @@ export interface IObject {
     transaction: IPlaceOrderTransactionFactory.ITransaction;
     cancelName: string;
     cancellationFee: number;
+    reason: Reason;
 }
 
 export type ITransaction = IExtendId<IAttributes>;
