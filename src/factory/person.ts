@@ -6,6 +6,12 @@
 
 import PersonType from './personType';
 
+/**
+ * 人物グループ
+ * @export
+ * @enum
+ * @memberof person
+ */
 export enum Group {
     /**
      * 一般
@@ -21,7 +27,7 @@ export enum Group {
  * contact interface
  * 連絡先インターフェース
  * @export
- * @interface {IPerson}
+ * @interface
  * @memberof person
  */
 export interface IContact {
@@ -38,7 +44,7 @@ export interface IContact {
  * person interface
  * 人物インターフェース
  * @export
- * @interface {IPerson}
+ * @interface
  * @memberof person
  */
 export interface IPerson {

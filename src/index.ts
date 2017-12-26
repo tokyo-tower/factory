@@ -10,6 +10,7 @@ import * as seatReservationAuthorizeActionFactory from './factory/action/authori
 import * as PrintActionFactory from './factory/action/transfer/print';
 import * as PrintTicketActionFactory from './factory/action/transfer/print/ticket';
 import * as EmailMessageFactory from './factory/creativeWork/message/email';
+import * as MovieCreativeWorkFactory from './factory/creativeWork/movie';
 import CreativeWorkType from './factory/creativeWorkType';
 import ItemAvailability from './factory/itemAvailability';
 import * as MultilingualStringFactory from './factory/multilingualString';
@@ -23,7 +24,7 @@ import * as PerformanceFactory from './factory/performance';
 import * as PersonFactory from './factory/person';
 import PersonType from './factory/personType';
 import * as CheckinGateFactory from './factory/place/checkinGate';
-import * as ScreenFactory from './factory/place/screen';
+import * as MovieTheaterFactory from './factory/place/movieTheater';
 import PriceCurrency from './factory/priceCurrency';
 import * as ReservationFactory from './factory/reservation';
 import * as EventReservationFactory from './factory/reservation/event';
@@ -84,6 +85,7 @@ export namespace creativeWork {
     export namespace message {
         export import email = EmailMessageFactory;
     }
+    export import movie = MovieCreativeWorkFactory;
 }
 export import creativeWorkType = CreativeWorkType;
 export import itemAvailability = ItemAvailability;
@@ -108,7 +110,7 @@ export namespace reservation {
 export import stock = StockFactory;
 export namespace place {
     export import checkinGate = CheckinGateFactory;
-    export import screen = ScreenFactory;
+    export import movieTheater = MovieTheaterFactory;
 }
 export import reservationStatusType = ReservationStatusType;
 export namespace task {

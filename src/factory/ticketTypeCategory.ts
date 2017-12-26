@@ -1,6 +1,6 @@
 /**
  * 券種ファクトリー
- * @namespace factory.ticketTypeCategory
+ * @namespace ticketTypeCategory
  */
 
 /**

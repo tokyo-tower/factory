@@ -1,15 +1,20 @@
 /**
  * パフォーマンスファクトリー
- * @namespace factory.performance
+ * @namespace performance
  */
 
-import { IBilingualString, IMultilingualString } from './multilingualString';
+import { IFilm } from './creativeWork/movie';
+import { IBilingualString } from './multilingualString';
+import { ITicketType } from './offer/seatReservation';
+import { IScreen, ITheater } from './place/movieTheater';
 import { ICheckin, IReservation } from './reservation/event';
 import TicketTypeCategory from './ticketTypeCategory';
 
 /**
  * エレベータ運行ステータス
  * @enum
+ * @export
+ * @memberof performance
  */
 export enum EvServiceStatus {
     // 正常運行
@@ -23,6 +28,8 @@ export enum EvServiceStatus {
 /**
  * オンライン販売ステータス
  * @enum
+ * @export
+ * @memberof performance
  */
 export enum OnlineSalesStatus {
     // 販売
@@ -34,6 +41,8 @@ export enum OnlineSalesStatus {
 /**
  * 返金ステータス
  * @enum
+ * @export
+ * @memberof performance
  */
 export enum RefundStatus {
     // なし
@@ -50,6 +59,9 @@ export enum RefundStatus {
  * tttsExtensionPerformance.ts
  * ttts拡張・パフォーマンス情報mongooseスキーマタイプ
  * ttts独自の機能拡張用フィールド定義
+ * @interface
+ * @export
+ * @memberof performance
  */
 export interface IExtension {
     // ツアーナンバー
@@ -79,35 +91,12 @@ export interface IExtension {
     unrefunded_count?: number;
 }
 
-export interface ISeat {
-    code: string; // 座席コード
-    grade: {
-        code: string;
-        name: IBilingualString;
-        additional_charge: number; // 追加料金
-    };
-}
-
-export interface IScreen {
-    code: string;
-    name: IBilingualString;
-    seats: ISeat[];
-}
-
-export interface ITicketType {
-    /**
-     * 券種カテゴリーごとのレート制限単位(何秒に1予約という設定)
-     */
-    rate_limit_unit_in_seconds: number;
-    ttts_extension: { csv_code: string; required_seat_num: number; category: TicketTypeCategory; };
-    cancel_charge: { charge: number; days: number; }[];
-    charge: number;
-    notes: string;
-    description: string;
-    name: IMultilingualString;
-    id: string;
-}
-
+/**
+ * 券種グループインターフェース
+ * @interface
+ * @export
+ * @memberof performance
+ */
 export interface ITicketTypeGroup {
     id: string;
     ticket_types: ITicketType[];
@@ -117,7 +106,8 @@ export interface ITicketTypeGroup {
 /**
  * 詳細情報つきのパフォーマンスインターフェース
  * @interface
- * @memberof factory.performance
+ * @export
+ * @memberof performance
  */
 export interface IPerformanceWithDetails {
     id: string;
@@ -129,23 +119,9 @@ export interface IPerformanceWithDetails {
     location_str: IBilingualString;
     canceled: boolean;
     ticket_type_group: ITicketTypeGroup;
-    theater: {
-        id: string;
-        name: IBilingualString;
-        address: IBilingualString;
-    };
-    screen: {
-        id: string;
-        name: IBilingualString;
-        sections: IScreen[]
-    };
-    film: {
-        id: string;
-        name: IBilingualString;
-        // image: `${req.protocol}://${req.hostname}/images/film/${performance.get('film').get('_id')}.jpg`,
-        is_mx4d: boolean;
-        copyright: string;
-    };
+    theater: ITheater;
+    screen: IScreen;
+    film: IFilm;
     ttts_extension: IExtension;
     door_time: Date;
     start_date: Date;
@@ -157,7 +133,8 @@ export interface IPerformanceWithDetails {
 /**
  * パフォーマンスインターフェース
  * @interface
- * @memberof factory.performance
+ * @export
+ * @memberof performance
  */
 export interface IPerformance {
     id: string;
@@ -205,6 +182,8 @@ export interface ICheckinCountByWhere {
 /**
  * 集計データつきのパフォーマンスインターフェース
  * @interface
+ * @export
+ * @memberof performance
  */
 export interface IPerformanceWithAggregation {
     id: string;
@@ -228,9 +207,13 @@ export interface IPerformanceWithAggregation {
      * ツアーナンバー
      */
     tourNumber: string;
-    // エレベータ運行ステータス
+    /**
+     * エレベータ運行ステータス
+     */
     evServiceStatus: EvServiceStatus;
-    // オンライン販売ステータス
+    /**
+     * オンライン販売ステータス
+     */
     onlineSalesStatus: OnlineSalesStatus;
     /**
      * 最大収容人数
@@ -318,7 +301,9 @@ export interface ICheckinInfoByWhere {
      */
     arrivedCountsByTicketType: IArrivedCountByTicketType[];
 }
+
 export type ICheckinInfosByWhere = ICheckinInfoByWhere[];
+
 /**
  * パフォーマンスごとの入場情報インターフェース
  * @interface
@@ -334,7 +319,7 @@ export interface ICheckinInfoByPerformance {
 /**
  * 在庫状況インターフェース
  * @interface
- * @memberof factory.performance
+ * @memberof performance
  */
 export interface IAvailability {
     id: string;

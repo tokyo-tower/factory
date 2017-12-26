@@ -1,10 +1,16 @@
 /**
  * 在庫ファクトリー
- * @namespace factory.stock
+ * @namespace stock
  */
 
 import ItemAvailability from './itemAvailability';
 
+/**
+ * 在庫インターフェース
+ * @export
+ * @interface
+ * @memberof stock
+ */
 export interface IStock {
     /**
      * 在庫ID
