@@ -208,14 +208,42 @@ export interface ICheckinCountByWhere {
  */
 export interface IPerformanceWithAggregation {
     id: string;
+    /**
+     * 入場日時
+     */
+    doorTime: Date;
+    /**
+     * 開演日時
+     */
     startDate: Date;
+    /**
+     * 終演日時
+     */
     endDate: Date;
+    /**
+     * 上演時間
+     */
     duration: string;
+    /**
+     * ツアーナンバー
+     */
     tourNumber: string;
     // エレベータ運行ステータス
     evServiceStatus: EvServiceStatus;
     // オンライン販売ステータス
     onlineSalesStatus: OnlineSalesStatus;
+    /**
+     * 最大収容人数
+     */
+    maximumAttendeeCapacity: number;
+    /**
+     * 残収容人数
+     */
+    remainingAttendeeCapacity: number;
+    /**
+     * 車椅子客にとっての残収容人数
+     */
+    remainingAttendeeCapacityForWheelchair: number;
     /**
      * 全予約数
      */
