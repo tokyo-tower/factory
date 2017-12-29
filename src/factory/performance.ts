@@ -11,6 +11,34 @@ import { ICheckin, IReservation } from './reservation/event';
 import TicketTypeCategory from './ticketTypeCategory';
 
 /**
+ * 検索条件インターフェース
+ * @export
+ * @interface
+ * @memberof performance
+ */
+export interface ISearchConditions {
+    limit?: number;
+    page?: number;
+    // 上映日
+    day?: string;
+    // 部門
+    section?: string;
+    // フリーワード
+    words?: string;
+    // この時間以降開始のパフォーマンスに絞る(timestamp milliseconds)
+    startFrom?: Date;
+    startThrough?: Date;
+    // 劇場
+    theater?: string;
+    // スクリーン
+    screen?: string;
+    // パフォーマンスID
+    performanceId?: string;
+    // 車椅子チェック要求
+    wheelchair?: string;
+}
+
+/**
  * エレベータ運行ステータス
  * @enum
  * @export
@@ -177,6 +205,70 @@ export interface ICheckinCountByWhere {
      * 券種ごとの入場数
      */
     checkinCountsByTicketType: ICheckinCountsByTicketType[];
+}
+
+/**
+ * 残席数つきの券種インターフェース
+ * @export
+ * @interface
+ * @memberof performance
+ */
+export type ITicketTypeWithAvailability = ITicketType & {
+    remainingAttendeeCapacity: number;
+};
+
+/**
+ * 在庫状況つきのパフォーマンスインターフェース
+ * @export
+ * @interface
+ * @memberof performance
+ */
+export interface IPerformanceWithAvailability {
+    id: string;
+    /**
+     * 入場日時
+     */
+    doorTime: Date;
+    /**
+     * 開演日時
+     */
+    startDate: Date;
+    /**
+     * 終演日時
+     */
+    endDate: Date;
+    /**
+     * 上演時間
+     */
+    duration: string;
+    /**
+     * ツアーナンバー
+     */
+    tourNumber: string;
+    /**
+     * エレベータ運行ステータス
+     */
+    evServiceStatus: EvServiceStatus;
+    /**
+     * オンライン販売ステータス
+     */
+    onlineSalesStatus: OnlineSalesStatus;
+    /**
+     * 最大収容人数
+     */
+    maximumAttendeeCapacity: number;
+    /**
+     * 残収容人数
+     */
+    remainingAttendeeCapacity: number;
+    /**
+     * 車椅子客にとっての残収容人数
+     */
+    remainingAttendeeCapacityForWheelchair: number;
+    /**
+     * 券種情報
+     */
+    ticketTypes: ITicketTypeWithAvailability[];
 }
 
 /**
