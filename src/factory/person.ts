@@ -58,11 +58,12 @@ export interface IPerson {
      * URL of the item.
      */
     url?: string;
-    name?: string;
-    notes?: string;
+    familyName?: string;
+    givenName?: string;
     email?: string;
+    telephone?: string;
+    notes?: string;
     group?: Group;
-    signature?: string;
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      * 所属会員プログラム

@@ -125,6 +125,8 @@ export interface IReservation extends ReservationFactory.IReservation {
 
     owner_username?: string;
     owner_name?: string;
+    owner_last_name?: string;
+    owner_first_name?: string;
     owner_email?: string;
     owner_group?: string;
 
