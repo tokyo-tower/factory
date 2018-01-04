@@ -5,6 +5,7 @@
  */
 
 import PersonType from './personType';
+import * as ProgramMembershipFactory from './programMembership';
 
 /**
  * 人物グループ
@@ -57,10 +58,14 @@ export interface IPerson {
      * URL of the item.
      */
     url?: string;
-    username?: string;
     name?: string;
     notes?: string;
     email?: string;
     group?: Group;
     signature?: string;
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     * 所属会員プログラム
+     */
+    memberOf?: ProgramMembershipFactory.IProgramMembership;
 }

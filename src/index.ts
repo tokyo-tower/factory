@@ -9,6 +9,7 @@ import * as CreditCardAuthorizeActionFactory from './factory/action/authorize/cr
 import * as seatReservationAuthorizeActionFactory from './factory/action/authorize/seatReservation';
 import * as PrintActionFactory from './factory/action/transfer/print';
 import * as PrintTicketActionFactory from './factory/action/transfer/print/ticket';
+import * as ClientUserFactory from './factory/clientUser';
 import * as EmailMessageFactory from './factory/creativeWork/message/email';
 import * as MovieCreativeWorkFactory from './factory/creativeWork/movie';
 import CreativeWorkType from './factory/creativeWorkType';
@@ -75,7 +76,7 @@ export namespace action {
         }
     }
 }
-
+export import clientUser = ClientUserFactory;
 export namespace paymentMethod {
     export namespace paymentCard {
         export import creditCard = CreditCardFactory;

@@ -123,12 +123,10 @@ export interface IReservation extends ReservationFactory.IReservation {
 
     charge: number; // 座席単体の料金
 
-    owner?: string; // オーナー
     owner_username?: string;
     owner_name?: string;
     owner_email?: string;
     owner_group?: string;
-    owner_signature?: string;
 
     checkins: ICheckin[];
 
