@@ -65,7 +65,6 @@ export type IAgent = IPerson;
  * @interface
  * @memberof transaction.placeOrder
  */
-// tslint:disable-next-line:no-empty-interface
 export interface IResult {
     /**
      * 注文データ
@@ -79,6 +78,10 @@ export interface IResult {
      * 座席予約リスト
      */
     eventReservations: EventReservationFactory.IReservation[];
+    /**
+     * 印刷トークン(印刷に必要な期限付きトークン)
+     */
+    printToken: string;
 }
 
 /**
