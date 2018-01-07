@@ -26,6 +26,10 @@ enum TaskName {
      */
     SettleCreditCard = 'settleCreditCard',
     /**
+     * 注文作成
+     */
+    CreateOrder = 'createOrder',
+    /**
      * 返品タスク
      */
     ReturnOrder = 'returnOrder',

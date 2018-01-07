@@ -7,7 +7,79 @@
  */
 
 import OrderStatus from './orderStatus';
+import OrganizationType from './organizationType';
+import { IContact, IPerson } from './person';
+import PersonType from './personType';
 import PriceCurrency from './priceCurrency';
+import { IReservation } from './reservation/event';
+
+/**
+ * seller interface
+ * 販売者インターフェース
+ * @export
+ * @interface
+ * @memberof order
+ */
+export interface ISeller {
+    typeOf: OrganizationType | PersonType;
+    /**
+     * Name of the Organization.
+     */
+    name: string;
+    /**
+     * The Freebase URL for the merchant.
+     */
+    url: string;
+}
+
+/**
+ * customer interface
+ * 購入者インターフェース
+ * @export
+ * @interface
+ * @memberof order
+ */
+export type ICustomer = IPerson & IContact & {
+    name: string;
+};
+
+/**
+ * offered item type
+ * 供給アイテムインターフェース
+ * @export
+ * @type
+ * @memberof order
+ */
+export type IItemOffered = IReservation;
+
+/**
+ * offer interface
+ * 供給インターフェース
+ * @export
+ * @interface
+ * @memberof order
+ */
+export interface IOffer {
+    /**
+     * 受け入れられた予約情報
+     */
+    itemOffered: IItemOffered;
+    /**
+     * 金額
+     */
+    price: number;
+    /**
+     * 通貨
+     */
+    priceCurrency: PriceCurrency;
+    /**
+     * 販売者
+     */
+    seller: {
+        typeOf: OrganizationType | PersonType;
+        name: string;
+    };
+}
 
 /**
  * payment method interface
@@ -77,6 +149,16 @@ export interface IOrder {
      */
     typeOf: string;
     /**
+     * Organization or Person
+     * The party taking the order (e.g. Amazon.com is a merchant for many sellers). Also accepts a string (e.g. "Amazon.com").
+     */
+    seller: ISeller;
+    /**
+     * Person or Organization
+     * Party placing the order.
+     */
+    customer: ICustomer;
+    /**
      * A number that confirms the given order or payment has been received.
      */
     confirmationNumber: string;
@@ -92,6 +174,11 @@ export interface IOrder {
      * The currency (in 3 - letter ISO 4217 format) of the order price.
      */
     priceCurrency: PriceCurrency;
+    /**
+     * Offer
+     * The offers included in the order.Also accepts an array of objects.
+     */
+    acceptedOffers: IOffer[];
     /**
      * payment methods
      */

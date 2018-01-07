@@ -16,6 +16,7 @@ import CreativeWorkType from './factory/creativeWorkType';
 import ItemAvailability from './factory/itemAvailability';
 import * as MultilingualStringFactory from './factory/multilingualString';
 import * as SeatReservationOfferFactory from './factory/offer/seatReservation';
+import * as OrderFactory from './factory/order';
 import OrderStatus from './factory/orderStatus';
 import * as CorporationOrganizationFactory from './factory/organization/corporation';
 import OrganizationType from './factory/organizationType';
@@ -34,6 +35,7 @@ import * as StockFactory from './factory/stock';
 import * as TaskFactory from './factory/task';
 import * as CancelCreditCardTaskFactory from './factory/task/cancelCreditCard';
 import * as CancelSeatReservationTaskFactory from './factory/task/cancelSeatReservation';
+import * as CreateOrderTaskFactory from './factory/task/createOrder';
 import * as ReturnOrderTaskFactory from './factory/task/returnOrder';
 import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrdersByPerformance';
 import * as SendEmailNotificationTaskFactory from './factory/task/sendEmailNotification';
@@ -94,6 +96,7 @@ export import multilingualString = MultilingualStringFactory;
 export namespace offer {
     export import seatReservation = SeatReservationOfferFactory;
 }
+export import order = OrderFactory;
 export import orderStatus = OrderStatus;
 export namespace organization {
     export import corporation = CorporationOrganizationFactory;
@@ -119,6 +122,7 @@ export namespace task {
     export import ITask = TaskFactory.ITask;
     export import cancelCreditCard = CancelCreditCardTaskFactory;
     export import cancelSeatReservation = CancelSeatReservationTaskFactory;
+    export import createOrder = CreateOrderTaskFactory;
     export import returnOrder = ReturnOrderTaskFactory;
     export import returnOrdersByPerformance = ReturnOrdersByPerformanceTaskFactory;
     export import sendEmailNotification = SendEmailNotificationTaskFactory;
