@@ -137,6 +137,16 @@ export interface IOrderInquiryKey {
 }
 
 /**
+ * 注文照会結果インターフェース
+ * @export
+ * @type
+ * @memberof order
+ */
+export type IOrderInquiryResult = IOrder & {
+    printToken: string;
+};
+
+/**
  * order interface
  * 注文インターフェース
  * @export
