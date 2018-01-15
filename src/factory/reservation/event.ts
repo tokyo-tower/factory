@@ -25,16 +25,32 @@ export interface ICheckin {
 }
 
 /**
- * tttsExtensionReservation.ts
- * ttts拡張予予約情報mongooseスキーマタイプ
- * ttts独自の機能拡張用フィールド定義
+ * 予約に要した在庫インターフェース
  * @export
  * @interface
  * @memberof reservation.event
  */
-export interface IExtensionReservation {
-    // 本体の座席番号 (余分確保チケットと予約本体のチケットを結びつけるためのフィールド)
-    seat_code_base: string;
+export interface IStock {
+    /**
+     * おさえた在庫ID
+     */
+    id: string;
+    /**
+     * 座席コード
+     */
+    seat_code: string;
+    /**
+     * 仮予約前の在庫ステータス
+     */
+    availability_before: ItemAvailability;
+    /**
+     * 仮予約後の在庫ステータス
+     */
+    availability_after: ItemAvailability;
+    /**
+     * 仮予約後の在庫保持者
+     */
+    holder: string;
 }
 
 /**
@@ -54,21 +70,21 @@ export interface IReservation extends ReservationFactory.IReservation {
      */
     order_number: string;
     /**
-     * おさえた在庫ID
+     * 予約に要した在庫インターフェース
      */
-    stock: string;
+    stocks: IStock[];
     /**
-     * 仮予約前の在庫ステータス
+     * QR文字列
      */
-    stock_availability_before: ItemAvailability;
-    /**
-     * 仮予約後の在庫ステータス
-     */
-    stock_availability_after: ItemAvailability;
     qr_str: string;
+    /**
+     * パフォーマンスID
+     */
     performance: string;
+    /**
+     * 座席コード
+     */
     seat_code: string;
-    reservation_ttts_extension: IExtensionReservation;
 
     performance_day: string;
     performance_open_time: string;

@@ -12,17 +12,7 @@ enum ReservationStatusType {
      * The status of a confirmed reservation.
      * @memberof {ReservationStatusType}
      */
-    ReservationConfirmed = 'ReservationConfirmed',
-    /**
-     * 主に車椅子などのための余分確保
-     * @memberof {ReservationStatusType}
-     */
-    ReservationSecuredExtra = 'ReservationSecuredExtra'
-    /**
-     * キャンセル料
-     */
-    // TATUS_CANCELLATION_FEE = 'CANCELLATION_FEE';
-
+    ReservationConfirmed = 'ReservationConfirmed'
     /**
      * The status of a reservation on hold pending an update like credit card number or flight changes.
      * @memberof {ReservationStatusType}
