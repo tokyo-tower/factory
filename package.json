@@ -55,14 +55,14 @@
     "power-assert": "^1.4.4",
     "rimraf": "^2.6.2",
     "sinon": "^3.3.0",
-    "snyk": "^1.65.1",
+    "snyk": "^1.68.1",
     "ts-node": "^3.3.0",
-    "tslint": "^5.8.0",
-    "tslint-microsoft-contrib": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-microsoft-contrib": "^5.0.2",
     "typescript": "^2.6.2"
   },
   "dependencies": {
-    "@motionpicture/gmo-service": "^4.1.0",
+    "@motionpicture/gmo-service": "^4.2.0",
     "@motionpicture/waiter-domain": "^2.0.2",
     "debug": "^3.1.0",
     "moment": "^2.20.1",

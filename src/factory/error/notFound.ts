@@ -12,6 +12,7 @@ export default class NotFoundError extends TTTSError {
 
     constructor(entityName: string, message?: string) {
         if (message === undefined || message.length === 0) {
+            // tslint:disable-next-line:no-parameter-reassignment
             message = `Not Found: ${entityName}.`;
         }
 

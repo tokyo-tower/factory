@@ -12,6 +12,7 @@ export default class ArgumentError extends TTTSError {
 
     constructor(argumentName: string, message?: string) {
         if (message === undefined || message.length === 0) {
+            // tslint:disable-next-line:no-parameter-reassignment
             message = `Invalid or missing argument supplied: ${argumentName}.`;
         }
 

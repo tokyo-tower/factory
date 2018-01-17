@@ -125,7 +125,7 @@ export interface IAttributes extends TransactionFactory.IAttributes {
  */
 export function createAttributes(params: {
     status: TransactionStatusType;
-    agent: IAgent
+    agent: IAgent;
     result?: IResult;
     error?: IError;
     object: IObject;
