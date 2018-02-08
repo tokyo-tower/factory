@@ -10,6 +10,7 @@ import * as ReservationFactory from '../reservation';
 import ItemAvailability from '../itemAvailability';
 import { IBilingualString, IMultilingualString } from '../multilingualString';
 import { ITicketCancelCharge, ITicketTypeExtension } from '../offer/seatReservation';
+import { IAgent } from '../transaction/placeOrder';
 
 /**
  * 入場履歴インターフェース
@@ -149,4 +150,9 @@ export interface IReservation extends ReservationFactory.IReservation {
     checkins: ICheckin[];
 
     gmo_order_id: string; // GMOオーダーID
+    /**
+     * 注文取引主体者
+     * 注文が実行されたアプリケーションのクライアントIDが含まれる
+     */
+    transaction_agent: IAgent;
 }
