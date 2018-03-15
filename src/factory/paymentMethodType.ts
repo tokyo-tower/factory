@@ -31,7 +31,11 @@ enum PaymentMethodType {
     /**
      * 無料招待券
      */
-    Invitation = 'Invitation'
+    Invitation = 'Invitation',
+    /**
+     * 手売り(Over the Counter)
+     */
+    OTC = 'OTC'
 }
 
 export default PaymentMethodType;

@@ -1,10 +1,14 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## Unreleased
+
 ### Added
+
+- 決済方法に手売りを追加。
 
 ### Changed
 
@@ -14,8 +18,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Fixed
 
-### Security
+- typescriptのコンパイルターゲットをes6からes5に変更。
 
+### Security
 
 ## v0.0.1 - 2018-02-14
 ### Changed
