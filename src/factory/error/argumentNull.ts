@@ -1,3 +1,5 @@
+// tslint:disable-next-line:no-require-imports
+import setPrototypeOf = require('setprototypeof');
 import ErrorCode from '../errorCode';
 import { TTTSError } from './ttts';
 
@@ -20,7 +22,6 @@ export default class ArgumentNullError extends TTTSError {
 
         this.argumentName = argumentName;
 
-        // Set the prototype explicitly.
-        Object.setPrototypeOf(this, ArgumentNullError.prototype);
+        setPrototypeOf(this, ArgumentNullError.prototype);
     }
 }

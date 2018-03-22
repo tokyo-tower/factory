@@ -1,3 +1,5 @@
+// tslint:disable-next-line:no-require-imports
+import setPrototypeOf = require('setprototypeof');
 import ErrorCode from '../errorCode';
 import { TTTSError } from './ttts';
 
@@ -22,7 +24,6 @@ export default class AlreadyInUseError extends TTTSError {
         this.entityName = entityName;
         this.fieldNames = fieldNames;
 
-        // Set the prototype explicitly.
-        Object.setPrototypeOf(this, AlreadyInUseError.prototype);
+        setPrototypeOf(this, AlreadyInUseError.prototype);
     }
 }

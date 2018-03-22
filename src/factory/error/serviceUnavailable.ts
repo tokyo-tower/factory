@@ -1,3 +1,5 @@
+// tslint:disable-next-line:no-require-imports
+import setPrototypeOf = require('setprototypeof');
 import ErrorCode from '../errorCode';
 import { TTTSError } from './ttts';
 
@@ -16,7 +18,6 @@ export default class ServiceUnavailableError extends TTTSError {
 
         super(ErrorCode.ServiceUnavailable, message);
 
-        // Set the prototype explicitly.
-        Object.setPrototypeOf(this, ServiceUnavailableError.prototype);
+        setPrototypeOf(this, ServiceUnavailableError.prototype);
     }
 }

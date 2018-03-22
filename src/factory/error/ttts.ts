@@ -1,3 +1,5 @@
+// tslint:disable-next-line:no-require-imports
+import setPrototypeOf = require('setprototypeof');
 import ErrorCode from '../errorCode';
 
 /**
@@ -15,7 +17,6 @@ export class TTTSError extends Error {
         this.name = 'TTTSError';
         this.reason = code;
 
-        // Set the prototype explicitly.
-        Object.setPrototypeOf(this, TTTSError.prototype);
+        setPrototypeOf(this, TTTSError.prototype);
     }
 }

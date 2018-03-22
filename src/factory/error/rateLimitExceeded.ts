@@ -1,3 +1,5 @@
+// tslint:disable-next-line:no-require-imports
+import setPrototypeOf = require('setprototypeof');
 import ErrorCode from '../errorCode';
 import { TTTSError } from './ttts';
 
@@ -15,7 +17,6 @@ export default class RateLimitExceededError extends TTTSError {
 
         super(ErrorCode.RateLimitExceeded, message);
 
-        // Set the prototype explicitly.
-        Object.setPrototypeOf(this, RateLimitExceededError.prototype);
+        setPrototypeOf(this, RateLimitExceededError.prototype);
     }
 }
