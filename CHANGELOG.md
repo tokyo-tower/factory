@@ -8,8 +8,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
-- 決済方法に手売りを追加。
-
 ### Changed
 
 ### Deprecated
@@ -18,9 +16,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Fixed
 
-- typescriptのコンパイルターゲットをes6からes5に変更。
-
 ### Security
+
+## v0.1.0 - 2018-03-22
+
+### Added
+
+- 決済方法に手売りを追加。
+
+### Fixed
+
+- typescriptのコンパイルターゲットをes6からes5に変更。
 
 ## v0.0.1 - 2018-02-14
 ### Changed
