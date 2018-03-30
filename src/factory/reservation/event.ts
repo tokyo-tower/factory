@@ -10,6 +10,7 @@ import * as ReservationFactory from '../reservation';
 import ItemAvailability from '../itemAvailability';
 import { IBilingualString, IMultilingualString } from '../multilingualString';
 import { ITicketCancelCharge, ITicketTypeExtension } from '../offer/seatReservation';
+import { Group as PersonGroup } from '../person';
 import { IAgent } from '../transaction/placeOrder';
 
 /**
@@ -109,7 +110,7 @@ export interface IReservation extends ReservationFactory.IReservation {
     film_is_mx4d: boolean;
     film_copyright: string;
 
-    purchaser_group: string; // 購入者区分
+    purchaser_group: PersonGroup; // 購入者区分
     purchaser_name: string;
     purchaser_last_name: string;
     purchaser_first_name: string;
