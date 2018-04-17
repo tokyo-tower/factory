@@ -13,7 +13,7 @@ import { IClientUser } from '../clientUser';
 import { IOrder } from '../order';
 import OrganizationType from '../organizationType';
 import PaymentMethodType from '../paymentMethodType';
-import { IContact, IPerson } from '../person';
+import { Group as PersonGroup, IContact, IPerson } from '../person';
 import PersonType from '../personType';
 import * as EventReservationFactory from '../reservation/event';
 import * as TransactionFactory from '../transaction';
@@ -120,7 +120,7 @@ export interface IObject {
     /**
      * 購入者区分
      */
-    purchaser_group: string;
+    purchaser_group: PersonGroup;
     /**
      * customer contact
      */

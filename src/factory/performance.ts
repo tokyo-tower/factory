@@ -6,8 +6,11 @@
 import { IFilm } from './creativeWork/movie';
 import { IBilingualString } from './multilingualString';
 import { ITicketType } from './offer/seatReservation';
+import PaymentMethodType from './paymentMethodType';
+import { Group as PersonGroup, IPerson } from './person';
 import { IScreen, ITheater } from './place/movieTheater';
 import { ICheckin, IReservation } from './reservation/event';
+import ReservationStatusType from './reservationStatusType';
 import TicketTypeCategory from './ticketTypeCategory';
 
 /**
@@ -117,6 +120,22 @@ export interface IExtension {
     refunded_count?: number;
     // 未返金数
     unrefunded_count?: number;
+    /**
+     * 販売ステータス最終更新時の予約データリスト
+     */
+    reservationsAtLastUpdateDate?: IReservationAtLastupdateDate[];
+}
+
+/**
+ * 販売ステータス最終更新時の予約データインターフェース
+ */
+export interface IReservationAtLastupdateDate {
+    id: string;
+    status: ReservationStatusType;
+    purchaser_group: PersonGroup;
+    transaction_agent: IPerson;
+    payment_method: PaymentMethodType;
+    order_number: string;
 }
 
 /**
