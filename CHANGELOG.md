@@ -10,8 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- パフォーマンスの拡張属性に、販売ステータス最終更新時の予約データリストを追加。
-
 ### Deprecated
 
 ### Removed
@@ -19,6 +17,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v0.1.1 - 2018-04-17
+
+### Changed
+
+- パフォーマンスの拡張属性に、販売ステータス最終更新時の予約データリストを追加。
 
 ## v0.1.0 - 2018-03-22
 
