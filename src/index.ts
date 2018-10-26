@@ -36,6 +36,8 @@ import * as TaskFactory from './factory/task';
 import * as CancelCreditCardTaskFactory from './factory/task/cancelCreditCard';
 import * as CancelSeatReservationTaskFactory from './factory/task/cancelSeatReservation';
 import * as CreateOrderTaskFactory from './factory/task/createOrder';
+import * as CreatePlaceOrderReportTaskFactory from './factory/task/createPlaceOrderReport';
+import * as CreateReturnOrderReportTaskFactory from './factory/task/createReturnOrderReport';
 import * as ReturnOrderTaskFactory from './factory/task/returnOrder';
 import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrdersByPerformance';
 import * as SendEmailNotificationTaskFactory from './factory/task/sendEmailNotification';
@@ -123,6 +125,8 @@ export namespace task {
     export import cancelCreditCard = CancelCreditCardTaskFactory;
     export import cancelSeatReservation = CancelSeatReservationTaskFactory;
     export import createOrder = CreateOrderTaskFactory;
+    export import createPlaceOrderReport = CreatePlaceOrderReportTaskFactory;
+    export import createReturnOrderReport = CreateReturnOrderReportTaskFactory;
     export import returnOrder = ReturnOrderTaskFactory;
     export import returnOrdersByPerformance = ReturnOrdersByPerformanceTaskFactory;
     export import sendEmailNotification = SendEmailNotificationTaskFactory;
