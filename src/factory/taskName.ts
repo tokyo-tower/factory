@@ -44,7 +44,11 @@ enum TaskName {
     /**
      * 注文返品取引レポート作成
      */
-    CreateReturnOrderReport = 'createReturnOrderReport'
+    CreateReturnOrderReport = 'createReturnOrderReport',
+    /**
+     * 予約から注文レポート更新
+     */
+    UpdateOrderReportByReservation = 'updateOrderReportByReservation'
 }
 
 export default TaskName;

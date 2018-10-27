@@ -43,6 +43,7 @@ import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrde
 import * as SendEmailNotificationTaskFactory from './factory/task/sendEmailNotification';
 import * as SettleCreditCardTaskFactory from './factory/task/settleCreditCard';
 import * as SettleSeatReservationTaskFactory from './factory/task/settleSeatReservation';
+import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
 import * as TaskExecutionResultFactory from './factory/taskExecutionResult';
 import TaskName from './factory/taskName';
 import TaskStatus from './factory/taskStatus';
@@ -132,6 +133,7 @@ export namespace task {
     export import sendEmailNotification = SendEmailNotificationTaskFactory;
     export import settleCreditCard = SettleCreditCardTaskFactory;
     export import settleSeatReservation = SettleSeatReservationTaskFactory;
+    export import updateOrderReportByReservation = UpdateOrderReportByReservationTaskFactory;
 }
 export import taskExecutionResult = TaskExecutionResultFactory;
 export import taskName = TaskName;
