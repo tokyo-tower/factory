@@ -1,6 +1,6 @@
 {
   "name": "@motionpicture/ttts-factory",
-  "version": "0.1.1",
+  "version": "0.2.0-alpha.1",
   "description": "TTTS factory library.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
