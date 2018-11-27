@@ -36,7 +36,19 @@ enum TaskName {
     /**
      * パフォーマンスに対する注文返品タスク
      */
-    ReturnOrdersByPerformance = 'returnOrdersByPerformance'
+    ReturnOrdersByPerformance = 'returnOrdersByPerformance',
+    /**
+     * 注文取引レポート作成
+     */
+    CreatePlaceOrderReport = 'createPlaceOrderReport',
+    /**
+     * 注文返品取引レポート作成
+     */
+    CreateReturnOrderReport = 'createReturnOrderReport',
+    /**
+     * 予約から注文レポート更新
+     */
+    UpdateOrderReportByReservation = 'updateOrderReportByReservation'
 }
 
 export default TaskName;
