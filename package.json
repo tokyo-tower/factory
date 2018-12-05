@@ -69,7 +69,7 @@
     "lodash": "^4.17.5",
     "moment": "^2.20.1",
     "setprototypeof": "^1.1.0",
-    "validator": "^9.2.0"
+    "validator": "^9.4.1"
   },
   "repository": {
     "type": "git",
