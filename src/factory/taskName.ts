@@ -45,7 +45,11 @@ enum TaskName {
     /**
      * 予約から注文レポート更新
      */
-    UpdateOrderReportByReservation = 'updateOrderReportByReservation'
+    UpdateOrderReportByReservation = 'updateOrderReportByReservation',
+    /**
+     * ウェブフックをたたく
+     */
+    TriggerWebhook = 'triggerWebhook'
 }
 
 export default TaskName;

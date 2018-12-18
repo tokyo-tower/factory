@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
+- TriggerWebhookタスクを追加
+
 ### Changed
 
 - [Cinerino](https://github.com/cinerino/factory)化に向けて注文インターフェースを調整
