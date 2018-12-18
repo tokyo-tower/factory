@@ -2,6 +2,7 @@
  * factory
  * @module
  */
+import * as chevre from './chevre';
 
 import * as ActionFactory from './factory/action';
 import * as AuthorizeActionFactory from './factory/action/authorize';
@@ -14,6 +15,7 @@ import * as EmailMessageFactory from './factory/creativeWork/message/email';
 import * as MovieCreativeWorkFactory from './factory/creativeWork/movie';
 import CreativeWorkType from './factory/creativeWorkType';
 import ItemAvailability from './factory/itemAvailability';
+import * as MonetaryAmountFactory from './factory/monetaryAmount';
 import * as MultilingualStringFactory from './factory/multilingualString';
 import * as SeatReservationOfferFactory from './factory/offer/seatReservation';
 import * as OrderFactory from './factory/order';
@@ -28,9 +30,11 @@ import PersonType from './factory/personType';
 import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as MovieTheaterFactory from './factory/place/movieTheater';
 import PriceCurrency from './factory/priceCurrency';
+import * as PropertyValueFactory from './factory/propertyValue';
 import * as ReservationFactory from './factory/reservation';
 import * as EventReservationFactory from './factory/reservation/event';
 import ReservationStatusType from './factory/reservationStatusType';
+import SortType from './factory/sortType';
 import * as StockFactory from './factory/stock';
 import * as TaskFactory from './factory/task';
 import * as CancelCreditCardTaskFactory from './factory/task/cancelCreditCard';
@@ -58,6 +62,7 @@ import * as URLFactory from './factory/url';
 import ErrorCode from './factory/errorCode';
 import * as errors from './factory/errors';
 
+export import chevre = chevre;
 export import errors = errors;
 export import errorCode = ErrorCode;
 
@@ -95,6 +100,8 @@ export namespace creativeWork {
 }
 export import creativeWorkType = CreativeWorkType;
 export import itemAvailability = ItemAvailability;
+
+export import monetaryAmount = MonetaryAmountFactory;
 export import multilingualString = MultilingualStringFactory;
 export namespace offer {
     export import seatReservation = SeatReservationOfferFactory;
@@ -110,10 +117,12 @@ export import paymentMethodType = PaymentMethodType;
 export import performance = PerformanceFactory;
 export import person = PersonFactory;
 export import personType = PersonType;
+export import propertyValue = PropertyValueFactory;
 export namespace reservation {
     export import reservationType = ReservationFactory.ReservationType;
     export import event = EventReservationFactory;
 }
+export import sortType = SortType;
 export import stock = StockFactory;
 export namespace place {
     export import checkinGate = CheckinGateFactory;

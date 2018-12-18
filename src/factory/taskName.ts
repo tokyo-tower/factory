@@ -1,9 +1,6 @@
 /**
- * task name
  * タスク名
- * @namespace taskName
  */
-
 enum TaskName {
     /**
      * 座席の仮予約削除

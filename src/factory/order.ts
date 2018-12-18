@@ -1,113 +1,53 @@
-/**
- * order factory
- * An order is a confirmation of a transaction (a receipt),
- * which can contain multiple line items, each represented by an Offer that has been accepted by the customer.
- * 注文ファクトリー
- * @namespace order
- */
-
+import { IMonetaryAmount } from './monetaryAmount';
+import { IMultilingualString } from './multilingualString';
+import { IOffer } from './offer';
 import OrderStatus from './orderStatus';
 import OrganizationType from './organizationType';
-import { IContact, IPerson } from './person';
+import PaymentMethodType from './paymentMethodType';
+import { IIdentifier, IPerson, IProfile } from './person';
 import PersonType from './personType';
 import PriceCurrency from './priceCurrency';
+import { IPropertyValue } from './propertyValue';
 import { IReservation } from './reservation/event';
+import SortType from './sortType';
 
+import * as chevre from '../chevre';
+
+export type TypeOf = 'Order';
 /**
- * seller interface
- * 販売者インターフェース
- * @export
- * @interface
- * @memberof order
+ * 決済方法インターフェース
  */
-export interface ISeller {
-    typeOf: OrganizationType | PersonType;
+export interface IPaymentMethod<T extends PaymentMethodType> {
     /**
-     * Name of the Organization.
+     * 決済方法タイプ
+     */
+    typeOf: T;
+    paymentMethod: T;
+    /**
+     * 決済方法名
      */
     name: string;
-    /**
-     * The Freebase URL for the merchant.
-     */
-    url: string;
-}
-
-/**
- * customer interface
- * 購入者インターフェース
- * @export
- * @interface
- * @memberof order
- */
-export type ICustomer = IPerson & IContact & {
-    name: string;
-};
-
-/**
- * offered item type
- * 供給アイテムインターフェース
- * @export
- * @type
- * @memberof order
- */
-export type IItemOffered = IReservation;
-
-/**
- * offer interface
- * 供給インターフェース
- * @export
- * @interface
- * @memberof order
- */
-export interface IOffer {
-    /**
-     * 受け入れられた予約情報
-     */
-    itemOffered: IItemOffered;
-    /**
-     * 金額
-     */
-    price: number;
-    /**
-     * 通貨
-     */
-    priceCurrency: PriceCurrency;
-    /**
-     * 販売者
-     */
-    seller: {
-        typeOf: OrganizationType | PersonType;
-        name: string;
-    };
-}
-
-/**
- * payment method interface
- * 決済方法イーターフェース
- * @export
- * @interface
- * @memberof order
- */
-export interface IPaymentMethod {
-    name: string;
-    /**
-     * The name of the credit card or other method of payment for the order.
-     */
-    paymentMethod: string;
     /**
      * An identifier for the method of payment used (e.g.the last 4 digits of the credit card).
      */
     paymentMethodId: string;
+    /**
+     * The total amount due.
+     */
+    totalPaymentDue?: IMonetaryAmount;
+    /**
+     * 追加特性
+     */
+    additionalProperty: IPropertyValue<any>[];
 }
-
 /**
- * discount interface
  * 割引インターフェース
- * @export
- * @interface
- * @memberof order
  */
 export interface IDiscount {
+    /**
+     * 割引タイプ
+     */
+    typeOf: string;
     name: string;
     /**
      * Any discount applied.
@@ -122,13 +62,32 @@ export interface IDiscount {
      */
     discountCurrency: string;
 }
+/**
+ * 供給アイテムインターフェース
+ */
+export type IItemOffered = IReservation;
+
+/**
+ * offer interface
+ * 供給インターフェース
+ */
+export interface IAcceptedOffer<T extends IItemOffered> extends IOffer {
+    /**
+     * オファー対象アイテム
+     */
+    itemOffered: T;
+    /**
+     * 販売者
+     */
+    seller: {
+        typeOf: OrganizationType | PersonType;
+        name: string;
+    };
+}
 
 /**
  * key for inquiry of the order
  * 注文照会キーインターフェース
- * @export
- * @interface
- * @memberof order
  */
 export interface IOrderInquiryKey {
     performanceDay: string;
@@ -138,26 +97,38 @@ export interface IOrderInquiryKey {
 
 /**
  * 注文照会結果インターフェース
- * @export
- * @type
- * @memberof order
  */
 export type IOrderInquiryResult = IOrder & {
     printToken: string;
 };
 
 /**
- * order interface
+ * 販売者インターフェース
+ */
+export interface ISeller {
+    id: string;
+    identifier?: string;
+    name: string;
+    legalName?: IMultilingualString;
+    typeOf: OrganizationType | PersonType;
+    telephone?: string;
+    url?: string;
+}
+/**
+ * 購入者インターフェース
+ */
+export type ICustomer = IPerson & IProfile & {
+    name: string;
+};
+/**
  * 注文インターフェース
- * @export
- * @interface
- * @memberof order
+ * @see https://schema.org/Order
  */
 export interface IOrder {
     /**
      * object type
      */
-    typeOf: string;
+    typeOf: TypeOf;
     /**
      * Organization or Person
      * The party taking the order (e.g. Amazon.com is a merchant for many sellers). Also accepts a string (e.g. "Amazon.com").
@@ -188,11 +159,11 @@ export interface IOrder {
      * Offer
      * The offers included in the order.Also accepts an array of objects.
      */
-    acceptedOffers: IOffer[];
+    acceptedOffers: IAcceptedOffer<IItemOffered>[];
     /**
      * payment methods
      */
-    paymentMethods: IPaymentMethod[];
+    paymentMethods: IPaymentMethod<PaymentMethodType>[];
     /**
      * discount infos
      */
@@ -216,7 +187,148 @@ export interface IOrder {
      */
     isGift: boolean;
     /**
-     * key for inquiry (required)
+     * Date order was returned.
      */
+    dateReturned?: Date;
     orderInquiryKey: IOrderInquiryKey;
+}
+/**
+ * ソート条件インターフェース
+ */
+export interface ISortOrder {
+    orderDate?: SortType;
+    orderNumber?: SortType;
+    price?: SortType;
+}
+/**
+ * 予約対象検索条件インターフェース
+ */
+export interface IReservationForSearchConditions {
+    typeOfs?: chevre.eventType[];
+    ids?: string[];
+    /**
+     * イベント名称
+     */
+    name?: string;
+    /**
+     * 開催中 from
+     */
+    inSessionFrom?: Date;
+    /**
+     * 開催中 through
+     */
+    inSessionThrough?: Date;
+    /**
+     * 開始日時 from
+     */
+    startFrom?: Date;
+    /**
+     * 開始日時 through
+     */
+    startThrough?: Date;
+    /**
+     * イベント開催場所
+     */
+    location?: {
+        branchCodes?: string[];
+    };
+    /**
+     * 親イベント情報
+     */
+    superEvent?: {
+        ids?: string[];
+        location?: {
+            /**
+             * 親イベントが実施される場所の枝番号
+             */
+            branchCodes?: string[];
+        };
+        workPerformed?: {
+            /**
+             * イベントで上演される作品識別子リスト
+             */
+            identifiers?: string[];
+        };
+    };
+}
+export interface ISellerSearchConditions {
+    typeOf?: OrganizationType;
+    /**
+     * 販売者IDリスト
+     */
+    ids?: string[];
+}
+export interface ICustomerSearchConditions {
+    typeOf?: PersonType;
+    ids?: string[];
+    identifiers?: IIdentifier;
+    /**
+     * 購入者会員番号リスト
+     */
+    membershipNumbers?: string[];
+    /**
+     * 電話番号
+     */
+    telephone?: string;
+}
+export interface IPaymentMethodsSearchConditions {
+    typeOfs?: PaymentMethodType[];
+    paymentMethodIds?: string[];
+}
+export interface IAcceptedOffersSearchConditions {
+    itemOffered?: {
+        // typeOfs?: ItemOfferedType[];
+        /**
+         * 予約IDリスト
+         */
+        ids?: string[];
+        /**
+         * 予約対象
+         */
+        reservationFor?: IReservationForSearchConditions;
+    };
+}
+/**
+ * 注文検索条件インターフェース
+ */
+export interface ISearchConditions {
+    limit?: number;
+    page?: number;
+    sort?: ISortOrder;
+    /**
+     * 販売者条件
+     */
+    seller?: ISellerSearchConditions;
+    /**
+     * 購入者条件
+     */
+    customer?: ICustomerSearchConditions;
+    /**
+     * 注文番号リスト
+     */
+    orderNumbers?: string[];
+    /**
+     * 注文ステータスリスト
+     */
+    orderStatuses?: OrderStatus[];
+    /**
+     * 注文日時(から)
+     */
+    orderDateFrom?: Date;
+    /**
+     * 注文日時(まで)
+     */
+    orderDateThrough?: Date;
+    /**
+     * 確認番号リスト
+     */
+    confirmationNumbers?: string[];
+    /**
+     * 決済方法
+     */
+    paymentMethods?: IPaymentMethodsSearchConditions;
+    /**
+     * 注文アイテム条件
+     */
+    acceptedOffers?: IAcceptedOffersSearchConditions;
 }
