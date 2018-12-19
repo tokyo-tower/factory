@@ -27,6 +27,18 @@ export interface IProfile {
     age: string;
     address: string;
     gender: string;
+    /**
+     * 重複項目だが、Cinerino化に向けて補強
+     */
+    givenName?: string;
+    /**
+     * 重複項目だが、Cinerino化に向けて補強
+     */
+    familyName?: string;
+    /**
+     * 重複項目だが、Cinerino化に向けて補強
+     */
+    telephone?: string;
 }
 
 /**
