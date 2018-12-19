@@ -1,7 +1,7 @@
 /**
  * factory
- * @module
  */
+import * as cinerino from '@cinerino/factory';
 import * as chevre from './chevre';
 
 import * as ActionFactory from './factory/action';
@@ -63,6 +63,7 @@ import * as URLFactory from './factory/url';
 import ErrorCode from './factory/errorCode';
 import * as errors from './factory/errors';
 
+export import cinerino = cinerino;
 export import chevre = chevre;
 export import errors = errors;
 export import errorCode = ErrorCode;

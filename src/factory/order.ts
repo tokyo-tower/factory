@@ -1,17 +1,16 @@
+import * as cinerino from '@cinerino/factory';
+
 import { IMonetaryAmount } from './monetaryAmount';
 import { IMultilingualString } from './multilingualString';
 import { IOffer } from './offer';
 import OrderStatus from './orderStatus';
 import OrganizationType from './organizationType';
 import PaymentMethodType from './paymentMethodType';
-import { IIdentifier, IPerson, IProfile } from './person';
+import { IPerson, IProfile } from './person';
 import PersonType from './personType';
 import PriceCurrency from './priceCurrency';
 import { IPropertyValue } from './propertyValue';
 import { IReservation } from './reservation/event';
-import SortType from './sortType';
-
-import * as chevre from '../chevre';
 
 export type TypeOf = 'Order';
 /**
@@ -193,142 +192,6 @@ export interface IOrder {
     orderInquiryKey: IOrderInquiryKey;
 }
 /**
- * ソート条件インターフェース
- */
-export interface ISortOrder {
-    orderDate?: SortType;
-    orderNumber?: SortType;
-    price?: SortType;
-}
-/**
- * 予約対象検索条件インターフェース
- */
-export interface IReservationForSearchConditions {
-    typeOfs?: chevre.eventType[];
-    ids?: string[];
-    /**
-     * イベント名称
-     */
-    name?: string;
-    /**
-     * 開催中 from
-     */
-    inSessionFrom?: Date;
-    /**
-     * 開催中 through
-     */
-    inSessionThrough?: Date;
-    /**
-     * 開始日時 from
-     */
-    startFrom?: Date;
-    /**
-     * 開始日時 through
-     */
-    startThrough?: Date;
-    /**
-     * イベント開催場所
-     */
-    location?: {
-        branchCodes?: string[];
-    };
-    /**
-     * 親イベント情報
-     */
-    superEvent?: {
-        ids?: string[];
-        location?: {
-            /**
-             * 親イベントが実施される場所の枝番号
-             */
-            branchCodes?: string[];
-        };
-        workPerformed?: {
-            /**
-             * イベントで上演される作品識別子リスト
-             */
-            identifiers?: string[];
-        };
-    };
-}
-export interface ISellerSearchConditions {
-    typeOf?: OrganizationType;
-    /**
-     * 販売者IDリスト
-     */
-    ids?: string[];
-}
-export interface ICustomerSearchConditions {
-    typeOf?: PersonType;
-    ids?: string[];
-    identifiers?: IIdentifier;
-    /**
-     * 購入者会員番号リスト
-     */
-    membershipNumbers?: string[];
-    /**
-     * 電話番号
-     */
-    telephone?: string;
-}
-export interface IPaymentMethodsSearchConditions {
-    typeOfs?: PaymentMethodType[];
-    paymentMethodIds?: string[];
-}
-export interface IAcceptedOffersSearchConditions {
-    itemOffered?: {
-        // typeOfs?: ItemOfferedType[];
-        /**
-         * 予約IDリスト
-         */
-        ids?: string[];
-        /**
-         * 予約対象
-         */
-        reservationFor?: IReservationForSearchConditions;
-    };
-}
-/**
  * 注文検索条件インターフェース
  */
-export interface ISearchConditions {
-    limit?: number;
-    page?: number;
-    sort?: ISortOrder;
-    /**
-     * 販売者条件
-     */
-    seller?: ISellerSearchConditions;
-    /**
-     * 購入者条件
-     */
-    customer?: ICustomerSearchConditions;
-    /**
-     * 注文番号リスト
-     */
-    orderNumbers?: string[];
-    /**
-     * 注文ステータスリスト
-     */
-    orderStatuses?: OrderStatus[];
-    /**
-     * 注文日時(から)
-     */
-    orderDateFrom?: Date;
-    /**
-     * 注文日時(まで)
-     */
-    orderDateThrough?: Date;
-    /**
-     * 確認番号リスト
-     */
-    confirmationNumbers?: string[];
-    /**
-     * 決済方法
-     */
-    paymentMethods?: IPaymentMethodsSearchConditions;
-    /**
-     * 注文アイテム条件
-     */
-    acceptedOffers?: IAcceptedOffersSearchConditions;
-}
+export type ISearchConditions = cinerino.order.ISearchConditions;
