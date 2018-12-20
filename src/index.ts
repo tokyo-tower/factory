@@ -152,6 +152,18 @@ export import taskName = TaskName;
 export import taskStatus = TaskStatus;
 export import ticketTypeCategory = TicketTypeCategory;
 export namespace transaction {
+    export type ISearchConditions<T extends TransactionType> =
+        T extends TransactionType.PlaceOrder ? PlaceOrderTransactionFactory.ISearchConditions :
+        T extends TransactionType.ReturnOrder ? ReturnOrderTransactionFactory.ISearchConditions :
+        never;
+    export type IAttributes<T extends TransactionType> =
+        T extends TransactionType.PlaceOrder ? PlaceOrderTransactionFactory.IAttributes :
+        T extends TransactionType.ReturnOrder ? ReturnOrderTransactionFactory.IAttributes :
+        never;
+    export type ITransaction<T extends TransactionType> =
+        T extends TransactionType.PlaceOrder ? PlaceOrderTransactionFactory.ITransaction :
+        T extends TransactionType.ReturnOrder ? ReturnOrderTransactionFactory.ITransaction :
+        never;
     export import placeOrder = PlaceOrderTransactionFactory;
     export import returnOrder = ReturnOrderTransactionFactory;
 }

@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 - [Cinerino](https://github.com/cinerino/factory)化に向けて注文インターフェースを調整
 - 注文検索条件を追加
+- 取引検索条件を追加
 
 ### Deprecated
 
