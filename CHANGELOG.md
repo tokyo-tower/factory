@@ -18,6 +18,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v1.0.0 - 2018-12-22
+
+### Added
+
+- TriggerWebhookタスクを追加
+
+### Changed
+
+- [Cinerino](https://github.com/cinerino/factory)化に向けて注文インターフェースを調整
+- 注文検索条件を追加
+- 取引検索条件を追加
+
 ## v0.2.0 - 2018-11-27
 
 ### Added

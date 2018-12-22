@@ -3,10 +3,7 @@ import setPrototypeOf = require('setprototypeof');
 import ErrorCode from '../errorCode';
 
 /**
- * TTTSError
- *
- * @class TTTSError
- * @extends {Error}
+ * TTTSドメインエラー
  */
 export class TTTSError extends Error {
     public readonly reason: ErrorCode;

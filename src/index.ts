@@ -1,7 +1,8 @@
 /**
  * factory
- * @module
  */
+import * as cinerino from '@cinerino/factory';
+import * as chevre from './chevre';
 
 import * as ActionFactory from './factory/action';
 import * as AuthorizeActionFactory from './factory/action/authorize';
@@ -14,6 +15,7 @@ import * as EmailMessageFactory from './factory/creativeWork/message/email';
 import * as MovieCreativeWorkFactory from './factory/creativeWork/movie';
 import CreativeWorkType from './factory/creativeWorkType';
 import ItemAvailability from './factory/itemAvailability';
+import * as MonetaryAmountFactory from './factory/monetaryAmount';
 import * as MultilingualStringFactory from './factory/multilingualString';
 import * as SeatReservationOfferFactory from './factory/offer/seatReservation';
 import * as OrderFactory from './factory/order';
@@ -28,9 +30,11 @@ import PersonType from './factory/personType';
 import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as MovieTheaterFactory from './factory/place/movieTheater';
 import PriceCurrency from './factory/priceCurrency';
+import * as PropertyValueFactory from './factory/propertyValue';
 import * as ReservationFactory from './factory/reservation';
 import * as EventReservationFactory from './factory/reservation/event';
 import ReservationStatusType from './factory/reservationStatusType';
+import SortType from './factory/sortType';
 import * as StockFactory from './factory/stock';
 import * as TaskFactory from './factory/task';
 import * as CancelCreditCardTaskFactory from './factory/task/cancelCreditCard';
@@ -43,6 +47,7 @@ import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrde
 import * as SendEmailNotificationTaskFactory from './factory/task/sendEmailNotification';
 import * as SettleCreditCardTaskFactory from './factory/task/settleCreditCard';
 import * as SettleSeatReservationTaskFactory from './factory/task/settleSeatReservation';
+import * as TriggerWebhookTaskFactory from './factory/task/triggerWebhook';
 import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
 import * as TaskExecutionResultFactory from './factory/taskExecutionResult';
 import TaskName from './factory/taskName';
@@ -58,6 +63,8 @@ import * as URLFactory from './factory/url';
 import ErrorCode from './factory/errorCode';
 import * as errors from './factory/errors';
 
+export import cinerino = cinerino;
+export import chevre = chevre;
 export import errors = errors;
 export import errorCode = ErrorCode;
 
@@ -95,6 +102,8 @@ export namespace creativeWork {
 }
 export import creativeWorkType = CreativeWorkType;
 export import itemAvailability = ItemAvailability;
+
+export import monetaryAmount = MonetaryAmountFactory;
 export import multilingualString = MultilingualStringFactory;
 export namespace offer {
     export import seatReservation = SeatReservationOfferFactory;
@@ -110,10 +119,12 @@ export import paymentMethodType = PaymentMethodType;
 export import performance = PerformanceFactory;
 export import person = PersonFactory;
 export import personType = PersonType;
+export import propertyValue = PropertyValueFactory;
 export namespace reservation {
     export import reservationType = ReservationFactory.ReservationType;
     export import event = EventReservationFactory;
 }
+export import sortType = SortType;
 export import stock = StockFactory;
 export namespace place {
     export import checkinGate = CheckinGateFactory;
@@ -133,6 +144,7 @@ export namespace task {
     export import sendEmailNotification = SendEmailNotificationTaskFactory;
     export import settleCreditCard = SettleCreditCardTaskFactory;
     export import settleSeatReservation = SettleSeatReservationTaskFactory;
+    export import triggerWebhook = TriggerWebhookTaskFactory;
     export import updateOrderReportByReservation = UpdateOrderReportByReservationTaskFactory;
 }
 export import taskExecutionResult = TaskExecutionResultFactory;
@@ -140,6 +152,18 @@ export import taskName = TaskName;
 export import taskStatus = TaskStatus;
 export import ticketTypeCategory = TicketTypeCategory;
 export namespace transaction {
+    export type ISearchConditions<T extends TransactionType> =
+        T extends TransactionType.PlaceOrder ? PlaceOrderTransactionFactory.ISearchConditions :
+        T extends TransactionType.ReturnOrder ? ReturnOrderTransactionFactory.ISearchConditions :
+        never;
+    export type IAttributes<T extends TransactionType> =
+        T extends TransactionType.PlaceOrder ? PlaceOrderTransactionFactory.IAttributes :
+        T extends TransactionType.ReturnOrder ? ReturnOrderTransactionFactory.IAttributes :
+        never;
+    export type ITransaction<T extends TransactionType> =
+        T extends TransactionType.PlaceOrder ? PlaceOrderTransactionFactory.ITransaction :
+        T extends TransactionType.ReturnOrder ? ReturnOrderTransactionFactory.ITransaction :
+        never;
     export import placeOrder = PlaceOrderTransactionFactory;
     export import returnOrder = ReturnOrderTransactionFactory;
 }

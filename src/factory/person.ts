@@ -1,17 +1,9 @@
-/**
- * person factory
- * 人物ファクトリー
- * @namespace person
- */
-
 import PersonType from './personType';
 import * as ProgramMembershipFactory from './programMembership';
+import { IPropertyValue } from './propertyValue';
 
 /**
  * 人物グループ
- * @export
- * @enum
- * @memberof person
  */
 export enum Group {
     /**
@@ -25,13 +17,9 @@ export enum Group {
 }
 
 /**
- * contact interface
  * 連絡先インターフェース
- * @export
- * @interface
- * @memberof person
  */
-export interface IContact {
+export interface IProfile {
     last_name: string;
     first_name: string;
     email: string;
@@ -39,14 +27,33 @@ export interface IContact {
     age: string;
     address: string;
     gender: string;
+    /**
+     * 重複項目だが、Cinerino化に向けて補強
+     */
+    givenName?: string;
+    /**
+     * 重複項目だが、Cinerino化に向けて補強
+     */
+    familyName?: string;
+    /**
+     * 重複項目だが、Cinerino化に向けて補強
+     */
+    telephone?: string;
 }
 
 /**
- * person interface
+ * 連絡先インターフェース
+ * @alias
+ */
+export type IContact = IProfile;
+
+/**
+ * 識別子インターフェース
+ */
+export type IIdentifier = IPropertyValue<string>[];
+
+/**
  * 人物インターフェース
- * @export
- * @interface
- * @memberof person
  */
 export interface IPerson {
     typeOf: PersonType;
@@ -69,4 +76,9 @@ export interface IPerson {
      * 所属会員プログラム
      */
     memberOf?: ProgramMembershipFactory.IProgramMembership;
+    /**
+     * 人を識別するもの
+     * サービスを使用するアプリケーション側で都合のいいように設定する
+     */
+    identifier?: IIdentifier;
 }
