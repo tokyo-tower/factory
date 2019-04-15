@@ -33,7 +33,7 @@ import PriceCurrency from './factory/priceCurrency';
 import * as PropertyValueFactory from './factory/propertyValue';
 import * as ReservationFactory from './factory/reservation';
 import * as EventReservationFactory from './factory/reservation/event';
-import ReservationStatusType from './factory/reservationStatusType';
+import { ReservationStatusType } from './factory/reservationStatusType';
 import SortType from './factory/sortType';
 import * as StockFactory from './factory/stock';
 import * as TaskFactory from './factory/task';

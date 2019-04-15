@@ -9,7 +9,7 @@ import { IBilingualString, IMultilingualString } from '../../multilingualString'
 import { IAcceptedOffer as ISeatReservationAcceptedOffer, ITicketCancelCharge, ITicketTypeExtension } from '../../offer/seatReservation';
 import { IPerformanceWithDetails } from '../../performance';
 import { IStock } from '../../reservation/event';
-import ReservationStatusType from '../../reservationStatusType';
+import { ReservationStatusType } from '../../reservationStatusType';
 import * as AuthorizeActionFactory from '../authorize';
 
 export type IAgent = IParticipant;
