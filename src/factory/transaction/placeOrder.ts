@@ -9,7 +9,7 @@ import { IOrder } from '../order';
 import OrganizationType from '../organizationType';
 import PaymentMethodType from '../paymentMethodType';
 import { Group as PersonGroup, IContact, IPerson } from '../person';
-import PersonType from '../personType';
+import { PersonType } from '../personType';
 import * as EventReservationFactory from '../reservation/event';
 import * as TransactionFactory from '../transaction';
 

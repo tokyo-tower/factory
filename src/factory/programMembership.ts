@@ -1,17 +1,6 @@
-/**
- * programMembership factory
- * @namespace programMembership
- */
+import { programMembership } from '@cinerino/factory';
 
 /**
- * Used to describe membership in a loyalty programs
- * (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
- * @export
- * @interface {IProgramMembership}
- * @memberof programMembership
+ * 会員プログラムインターフェース
  */
-export interface IProgramMembership {
-    membershipNumber: string;
-    programName: string;
-    username: string;
-}
+export import IProgramMembership = programMembership.IProgramMembership;

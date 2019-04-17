@@ -26,7 +26,7 @@ import * as CreditCardFactory from './factory/paymentMethod/paymentCard/creditCa
 import PaymentMethodType from './factory/paymentMethodType';
 import * as PerformanceFactory from './factory/performance';
 import * as PersonFactory from './factory/person';
-import PersonType from './factory/personType';
+import { PersonType } from './factory/personType';
 import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as MovieTheaterFactory from './factory/place/movieTheater';
 import PriceCurrency from './factory/priceCurrency';

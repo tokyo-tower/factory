@@ -1,10 +1,6 @@
+import { personType } from '@cinerino/factory';
+
 /**
  * 人物タイプ
- * @namespace personType
  */
-
-enum PersonType {
-    Person = 'Person'
-}
-
-export default PersonType;
+export import PersonType = personType;

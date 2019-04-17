@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - 予約インターフェースをChevreを継承するように拡張
 - install @chevre/factory@1.0.0-alpha.88
 - install @cinerino/factory@1.0.0-alpha.126
+- 人物インターフェースをCinerino継承
 
 ### Deprecated
 
