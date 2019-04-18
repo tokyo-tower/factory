@@ -7,7 +7,7 @@ import OrderStatus from './orderStatus';
 import OrganizationType from './organizationType';
 import PaymentMethodType from './paymentMethodType';
 import { IPerson, IProfile } from './person';
-import PersonType from './personType';
+import { PersonType } from './personType';
 import PriceCurrency from './priceCurrency';
 import { IPropertyValue } from './propertyValue';
 import { IReservation } from './reservation/event';

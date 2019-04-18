@@ -10,7 +10,7 @@ import PaymentMethodType from './paymentMethodType';
 import { Group as PersonGroup, IPerson } from './person';
 import { IScreen, ITheater } from './place/movieTheater';
 import { ICheckin, IReservation } from './reservation/event';
-import ReservationStatusType from './reservationStatusType';
+import { ReservationStatusType } from './reservationStatusType';
 import TicketTypeCategory from './ticketTypeCategory';
 
 /**

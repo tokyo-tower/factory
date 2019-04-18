@@ -1,6 +1,4 @@
-import PersonType from './personType';
-import * as ProgramMembershipFactory from './programMembership';
-import { IPropertyValue } from './propertyValue';
+import { person } from '@cinerino/factory';
 
 /**
  * 人物グループ
@@ -19,7 +17,7 @@ export enum Group {
 /**
  * 連絡先インターフェース
  */
-export interface IProfile {
+export interface IProfile extends person.IProfile {
     last_name: string;
     first_name: string;
     email: string;
@@ -27,18 +25,6 @@ export interface IProfile {
     age: string;
     address: string;
     gender: string;
-    /**
-     * 重複項目だが、Cinerino化に向けて補強
-     */
-    givenName?: string;
-    /**
-     * 重複項目だが、Cinerino化に向けて補強
-     */
-    familyName?: string;
-    /**
-     * 重複項目だが、Cinerino化に向けて補強
-     */
-    telephone?: string;
 }
 
 /**
@@ -50,35 +36,12 @@ export type IContact = IProfile;
 /**
  * 識別子インターフェース
  */
-export type IIdentifier = IPropertyValue<string>[];
+export import IIdentifier = person.IIdentifier;
 
 /**
  * 人物インターフェース
  */
-export interface IPerson {
-    typeOf: PersonType;
-    /**
-     * id
-     */
-    id: string;
-    /**
-     * URL of the item.
-     */
-    url?: string;
-    familyName?: string;
-    givenName?: string;
-    email?: string;
-    telephone?: string;
+export interface IPerson extends person.IPerson {
     notes?: string;
     group?: Group;
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     * 所属会員プログラム
-     */
-    memberOf?: ProgramMembershipFactory.IProgramMembership;
-    /**
-     * 人を識別するもの
-     * サービスを使用するアプリケーション側で都合のいいように設定する
-     */
-    identifier?: IIdentifier;
 }

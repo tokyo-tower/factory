@@ -18,6 +18,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v1.0.1 - 2019-04-18
+
+### Changed
+
+- 予約インターフェースをChevreを継承するように拡張
+- install @chevre/factory@1.0.0-alpha.88
+- install @cinerino/factory@1.0.0-alpha.126
+- 人物インターフェースをCinerino継承
+
 ## v1.0.0 - 2018-12-22
 
 ### Added

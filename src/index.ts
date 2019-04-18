@@ -26,14 +26,13 @@ import * as CreditCardFactory from './factory/paymentMethod/paymentCard/creditCa
 import PaymentMethodType from './factory/paymentMethodType';
 import * as PerformanceFactory from './factory/performance';
 import * as PersonFactory from './factory/person';
-import PersonType from './factory/personType';
+import { PersonType } from './factory/personType';
 import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as MovieTheaterFactory from './factory/place/movieTheater';
 import PriceCurrency from './factory/priceCurrency';
 import * as PropertyValueFactory from './factory/propertyValue';
-import * as ReservationFactory from './factory/reservation';
 import * as EventReservationFactory from './factory/reservation/event';
-import ReservationStatusType from './factory/reservationStatusType';
+import { ReservationStatusType } from './factory/reservationStatusType';
 import SortType from './factory/sortType';
 import * as StockFactory from './factory/stock';
 import * as TaskFactory from './factory/task';
@@ -121,9 +120,9 @@ export import person = PersonFactory;
 export import personType = PersonType;
 export import propertyValue = PropertyValueFactory;
 export namespace reservation {
-    export import reservationType = ReservationFactory.ReservationType;
     export import event = EventReservationFactory;
 }
+export import reservationType = chevre.reservationType;
 export import sortType = SortType;
 export import stock = StockFactory;
 export namespace place {
