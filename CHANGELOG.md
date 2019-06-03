@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 - パフォーマンス検索条件調整
 - イベント予約検索条件調整
+- パフォーマンス検索結果調整
 
 ### Deprecated
 
