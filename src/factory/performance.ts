@@ -136,18 +136,24 @@ export interface ITicketTypeGroup {
  */
 export interface IPerformanceWithDetails {
     id: string;
+    doorTime: Date;
+    startDate: Date;
+    endDate: Date;
+    superEvent: IFilm;
+    location: IScreen;
+    tourNumber: string;
+
+    theater: ITheater;
+    screen: IScreen;
+    film: IFilm;
+
+    ticket_type_group: ITicketTypeGroup;
+    ttts_extension: IExtension;
+
     day: string;
     open_time: string;
     start_time: string;
     end_time: string;
-    start_str: IBilingualString;
-    location_str: IBilingualString;
-    canceled: boolean;
-    ticket_type_group: ITicketTypeGroup;
-    theater: ITheater;
-    screen: IScreen;
-    film: IFilm;
-    ttts_extension: IExtension;
     door_time: Date;
     start_date: Date;
     end_date: Date;
@@ -160,18 +166,27 @@ export interface IPerformanceWithDetails {
  */
 export interface IPerformance {
     id: string;
-    theater: string;
-    theater_name: IBilingualString;
-    screen: string;
-    screen_name: IBilingualString;
-    film: string;
+    doorTime: Date;
+    startDate: Date;
+    endDate: Date;
+    superEvent: IFilm;
+    location: IScreen;
+    tourNumber: string;
+
     ticket_type_group: string;
+
+    ttts_extension: IExtension;
+
+    theater: ITheater;
+    screen: IScreen;
+    film: IFilm;
+    theater_name: IBilingualString;
+    screen_name: IBilingualString;
+
     day: string;
     open_time: string;
     start_time: string;
     end_time: string;
-    canceled: boolean;
-    ttts_extension: IExtension;
     door_time: Date;
     start_date: Date;
     end_date: Date;
