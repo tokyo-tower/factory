@@ -8,12 +8,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
+- イベント予約集計タスクを追加
+
 ### Changed
 
 - パフォーマンス検索条件調整
 - イベント予約検索条件調整
 - パフォーマンス検索結果調整
 - パフォーマンスインターフェースをChevre化に向けて補強
+- イベント集計にオファーごとの集計を追加
 
 ### Deprecated
 

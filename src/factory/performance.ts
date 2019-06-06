@@ -275,6 +275,13 @@ export interface IPerformanceWithAvailability {
     extension: IExtension;
 }
 
+export interface IOfferAggregation {
+    id: string;
+    remainingAttendeeCapacity?: number;
+    reservationCount?: number;
+    checkinCount?: number;
+}
+
 /**
  * 集計データつきのパフォーマンスインターフェース
  */
@@ -336,6 +343,10 @@ export interface IPerformanceWithAggregation {
      * 場所ごとの入場数
      */
     checkinCountsByWhere: ICheckinCountByWhere[];
+    /**
+     * オファーごとの集計
+     */
+    offers?: IOfferAggregation[];
 }
 
 export interface ICheckpoint {
