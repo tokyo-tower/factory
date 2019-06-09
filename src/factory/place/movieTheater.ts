@@ -13,12 +13,25 @@ export interface ITheater {
     address: IBilingualString;
 }
 
+export enum SeatingType {
+    Normal = 'Normal',
+    Wheelchair = 'Wheelchair'
+}
+
+export interface ISeatingType {
+    typeOf: SeatingType;
+}
+
 /**
  * 座席インターフェス
  */
 export interface ISeat {
     code: string; // 座席コード
     branchCode: string;
+    /**
+     * 座席タイプ
+     */
+    seatingType: ISeatingType;
 }
 
 /**
