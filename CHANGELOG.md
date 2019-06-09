@@ -23,6 +23,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Removed
 
 - パフォーマンスデータから不要な項目を削除
+- 券種から、説明、レート制限単位属性を削除
 
 ### Fixed
 
