@@ -8,6 +8,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## v2.0.0 - 2019-06-10
+
+### Added
+
 - イベント予約集計タスクを追加
 
 ### Changed
@@ -18,16 +32,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - パフォーマンスインターフェースをChevre化に向けて補強
 - イベント集計にオファーごとの集計を追加
 
-### Deprecated
-
 ### Removed
 
 - パフォーマンスデータから不要な項目を削除
 - 券種から、説明、レート制限単位属性を削除
-
-### Fixed
-
-### Security
 
 ## v1.0.1 - 2019-04-18
 
