@@ -6,6 +6,7 @@
 import PaymentMethodType from '../paymentMethodType';
 import * as PerformanceFactory from '../performance';
 import * as ReservationFactory from '../reservation';
+import { ReservationStatusType } from '../reservationStatusType';
 
 import ItemAvailability from '../itemAvailability';
 import { IBilingualString, IMultilingualString } from '../multilingualString';
@@ -156,4 +157,36 @@ export interface IReservation extends ReservationFactory.IReservation {
      * 注文が実行されたアプリケーションのクライアントIDが含まれる
      */
     transaction_agent: IAgent;
+}
+
+/**
+ * 予約検索条件インターフェース
+ */
+export interface ISearchConditions {
+    limit?: number;
+    page?: number;
+    sort?: any;
+    orderNumbers?: string[];
+    status?: ReservationStatusType;
+    performance?: string;
+    performances?: string[];
+    performanceStartFrom?: Date;
+    performanceStartThrough?: Date;
+    performanceEndFrom?: Date;
+    performanceEndThrough?: Date;
+    purchaser_group?: string;
+    performance_day?: string;
+    performanceStartTimeFrom?: string;
+    performanceStartTimeTo?: string;
+    payment_no?: string;
+    owner_username?: string;
+    paymentMethod?: string;
+    purchaserLastName?: string;
+    purchaserFirstName?: string;
+    purchaserEmail?: string;
+    purchaserTel?: string;
+    watcherName?: string;
+    transactionAgentId?: string | { $ne: string };
+    ids?: string[];
+    checkins?: { $size: number };
 }

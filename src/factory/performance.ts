@@ -1,8 +1,6 @@
 /**
  * パフォーマンスファクトリー
- * @namespace performance
  */
-
 import { IFilm } from './creativeWork/movie';
 import { IBilingualString } from './multilingualString';
 import { ITicketType } from './offer/seatReservation';
@@ -15,37 +13,32 @@ import TicketTypeCategory from './ticketTypeCategory';
 
 /**
  * 検索条件インターフェース
- * @export
- * @interface
- * @memberof performance
  */
 export interface ISearchConditions {
     limit?: number;
     page?: number;
+    sort?: any;
     // 上映日
     day?: string;
-    // 部門
-    section?: string;
-    // フリーワード
-    words?: string;
     // この時間以降開始のパフォーマンスに絞る(timestamp milliseconds)
     startFrom?: Date;
     startThrough?: Date;
-    // 劇場
-    theater?: string;
-    // スクリーン
-    screen?: string;
+    startTimes?: string[];
     // パフォーマンスID
     performanceId?: string;
     // 車椅子チェック要求
     wheelchair?: string;
+    canceled?: boolean;
+    days?: string[];
+    ttts_extension?: {
+        online_sales_status?: OnlineSalesStatus;
+        online_sales_update_at?: any;
+        refund_status?: string;
+    };
 }
 
 /**
  * エレベータ運行ステータス
- * @enum
- * @export
- * @memberof performance
  */
 export enum EvServiceStatus {
     // 正常運行
@@ -58,9 +51,6 @@ export enum EvServiceStatus {
 
 /**
  * オンライン販売ステータス
- * @enum
- * @export
- * @memberof performance
  */
 export enum OnlineSalesStatus {
     // 販売
@@ -71,9 +61,6 @@ export enum OnlineSalesStatus {
 
 /**
  * 返金ステータス
- * @enum
- * @export
- * @memberof performance
  */
 export enum RefundStatus {
     // なし
@@ -90,9 +77,6 @@ export enum RefundStatus {
  * tttsExtensionPerformance.ts
  * ttts拡張・パフォーマンス情報mongooseスキーマタイプ
  * ttts独自の機能拡張用フィールド定義
- * @interface
- * @export
- * @memberof performance
  */
 export interface IExtension {
     // ツアーナンバー
@@ -140,9 +124,6 @@ export interface IReservationAtLastupdateDate {
 
 /**
  * 券種グループインターフェース
- * @interface
- * @export
- * @memberof performance
  */
 export interface ITicketTypeGroup {
     id: string;
@@ -152,24 +133,27 @@ export interface ITicketTypeGroup {
 
 /**
  * 詳細情報つきのパフォーマンスインターフェース
- * @interface
- * @export
- * @memberof performance
  */
 export interface IPerformanceWithDetails {
     id: string;
+    doorTime: Date;
+    startDate: Date;
+    endDate: Date;
+    superEvent: IFilm;
+    location: IScreen;
+    tourNumber: string;
+
+    theater: ITheater;
+    screen: IScreen;
+    film: IFilm;
+
+    ticket_type_group: ITicketTypeGroup;
+    ttts_extension: IExtension;
+
     day: string;
     open_time: string;
     start_time: string;
     end_time: string;
-    start_str: IBilingualString;
-    location_str: IBilingualString;
-    canceled: boolean;
-    ticket_type_group: ITicketTypeGroup;
-    theater: ITheater;
-    screen: IScreen;
-    film: IFilm;
-    ttts_extension: IExtension;
     door_time: Date;
     start_date: Date;
     end_date: Date;
@@ -179,24 +163,30 @@ export interface IPerformanceWithDetails {
 
 /**
  * パフォーマンスインターフェース
- * @interface
- * @export
- * @memberof performance
  */
 export interface IPerformance {
     id: string;
-    theater: string;
-    theater_name: IBilingualString;
-    screen: string;
-    screen_name: IBilingualString;
-    film: string;
+    doorTime: Date;
+    startDate: Date;
+    endDate: Date;
+    superEvent: IFilm;
+    location: IScreen;
+    tourNumber: string;
+
     ticket_type_group: string;
+
+    ttts_extension: IExtension;
+
+    theater: ITheater;
+    screen: IScreen;
+    film: IFilm;
+    theater_name: IBilingualString;
+    screen_name: IBilingualString;
+
     day: string;
     open_time: string;
     start_time: string;
     end_time: string;
-    canceled: boolean;
-    ttts_extension: IExtension;
     door_time: Date;
     start_date: Date;
     end_date: Date;
@@ -228,9 +218,6 @@ export interface ICheckinCountByWhere {
 
 /**
  * 残席数つきの券種インターフェース
- * @export
- * @interface
- * @memberof performance
  */
 export type ITicketTypeWithAvailability = ITicketType & {
     remainingAttendeeCapacity: number;
@@ -238,9 +225,6 @@ export type ITicketTypeWithAvailability = ITicketType & {
 
 /**
  * 在庫状況つきのパフォーマンスインターフェース
- * @export
- * @interface
- * @memberof performance
  */
 export interface IPerformanceWithAvailability {
     id: string;
@@ -288,13 +272,18 @@ export interface IPerformanceWithAvailability {
      * 券種情報
      */
     ticketTypes: ITicketTypeWithAvailability[];
+    extension: IExtension;
+}
+
+export interface IOfferAggregation {
+    id: string;
+    remainingAttendeeCapacity?: number;
+    reservationCount?: number;
+    checkinCount?: number;
 }
 
 /**
  * 集計データつきのパフォーマンスインターフェース
- * @interface
- * @export
- * @memberof performance
  */
 export interface IPerformanceWithAggregation {
     id: string;
@@ -354,6 +343,10 @@ export interface IPerformanceWithAggregation {
      * 場所ごとの入場数
      */
     checkinCountsByWhere: ICheckinCountByWhere[];
+    /**
+     * オファーごとの集計
+     */
+    offers?: IOfferAggregation[];
 }
 
 export interface ICheckpoint {
@@ -388,7 +381,6 @@ export type IReservationAggregations = IReservationAggregation[];
 
 /**
  * 券種ごとの入場数インターフェース
- * @interface
  */
 export interface IArrivedCountByTicketType {
     ticketType: string;
@@ -417,7 +409,6 @@ export type ICheckinInfosByWhere = ICheckinInfoByWhere[];
 
 /**
  * パフォーマンスごとの入場情報インターフェース
- * @interface
  */
 export interface ICheckinInfoByPerformance {
     performanceId: string;
@@ -429,8 +420,6 @@ export interface ICheckinInfoByPerformance {
 
 /**
  * 在庫状況インターフェース
- * @interface
- * @memberof performance
  */
 export interface IAvailability {
     id: string;

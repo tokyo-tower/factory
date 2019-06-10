@@ -1,67 +1,41 @@
 /**
  * 劇場ファクトリー
- * @namespace place.movieTheater
  */
-
 import { IBilingualString } from '../multilingualString';
 
 /**
  * 劇場施設インターフェース
- * @interface
- * @export
- * @memberof place.movieTheater
  */
 export interface ITheater {
     id: string;
+    branchCode: string;
     name: IBilingualString;
     address: IBilingualString;
 }
 
-/**
- * 座席グレード
- * @enum
- * @export
- * @memberof place.movieTheater
- */
-export enum SeatGrade {
-    /**
-     * ノーマルシート
-     */
-    Normal = '00',
-    /**
-     * プレミアボックスシート
-     */
-    PremiereBox = '01',
-    /**
-     * プレミアラグジュアリーシート
-     */
-    PremiereLuxury = '02',
-    /**
-     * フロントリクライニングシート
-     */
-    FrontReclining = '03'
+export enum SeatingType {
+    Normal = 'Normal',
+    Wheelchair = 'Wheelchair'
+}
+
+export interface ISeatingType {
+    typeOf: SeatingType;
 }
 
 /**
  * 座席インターフェス
- * @interface
- * @export
- * @memberof place.movieTheater
  */
 export interface ISeat {
     code: string; // 座席コード
-    grade: {
-        code: SeatGrade;
-        name: IBilingualString;
-        additional_charge: number; // 追加料金
-    };
+    branchCode: string;
+    /**
+     * 座席タイプ
+     */
+    seatingType: ISeatingType;
 }
 
 /**
  * 座席コードのソート関数
- * @function
- * @param {string} a 座席コード
- * @param {string} b 座席コード
  */
 export function sortBySeatCode(a: string, b: string): number {
     const hyphenIndexA = a.lastIndexOf('-');
@@ -85,36 +59,20 @@ export function sortBySeatCode(a: string, b: string): number {
 
 /**
  * 座席セクションインターフェース
- * @interface
- * @export
- * @memberof place.movieTheater
  */
 export interface ISection {
     code: string;
+    branchCode: string;
     seats: ISeat[];
 }
 
 /**
  * スクリーンインターフェース
- * @interface
- * @export
- * @memberof place.movieTheater
  */
 export interface IScreen {
     id: string;
+    branchCode: string;
     name: IBilingualString;
     sections: ISection[];
     seats_number: number;
-    seats_numbers_by_seat_grade: ISeatsNumberBySeatGrade[];
-}
-
-/**
- * 座席グレードごとの座席数
- * @interface
- * @export
- * @memberof place.movieTheater
- */
-export interface ISeatsNumberBySeatGrade {
-    seats_number: number;
-    seat_grade_code: SeatGrade;
 }

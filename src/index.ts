@@ -36,6 +36,7 @@ import { ReservationStatusType } from './factory/reservationStatusType';
 import SortType from './factory/sortType';
 import * as StockFactory from './factory/stock';
 import * as TaskFactory from './factory/task';
+import * as AggregateEventReservationsTaskFactory from './factory/task/aggregateEventReservations';
 import * as CancelCreditCardTaskFactory from './factory/task/cancelCreditCard';
 import * as CancelSeatReservationTaskFactory from './factory/task/cancelSeatReservation';
 import * as CreateOrderTaskFactory from './factory/task/createOrder';
@@ -133,6 +134,7 @@ export import reservationStatusType = ReservationStatusType;
 export namespace task {
     export import IAttributes = TaskFactory.IAttributes;
     export import ITask = TaskFactory.ITask;
+    export import aggregateEventReservations = AggregateEventReservationsTaskFactory;
     export import cancelCreditCard = CancelCreditCardTaskFactory;
     export import cancelSeatReservation = CancelSeatReservationTaskFactory;
     export import createOrder = CreateOrderTaskFactory;
