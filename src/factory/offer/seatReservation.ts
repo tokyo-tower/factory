@@ -2,13 +2,15 @@ import { IMultilingualString } from '../multilingualString';
 import * as OfferFactory from '../offer';
 import TicketTypeCategory from '../ticketTypeCategory';
 
+import { ticketType } from '../../chevre';
+
 /**
  * 券種インターフェース
  */
-export interface ITicketType {
+export interface ITicketType extends ticketType.ITicketType {
     ttts_extension: ITicketTypeExtension;
     cancel_charge: ITicketCancelCharge[];
-    charge: number;
+    charge?: number;
     name: IMultilingualString;
     id: string;
 }
