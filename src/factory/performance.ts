@@ -220,7 +220,7 @@ export interface ICheckinCountByWhere {
  * 残席数つきの券種インターフェース
  */
 export type ITicketTypeWithAvailability = ITicketType & {
-    remainingAttendeeCapacity: number;
+    remainingAttendeeCapacity?: number;
 };
 
 /**
@@ -263,11 +263,11 @@ export interface IPerformanceWithAvailability {
     /**
      * 残収容人数
      */
-    remainingAttendeeCapacity: number;
+    remainingAttendeeCapacity?: number;
     /**
      * 車椅子客にとっての残収容人数
      */
-    remainingAttendeeCapacityForWheelchair: number;
+    remainingAttendeeCapacityForWheelchair?: number;
     /**
      * 券種情報
      */
