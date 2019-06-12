@@ -26,20 +26,6 @@ export interface ICheckin {
 }
 
 /**
- * 予約に要した在庫インターフェース
- */
-export interface IStock {
-    /**
-     * 座席コード
-     */
-    seat_code: string;
-    /**
-     * 仮予約後の在庫保持者
-     */
-    holder: string;
-}
-
-/**
  * イベント予約インターフェース
  */
 export interface IReservation extends ReservationFactory.IReservation {
@@ -52,10 +38,6 @@ export interface IReservation extends ReservationFactory.IReservation {
      * 注文番号
      */
     order_number: string;
-    /**
-     * 予約に要した在庫インターフェース
-     */
-    stocks: IStock[];
     /**
      * QR文字列
      */

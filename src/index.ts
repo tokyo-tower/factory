@@ -34,7 +34,6 @@ import * as PropertyValueFactory from './factory/propertyValue';
 import * as EventReservationFactory from './factory/reservation/event';
 import { ReservationStatusType } from './factory/reservationStatusType';
 import SortType from './factory/sortType';
-import * as StockFactory from './factory/stock';
 import * as TaskFactory from './factory/task';
 import * as AggregateEventReservationsTaskFactory from './factory/task/aggregateEventReservations';
 import * as CancelCreditCardTaskFactory from './factory/task/cancelCreditCard';
@@ -125,7 +124,6 @@ export namespace reservation {
 }
 export import reservationType = chevre.reservationType;
 export import sortType = SortType;
-export import stock = StockFactory;
 export namespace place {
     export import checkinGate = CheckinGateFactory;
     export import movieTheater = MovieTheaterFactory;

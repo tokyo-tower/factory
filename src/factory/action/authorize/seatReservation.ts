@@ -7,7 +7,6 @@ import { IBilingualString, IMultilingualString } from '../../multilingualString'
 import { IAcceptedOffer as ISeatReservationAcceptedOffer, ITicketCancelCharge, ITicketTypeExtension } from '../../offer/seatReservation';
 import { IPerformanceWithDetails } from '../../performance';
 import { IPropertyValue } from '../../propertyValue';
-import { IStock } from '../../reservation/event';
 import { ReservationStatusType } from '../../reservationStatusType';
 import * as AuthorizeActionFactory from '../authorize';
 
@@ -18,10 +17,7 @@ export type IRecipient = IParticipant;
  * 仮予約インターフェース
  */
 export interface ITmpReservation {
-    /**
-     * 予約に要した在庫インターフェース
-     */
-    stocks: IStock[];
+    transaction: string;
     /**
      * 完了後の予約ステータス
      */
