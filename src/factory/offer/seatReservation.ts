@@ -38,6 +38,7 @@ export interface ITicketTypeExtension {
  * 座席予約供給情報インターフェース
  */
 export interface IAcceptedOffer {
+    seat_code?: string;
     ticket_type: string;
     watcher_name: string;
 }
@@ -46,6 +47,7 @@ export interface IAcceptedOffer {
  * 座席予約オファー(詳細つき)インターフェース
  */
 export interface IOffer extends OfferFactory.IOffer {
+    seat_code?: string;
     ticket_type: string;
     ticket_type_name: IMultilingualString;
     ticket_type_charge: number;

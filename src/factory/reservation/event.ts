@@ -1,8 +1,6 @@
 /**
  * イベント予約ファクトリー
- * @namespace reservation.event
  */
-
 import PaymentMethodType from '../paymentMethodType';
 import * as PerformanceFactory from '../performance';
 import * as ReservationFactory from '../reservation';
@@ -14,11 +12,10 @@ import { ITicketCancelCharge, ITicketTypeExtension } from '../offer/seatReservat
 import { Group as PersonGroup } from '../person';
 import { IAgent } from '../transaction/placeOrder';
 
+import { reservation, reservationType } from '../../chevre';
+
 /**
  * 入場履歴インターフェース
- * @export
- * @interface
- * @memberof reservation.event
  */
 export interface ICheckin {
     when: Date; // いつ
@@ -29,9 +26,6 @@ export interface ICheckin {
 
 /**
  * 予約に要した在庫インターフェース
- * @export
- * @interface
- * @memberof reservation.event
  */
 export interface IStock {
     /**
@@ -58,9 +52,6 @@ export interface IStock {
 
 /**
  * イベント予約インターフェース
- * @export
- * @interface
- * @memberof reservation.event
  */
 export interface IReservation extends ReservationFactory.IReservation {
     id: string;
@@ -162,9 +153,7 @@ export interface IReservation extends ReservationFactory.IReservation {
 /**
  * 予約検索条件インターフェース
  */
-export interface ISearchConditions {
-    limit?: number;
-    page?: number;
+export interface ISearchConditions extends reservation.ISearchConditions<reservationType.EventReservation> {
     sort?: any;
     orderNumbers?: string[];
     status?: ReservationStatusType;
