@@ -3,10 +3,11 @@
  */
 import PaymentMethodType from '../paymentMethodType';
 import * as PerformanceFactory from '../performance';
+import { IPropertyValue } from '../propertyValue';
 import * as ReservationFactory from '../reservation';
 import { ReservationStatusType } from '../reservationStatusType';
 
-import ItemAvailability from '../itemAvailability';
+// import ItemAvailability from '../itemAvailability';
 import { IBilingualString, IMultilingualString } from '../multilingualString';
 import { ITicketCancelCharge, ITicketTypeExtension } from '../offer/seatReservation';
 import { Group as PersonGroup } from '../person';
@@ -29,21 +30,9 @@ export interface ICheckin {
  */
 export interface IStock {
     /**
-     * おさえた在庫ID
-     */
-    id: string;
-    /**
      * 座席コード
      */
     seat_code: string;
-    /**
-     * 仮予約前の在庫ステータス
-     */
-    availability_before: ItemAvailability;
-    /**
-     * 仮予約後の在庫ステータス
-     */
-    availability_after: ItemAvailability;
     /**
      * 仮予約後の在庫保持者
      */
@@ -155,6 +144,10 @@ export interface IReservation extends ReservationFactory.IReservation {
  */
 export interface ISearchConditions extends reservation.ISearchConditions<reservationType.EventReservation> {
     sort?: any;
+    additionalProperty?: {
+        $in?: IPropertyValue<string>[];
+        $nin?: IPropertyValue<string>[];
+    };
     orderNumbers?: string[];
     status?: ReservationStatusType;
     performance?: string;

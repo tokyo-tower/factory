@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 
 - 予約検索条件を拡張
+- 予約に追加特性を追加
 
 ### Deprecated
 
