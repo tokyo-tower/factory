@@ -130,6 +130,17 @@ export interface ISearchConditions extends reservation.ISearchConditions<reserva
         $in?: IPropertyValue<string>[];
         $nin?: IPropertyValue<string>[];
     };
+    reservationNumber?: string;
+    additionalTicketText?: string;
+    underName?: {
+        id?: string;
+        name?: string;
+        email?: string;
+        telephone?: string;
+        givenName?: string;
+        familyName?: string;
+        identifiers?: IPropertyValue<string>[];
+    };
     orderNumbers?: string[];
     status?: ReservationStatusType;
     performance?: string;
