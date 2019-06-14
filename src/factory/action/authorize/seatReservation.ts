@@ -10,6 +10,8 @@ import { IPropertyValue } from '../../propertyValue';
 import { ReservationStatusType } from '../../reservationStatusType';
 import * as AuthorizeActionFactory from '../authorize';
 
+import * as chevre from '../../../chevre';
+
 export type IAgent = IParticipant;
 export type IRecipient = IParticipant;
 
@@ -17,6 +19,7 @@ export type IRecipient = IParticipant;
  * 仮予約インターフェース
  */
 export interface ITmpReservation {
+    reservedTicket: chevre.reservation.ITicket<chevre.reservationType.EventReservation>;
     transaction: string;
     /**
      * 完了後の予約ステータス

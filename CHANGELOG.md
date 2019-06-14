@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 - 予約検索条件を拡張
 - 予約に追加特性を追加
+- 仮予約インターフェースを拡張
 
 ### Deprecated
 
