@@ -20,6 +20,10 @@ export type IRecipient = IParticipant;
  */
 export interface ITmpReservation {
     reservedTicket: chevre.reservation.ITicket<chevre.reservationType.EventReservation>;
+    additionalTicketText: string;
+    reservationNumber: string;
+    additionalProperty?: IPropertyValue<string>[];
+
     transaction: string;
     /**
      * 完了後の予約ステータス
@@ -37,7 +41,6 @@ export interface ITmpReservation {
     ticket_ttts_extension: ITicketTypeExtension;
     rate_limit_unit_in_seconds: number;
     payment_no: string;
-    additionalProperty?: IPropertyValue<string>[];
 }
 
 /**
