@@ -107,7 +107,7 @@ export interface ISearchConditions extends reservation.ISearchConditions<reserva
         givenName?: string;
         familyName?: string;
         identifier?: {
-            $and?: IPropertyValue<string>[];
+            $all?: IPropertyValue<string>[];
             $in?: IPropertyValue<string>[];
             $nin?: IPropertyValue<string>[];
         };
