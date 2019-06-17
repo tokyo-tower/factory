@@ -106,6 +106,11 @@ export interface ISearchConditions extends reservation.ISearchConditions<reserva
         telephone?: string;
         givenName?: string;
         familyName?: string;
+        identifier?: {
+            $and?: IPropertyValue<string>[];
+            $in?: IPropertyValue<string>[];
+            $nin?: IPropertyValue<string>[];
+        };
         identifiers?: IPropertyValue<string>[];
     };
     orderNumbers?: string[];
