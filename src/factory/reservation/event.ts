@@ -9,7 +9,7 @@ import { ReservationStatusType } from '../reservationStatusType';
 
 // import ItemAvailability from '../itemAvailability';
 import { IBilingualString, IMultilingualString } from '../multilingualString';
-import { ITicketCancelCharge, ITicketTypeExtension } from '../offer/seatReservation';
+import { ITicketTypeExtension } from '../offer/seatReservation';
 import { Group as PersonGroup } from '../person';
 import { IAgent } from '../transaction/placeOrder';
 
@@ -71,7 +71,7 @@ export interface IReservation extends ReservationFactory.IReservation {
     ticket_type: string;
     ticket_type_name: IMultilingualString;
     ticket_type_charge: number;
-    ticket_cancel_charge: ITicketCancelCharge[];
+    // ticket_cancel_charge: ITicketCancelCharge[];
     ticket_ttts_extension: ITicketTypeExtension;
     rate_limit_unit_in_seconds: number;
     watcher_name: string;

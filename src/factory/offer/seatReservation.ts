@@ -9,7 +9,7 @@ import { ticketType } from '../../chevre';
  */
 export interface ITicketType extends ticketType.ITicketType {
     ttts_extension: ITicketTypeExtension;
-    cancel_charge: ITicketCancelCharge[];
+    // cancel_charge: ITicketCancelCharge[];
     charge?: number;
     name: IMultilingualString;
     id: string;
@@ -52,7 +52,6 @@ export interface IOffer extends OfferFactory.IOffer {
     ticket_type_name: IMultilingualString;
     ticket_type_charge: number;
     watcher_name: string;
-    ticket_cancel_charge: ITicketCancelCharge[];
     ticket_ttts_extension: ITicketTypeExtension;
     rate_limit_unit_in_seconds: number;
 }
