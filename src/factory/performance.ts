@@ -333,8 +333,11 @@ export interface IPerformanceWithAvailability {
      * 上演時間
      */
     duration: string;
+    additionalProperty?: IPropertyValue<string>[];
+
     /**
      * ツアーナンバー
+     * @deprecated
      */
     tourNumber: string;
     /**
@@ -392,8 +395,11 @@ export interface IPerformanceWithAggregation {
      * 上演時間
      */
     duration: string;
+    additionalProperty?: IPropertyValue<string>[];
+
     /**
      * ツアーナンバー
+     * @deprecated
      */
     tourNumber: string;
     /**
