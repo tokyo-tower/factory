@@ -14,11 +14,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Removed
 
-- 券種からキャンセルチャージ属性を削除
-
 ### Fixed
 
 ### Security
+
+## v4.0.0 - 2019-06-24
+
+### Changed
+
+- update @chevre/factory
+
+### Removed
+
+- 券種からキャンセルチャージ属性を削除
+- 予約インターフェースから不要な属性を削除
+- 予約検索条件インターフェースから不要な属性を削除
 
 ## v3.3.0 - 2019-06-19
 
