@@ -1,15 +1,10 @@
-/**
- * イベント予約ファクトリー
- */
 import PaymentMethodType from '../paymentMethodType';
 import * as PerformanceFactory from '../performance';
 import { IPropertyValue } from '../propertyValue';
 import * as ReservationFactory from '../reservation';
-import { ReservationStatusType } from '../reservationStatusType';
 
-// import ItemAvailability from '../itemAvailability';
-import { IBilingualString, IMultilingualString } from '../multilingualString';
-import { ITicketCancelCharge, ITicketTypeExtension } from '../offer/seatReservation';
+import { IBilingualString } from '../multilingualString';
+import { ITicketTypeExtension } from '../offer/seatReservation';
 import { Group as PersonGroup } from '../person';
 import { IAgent } from '../transaction/placeOrder';
 
@@ -34,24 +29,7 @@ export interface IReservation extends ReservationFactory.IReservation {
     qr_str: string;
     performance: string;
     seat_code: string;
-    performance_day: string;
-    performance_open_time: string;
-    performance_start_time: string;
-    performance_end_time: string;
-    performance_start_date: Date;
-    performance_end_date: Date;
-    performance_door_time: Date;
-    performance_canceled: boolean;
     performance_ttts_extension: PerformanceFactory.IExtension;
-    theater: string;
-    theater_name: IBilingualString;
-    theater_address: IBilingualString;
-    screen: string;
-    screen_name: IBilingualString;
-    film: string;
-    film_name: IBilingualString;
-    film_is_mx4d: boolean;
-    film_copyright: string;
     purchaser_group: PersonGroup;
     purchaser_name: string;
     purchaser_last_name: string;
@@ -68,10 +46,6 @@ export interface IReservation extends ReservationFactory.IReservation {
     payment_method: PaymentMethodType;
     seat_grade_name: IBilingualString;
     seat_grade_additional_charge: number;
-    ticket_type: string;
-    ticket_type_name: IMultilingualString;
-    ticket_type_charge: number;
-    ticket_cancel_charge: ITicketCancelCharge[];
     ticket_ttts_extension: ITicketTypeExtension;
     rate_limit_unit_in_seconds: number;
     watcher_name: string;
@@ -113,27 +87,7 @@ export interface ISearchConditions extends reservation.ISearchConditions<reserva
         };
         identifiers?: IPropertyValue<string>[];
     };
-    orderNumbers?: string[];
-    status?: ReservationStatusType;
-    performance?: string;
-    performances?: string[];
-    performanceStartFrom?: Date;
-    performanceStartThrough?: Date;
-    performanceEndFrom?: Date;
-    performanceEndThrough?: Date;
     purchaser_group?: string;
-    performance_day?: string;
-    performanceStartTimeFrom?: string;
-    performanceStartTimeTo?: string;
-    payment_no?: string;
-    owner_username?: string;
-    paymentMethod?: string;
-    purchaserLastName?: string;
-    purchaserFirstName?: string;
-    purchaserEmail?: string;
-    purchaserTel?: string;
-    watcherName?: string;
-    transactionAgentId?: string | { $ne: string };
     ids?: string[];
     checkins?: { $size: number };
 }
