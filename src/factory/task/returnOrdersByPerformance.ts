@@ -18,6 +18,10 @@ export interface IData {
      * 返品対象のパフォーマンスID
      */
     performanceId: string;
+    /**
+     * 返品対象の注文クライアントID
+     */
+    clientIds: string[];
 }
 
 export interface IAttributes extends TaskFactory.IAttributes {
