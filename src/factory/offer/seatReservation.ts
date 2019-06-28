@@ -1,6 +1,6 @@
 import { IMultilingualString } from '../multilingualString';
 import * as OfferFactory from '../offer';
-import TicketTypeCategory from '../ticketTypeCategory';
+import { IPropertyValue } from '../propertyValue';
 
 import { ticketType } from '../../chevre';
 
@@ -29,11 +29,11 @@ export interface ITicketType extends ticketType.ITicketType {
 /**
  * ttts拡張属性
  */
-export interface ITicketTypeExtension {
-    category: TicketTypeCategory;
-    // csv出力用コード
-    csv_code: string;
-}
+// export interface ITicketTypeExtension {
+//     category: TicketTypeCategory;
+//     // csv出力用コード
+//     csv_code: string;
+// }
 
 /**
  * 座席予約供給情報インターフェース
@@ -48,11 +48,11 @@ export interface IAcceptedOffer {
  * 座席予約オファー(詳細つき)インターフェース
  */
 export interface IOffer extends OfferFactory.IOffer {
+    additionalProperty?: IPropertyValue<string>[];
     seat_code?: string;
     ticket_type: string;
     ticket_type_name: IMultilingualString;
     ticket_type_charge: number;
     watcher_name: string;
-    ticket_ttts_extension: ITicketTypeExtension;
     rate_limit_unit_in_seconds: number;
 }
