@@ -54,5 +54,4 @@ export interface IOffer extends OfferFactory.IOffer {
     ticket_type_name: IMultilingualString;
     ticket_type_charge: number;
     watcher_name: string;
-    rate_limit_unit_in_seconds: number;
 }

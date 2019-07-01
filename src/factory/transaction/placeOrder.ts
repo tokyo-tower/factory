@@ -10,7 +10,6 @@ import OrganizationType from '../organizationType';
 import PaymentMethodType from '../paymentMethodType';
 import { Group as PersonGroup, IContact, IPerson } from '../person';
 import { PersonType } from '../personType';
-import * as EventReservationFactory from '../reservation/event';
 import * as TransactionFactory from '../transaction';
 
 /**
@@ -19,13 +18,11 @@ import * as TransactionFactory from '../transaction';
 export type ICreditCardSales = GMO.services.credit.IAlterTranResult;
 
 /**
- * customer contact interface
- * 購入者連作先インターフェース
+ * 購入者プロフィールインターフェース
  */
 export type ICustomerContact = IContact;
 
 /**
- * seller interface
  * 販売者インターフェース
  */
 export interface ISeller {
@@ -36,13 +33,11 @@ export interface ISeller {
 }
 
 /**
- * agent interface
  * 購入者インターフェース
  */
 export type IAgent = IPerson;
 
 /**
- * result interface
  * 取引結果インターフェース
  */
 export interface IResult {
@@ -57,7 +52,7 @@ export interface IResult {
     /**
      * 座席予約リスト
      */
-    eventReservations: EventReservationFactory.IReservation[];
+    // eventReservations: EventReservationFactory.IReservation[];
     /**
      * 印刷トークン(印刷に必要な期限付きトークン)
      */
@@ -65,13 +60,11 @@ export interface IResult {
 }
 
 /**
- * error interface
  * エラーインターフェース
  */
 export type IError = any;
 
 /**
- * object of a transaction interface
  * 取引対象物インターフェース
  */
 export interface IObject {
@@ -112,7 +105,6 @@ export interface IObject {
 export type ITransaction = IExtendId<IAttributes>;
 
 /**
- * place order transaction interface
  * 注文取引インターフェース
  */
 export interface IAttributes extends TransactionFactory.IAttributes {
