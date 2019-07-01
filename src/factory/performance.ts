@@ -6,7 +6,7 @@ import { IBilingualString } from './multilingualString';
 import { ITicketType } from './offer/seatReservation';
 import PaymentMethodType from './paymentMethodType';
 import { Group as PersonGroup, IPerson } from './person';
-import { IScreen, ITheater } from './place/movieTheater';
+import { IScreen } from './place/movieTheater';
 import { IPropertyValue } from './propertyValue';
 import { ICheckin, IReservation } from './reservation/event';
 import { ReservationStatusType } from './reservationStatusType';
@@ -143,64 +143,10 @@ export interface IPerformanceWithDetails {
     superEvent: IFilm;
     location: IScreen;
     additionalProperty?: IPropertyValue<string>[];
-
-    /**
-     * @deprecated
-     */
-    tourNumber: string;
-
-    /**
-     * @deprecated
-     */
-    theater: ITheater;
-    /**
-     * @deprecated
-     */
-    screen: IScreen;
-    /**
-     * @deprecated
-     */
-    film: IFilm;
+    duration: string;
 
     ticket_type_group: ITicketTypeGroup;
     ttts_extension: IExtension;
-
-    /**
-     * @deprecated
-     */
-    day: string;
-    /**
-     * @deprecated
-     */
-    open_time: string;
-    /**
-     * @deprecated
-     */
-    start_time: string;
-    /**
-     * @deprecated
-     */
-    end_time: string;
-    /**
-     * @deprecated
-     */
-    door_time: Date;
-    /**
-     * @deprecated
-     */
-    start_date: Date;
-    /**
-     * @deprecated
-     */
-    end_date: Date;
-    /**
-     * @deprecated
-     */
-    duration: string;
-    /**
-     * @deprecated
-     */
-    tour_number: string;
 }
 
 /**
@@ -214,73 +160,10 @@ export interface IPerformance {
     superEvent: IFilm;
     location: IScreen;
     additionalProperty?: IPropertyValue<string>[];
-
-    /**
-     * @deprecated
-     */
-    tourNumber: string;
+    duration: string;
 
     ticket_type_group: string;
-
     ttts_extension: IExtension;
-
-    /**
-     * @deprecated
-     */
-    theater: ITheater;
-    /**
-     * @deprecated
-     */
-    screen: IScreen;
-    /**
-     * @deprecated
-     */
-    film: IFilm;
-    /**
-     * @deprecated
-     */
-    theater_name: IBilingualString;
-    /**
-     * @deprecated
-     */
-    screen_name: IBilingualString;
-
-    /**
-     * @deprecated
-     */
-    day: string;
-    /**
-     * @deprecated
-     */
-    open_time: string;
-    /**
-     * @deprecated
-     */
-    start_time: string;
-    /**
-     * @deprecated
-     */
-    end_time: string;
-    /**
-     * @deprecated
-     */
-    door_time: Date;
-    /**
-     * @deprecated
-     */
-    start_date: Date;
-    /**
-     * @deprecated
-     */
-    end_date: Date;
-    /**
-     * @deprecated
-     */
-    duration: string;
-    /**
-     * @deprecated
-     */
-    tour_number: string;
 }
 
 export type ICheckinWithTicketType = ICheckin & {
@@ -335,11 +218,6 @@ export interface IPerformanceWithAvailability {
     duration: string;
     additionalProperty?: IPropertyValue<string>[];
 
-    /**
-     * ツアーナンバー
-     * @deprecated
-     */
-    tourNumber: string;
     /**
      * エレベータ運行ステータス
      */
@@ -397,11 +275,6 @@ export interface IPerformanceWithAggregation {
     duration: string;
     additionalProperty?: IPropertyValue<string>[];
 
-    /**
-     * ツアーナンバー
-     * @deprecated
-     */
-    tourNumber: string;
     /**
      * エレベータ運行ステータス
      */
