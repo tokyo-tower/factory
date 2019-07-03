@@ -18,6 +18,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v6.0.0 - 2019-07-03
+
+### Changed
+
+- パフォーマンス検索条件のChevre化
+
+### Removed
+
+- 注文取引結果からeventReservationsを削除(order.acceptedOffersへ移行)
+- 仮予約インターフェースからrate_limit_unit_in_secondsを削除
+- パフォーマンスインターフェースから非推奨属性を削除
+
 ## v5.0.0 - 2019-06-28
 
 ### Changed
