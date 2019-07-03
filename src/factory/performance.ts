@@ -19,18 +19,8 @@ export interface ISearchConditions {
     limit?: number;
     page?: number;
     sort?: any;
-    // 上映日
-    day?: string;
-    // この時間以降開始のパフォーマンスに絞る(timestamp milliseconds)
     startFrom?: Date;
     startThrough?: Date;
-    startTimes?: string[];
-    // パフォーマンスID
-    performanceId?: string;
-    // 車椅子チェック要求
-    wheelchair?: string;
-    canceled?: boolean;
-    days?: string[];
     ttts_extension?: {
         online_sales_status?: OnlineSalesStatus;
         online_sales_update_at?: any;
