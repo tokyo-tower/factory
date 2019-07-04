@@ -28,7 +28,9 @@
     "preversion": "npm run clean && npm run build && npm test",
     "version": "git add -A",
     "postversion": "git push origin --tags",
-    "prepublishOnly": "npm run clean && npm run build && npm test && npm run doc"
+    "prepublishOnly": "npm run clean && npm run build && npm test && npm run doc",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": {
     "name": "Motionpicture co.,ltd."
@@ -67,10 +69,12 @@
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
     "setprototypeof": "^1.1.0",
-    "validator": "^9.4.1"
+    "validator": "^9.4.1",
+    "snyk": "^1.189.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/motionpicture/ttts-factory.git"
-  }
+  },
+  "snyk": true
 }
