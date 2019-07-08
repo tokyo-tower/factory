@@ -14,6 +14,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Removed
 
+- 映画作品インターフェースを削除
+- 座席セクションインターフェースからcodeを削除(branchCodeへ移行)
+- 座席インターフェースからcodeを削除(branchCodeへ移行)
+
 ### Fixed
 
 ### Security

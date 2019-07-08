@@ -12,7 +12,6 @@ import * as PrintActionFactory from './factory/action/transfer/print';
 import * as PrintTicketActionFactory from './factory/action/transfer/print/ticket';
 import * as ClientUserFactory from './factory/clientUser';
 import * as EmailMessageFactory from './factory/creativeWork/message/email';
-import * as MovieCreativeWorkFactory from './factory/creativeWork/movie';
 import CreativeWorkType from './factory/creativeWorkType';
 import ItemAvailability from './factory/itemAvailability';
 import * as MonetaryAmountFactory from './factory/monetaryAmount';
@@ -97,7 +96,6 @@ export namespace creativeWork {
     export namespace message {
         export import email = EmailMessageFactory;
     }
-    export import movie = MovieCreativeWorkFactory;
 }
 export import creativeWorkType = CreativeWorkType;
 export import itemAvailability = ItemAvailability;

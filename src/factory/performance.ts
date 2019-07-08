@@ -1,7 +1,3 @@
-/**
- * パフォーマンスファクトリー
- */
-import { IFilm } from './creativeWork/movie';
 import { IBilingualString } from './multilingualString';
 import { ITicketType } from './offer/seatReservation';
 import PaymentMethodType from './paymentMethodType';
@@ -11,6 +7,8 @@ import { IPropertyValue } from './propertyValue';
 import { ICheckin, IReservation } from './reservation/event';
 import { ReservationStatusType } from './reservationStatusType';
 import TicketTypeCategory from './ticketTypeCategory';
+
+import * as chevre from '../chevre';
 
 /**
  * 検索条件インターフェース
@@ -130,7 +128,7 @@ export interface IPerformanceWithDetails {
     doorTime: Date;
     startDate: Date;
     endDate: Date;
-    superEvent: IFilm;
+    superEvent: chevre.event.IEvent<chevre.eventType.ScreeningEventSeries>;
     location: IScreen;
     additionalProperty?: IPropertyValue<string>[];
     duration: string;
@@ -142,19 +140,7 @@ export interface IPerformanceWithDetails {
 /**
  * パフォーマンスインターフェース
  */
-export interface IPerformance {
-    id: string;
-    doorTime: Date;
-    startDate: Date;
-    endDate: Date;
-    superEvent: IFilm;
-    location: IScreen;
-    additionalProperty?: IPropertyValue<string>[];
-    duration: string;
-
-    ticket_type_group: string;
-    ttts_extension: IExtension;
-}
+export type IPerformance = IPerformanceWithDetails;
 
 export type ICheckinWithTicketType = ICheckin & {
     ticketType: string;

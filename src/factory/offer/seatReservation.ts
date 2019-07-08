@@ -9,31 +9,7 @@ import { ticketType } from '../../chevre';
  */
 // tslint:disable-next-line:no-empty-interface
 export interface ITicketType extends ticketType.ITicketType {
-    // ttts_extension: ITicketTypeExtension;
-    // cancel_charge: ITicketCancelCharge[];
-    // charge?: number;
-    // name: IMultilingualString;
-    // id: string;
 }
-
-/**
- * キャンセル料mongooseスキーマタイプ
- */
-// export interface ITicketCancelCharge {
-//     // 予約日までの日数
-//     days: number;
-//     // キャンセル料
-//     charge: number;
-// }
-
-/**
- * ttts拡張属性
- */
-// export interface ITicketTypeExtension {
-//     category: TicketTypeCategory;
-//     // csv出力用コード
-//     csv_code: string;
-// }
 
 /**
  * 座席予約供給情報インターフェース
