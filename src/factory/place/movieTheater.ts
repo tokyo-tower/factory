@@ -26,7 +26,6 @@ export interface ISeatingType {
  * 座席インターフェス
  */
 export interface ISeat {
-    code: string; // 座席コード
     branchCode: string;
     /**
      * 座席タイプ
@@ -61,7 +60,6 @@ export function sortBySeatCode(a: string, b: string): number {
  * 座席セクションインターフェース
  */
 export interface ISection {
-    code: string;
     branchCode: string;
     seats: ISeat[];
 }
