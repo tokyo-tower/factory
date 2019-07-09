@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v8.0.0 - 2019-07-09
+
+### Removed
+
+- パフォーマンスインターフェースから座席情報を削除
+
 ## v7.0.0 - 2019-07-08
 
 ### Removed

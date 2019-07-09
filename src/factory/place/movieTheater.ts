@@ -1,10 +1,7 @@
-/**
- * 劇場ファクトリー
- */
 import { IBilingualString } from '../multilingualString';
 
 /**
- * 劇場施設インターフェース
+ * 劇場インターフェース
  */
 export interface ITheater {
     id: string;
@@ -23,7 +20,7 @@ export interface ISeatingType {
 }
 
 /**
- * 座席インターフェス
+ * 座席インターフェース
  */
 export interface ISeat {
     branchCode: string;
@@ -57,20 +54,10 @@ export function sortBySeatCode(a: string, b: string): number {
 }
 
 /**
- * 座席セクションインターフェース
- */
-export interface ISection {
-    branchCode: string;
-    seats: ISeat[];
-}
-
-/**
  * スクリーンインターフェース
  */
 export interface IScreen {
     id: string;
     branchCode: string;
     name: IBilingualString;
-    sections: ISection[];
-    seats_number: number;
 }
