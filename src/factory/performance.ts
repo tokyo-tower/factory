@@ -217,7 +217,7 @@ export interface IPerformanceWithAvailability {
     /**
      * 券種情報
      */
-    ticketTypes: ITicketTypeWithAvailability[];
+    ticketTypes?: ITicketTypeWithAvailability[];
     extension: IExtension;
 }
 
