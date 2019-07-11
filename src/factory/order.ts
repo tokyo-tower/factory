@@ -1,18 +1,13 @@
-import * as cinerino from '@cinerino/factory';
+import { monetaryAmount, order, orderStatus, organizationType, personType, priceCurrency, propertyValue } from '@cinerino/factory';
 
-import { IMonetaryAmount } from './monetaryAmount';
 import { IMultilingualString } from './multilingualString';
 import { IOffer } from './offer';
-import OrderStatus from './orderStatus';
-import OrganizationType from './organizationType';
 import PaymentMethodType from './paymentMethodType';
 import { IPerson, IProfile } from './person';
-import { PersonType } from './personType';
-import PriceCurrency from './priceCurrency';
-import { IPropertyValue } from './propertyValue';
 import { IReservation } from './reservation/event';
 
 export type TypeOf = 'Order';
+
 /**
  * 決済方法インターフェース
  */
@@ -33,12 +28,13 @@ export interface IPaymentMethod<T extends PaymentMethodType> {
     /**
      * The total amount due.
      */
-    totalPaymentDue?: IMonetaryAmount;
+    totalPaymentDue?: monetaryAmount.IMonetaryAmount;
     /**
      * 追加特性
      */
-    additionalProperty: IPropertyValue<any>[];
+    additionalProperty: propertyValue.IPropertyValue<any>[];
 }
+
 /**
  * 割引インターフェース
  */
@@ -61,6 +57,7 @@ export interface IDiscount {
      */
     discountCurrency: string;
 }
+
 /**
  * 供給アイテムインターフェース
  */
@@ -79,7 +76,7 @@ export interface IAcceptedOffer<T extends IItemOffered> extends IOffer {
      * 販売者
      */
     seller: {
-        typeOf: OrganizationType | PersonType;
+        typeOf: organizationType | personType;
         name: string;
     };
 }
@@ -109,16 +106,18 @@ export interface ISeller {
     identifier?: string;
     name: string;
     legalName?: IMultilingualString;
-    typeOf: OrganizationType | PersonType;
+    typeOf: organizationType | personType;
     telephone?: string;
     url?: string;
 }
+
 /**
  * 購入者インターフェース
  */
 export type ICustomer = IPerson & IProfile & {
     name: string;
 };
+
 /**
  * 注文インターフェース
  * @see https://schema.org/Order
@@ -153,7 +152,7 @@ export interface IOrder {
     /**
      * The currency (in 3 - letter ISO 4217 format) of the order price.
      */
-    priceCurrency: PriceCurrency;
+    priceCurrency: priceCurrency;
     /**
      * Offer
      * The offers included in the order.Also accepts an array of objects.
@@ -176,7 +175,7 @@ export interface IOrder {
      * OrderStatus	(recommended for confirmation cards/ Search Answers)
      * The current status of the order.
      */
-    orderStatus: OrderStatus;
+    orderStatus: orderStatus;
     /**
      * Date order was placed.
      */
@@ -191,7 +190,8 @@ export interface IOrder {
     dateReturned?: Date;
     orderInquiryKey: IOrderInquiryKey;
 }
+
 /**
  * 注文検索条件インターフェース
  */
-export type ISearchConditions = cinerino.order.ISearchConditions;
+export type ISearchConditions = order.ISearchConditions;

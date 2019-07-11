@@ -1,11 +1,12 @@
+import { reservationStatusType } from '@chevre/factory';
+import { propertyValue } from '@cinerino/factory';
+
 import { IBilingualString } from './multilingualString';
 import { ITicketType } from './offer/seatReservation';
 import PaymentMethodType from './paymentMethodType';
 import { Group as PersonGroup, IPerson } from './person';
 import { IScreen } from './place/movieTheater';
-import { IPropertyValue } from './propertyValue';
 import { ICheckin, IReservation } from './reservation/event';
-import { ReservationStatusType } from './reservationStatusType';
 import TicketTypeCategory from './ticketTypeCategory';
 
 import * as chevre from '../chevre';
@@ -104,7 +105,7 @@ export interface IExtension {
  */
 export interface IReservationAtLastupdateDate {
     id: string;
-    status: ReservationStatusType;
+    status: reservationStatusType;
     purchaser_group: PersonGroup;
     transaction_agent: IPerson;
     payment_method: PaymentMethodType;
@@ -130,7 +131,7 @@ export interface IPerformanceWithDetails {
     endDate: Date;
     superEvent: chevre.event.IEvent<chevre.eventType.ScreeningEventSeries>;
     location: IScreen;
-    additionalProperty?: IPropertyValue<string>[];
+    additionalProperty?: propertyValue.IPropertyValue<string>[];
     duration: string;
 
     ticket_type_group: ITicketTypeGroup;
@@ -192,7 +193,7 @@ export interface IPerformanceWithAvailability {
      * 上演時間
      */
     duration: string;
-    additionalProperty?: IPropertyValue<string>[];
+    additionalProperty?: propertyValue.IPropertyValue<string>[];
 
     /**
      * エレベータ運行ステータス
@@ -249,7 +250,7 @@ export interface IPerformanceWithAggregation {
      * 上演時間
      */
     duration: string;
-    additionalProperty?: IPropertyValue<string>[];
+    additionalProperty?: propertyValue.IPropertyValue<string>[];
 
     /**
      * エレベータ運行ステータス

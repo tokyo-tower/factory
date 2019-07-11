@@ -1,13 +1,5 @@
 /**
- * 多言語文字列ファクトリー
- * @namespace multilingualString
- */
-
-/**
  * 多言語文字列
- * @export
- * @interface
- * @memberof multilingualString
  */
 export interface IMultilingualString {
     ja: string;
@@ -27,9 +19,6 @@ export interface IMultilingualString {
 
 /**
  * 英語と日本語対応文字列
- * @export
- * @interface
- * @memberof multilingualString
  */
 export interface IBilingualString {
     ja: string;
