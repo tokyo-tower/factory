@@ -29,6 +29,7 @@ import { PersonType } from './factory/personType';
 import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as MovieTheaterFactory from './factory/place/movieTheater';
 import PriceCurrency from './factory/priceCurrency';
+import * as project from './factory/project';
 import * as PropertyValueFactory from './factory/propertyValue';
 import * as EventReservationFactory from './factory/reservation/event';
 import { ReservationStatusType } from './factory/reservationStatusType';
@@ -116,6 +117,7 @@ export import paymentMethodType = PaymentMethodType;
 export import performance = PerformanceFactory;
 export import person = PersonFactory;
 export import personType = PersonType;
+export import project = project;
 export import propertyValue = PropertyValueFactory;
 export namespace reservation {
     export import event = EventReservationFactory;
