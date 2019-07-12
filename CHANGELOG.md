@@ -8,20 +8,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
-- プロジェクトインターフェースを追加
-
 ### Changed
 
 ### Deprecated
 
 ### Removed
 
-- パフォーマンスインターフェースから券種情報を削除
-- 仮予約インターフェースから冗長な属性を削除
-
 ### Fixed
 
 ### Security
+
+## v9.0.0 - 2019-07-12
+
+### Added
+
+- プロジェクトインターフェースを追加
+
+### Removed
+
+- パフォーマンスインターフェースから券種情報を削除
+- 仮予約インターフェースから冗長な属性を削除
 
 ## v8.0.0 - 2019-07-09
 
