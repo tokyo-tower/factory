@@ -1,10 +1,4 @@
-/**
- * 企業ファクトリー
- * @namespace organization.corporation
- */
-
 import * as OrganizationFactory from '../organization';
-import { IURL } from '../url';
 
 /**
  * GMOショップ情報インターフェース
@@ -25,7 +19,7 @@ export interface IGMOInfo {
 }
 
 export interface IOrganizationWithoutGMOInfo extends OrganizationFactory.IOrganization {
-    url: IURL;
+    url: string;
 }
 
 /**

@@ -1,15 +1,14 @@
+import { propertyValue } from '@cinerino/factory';
+
 import { IMultilingualString } from '../multilingualString';
 import * as OfferFactory from '../offer';
-import { IPropertyValue } from '../propertyValue';
 
 import { ticketType } from '../../chevre';
 
 /**
  * 券種インターフェース
  */
-// tslint:disable-next-line:no-empty-interface
-export interface ITicketType extends ticketType.ITicketType {
-}
+export type ITicketType = ticketType.ITicketType;
 
 /**
  * 座席予約供給情報インターフェース
@@ -24,7 +23,7 @@ export interface IAcceptedOffer {
  * 座席予約オファー(詳細つき)インターフェース
  */
 export interface IOffer extends OfferFactory.IOffer {
-    additionalProperty?: IPropertyValue<string>[];
+    additionalProperty?: propertyValue.IPropertyValue<string>[];
     seat_code?: string;
     ticket_type: string;
     ticket_type_name: IMultilingualString;

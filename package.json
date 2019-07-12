@@ -1,6 +1,6 @@
 {
   "name": "@motionpicture/ttts-factory",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "TTTS Factory Library",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@chevre/factory": "1.0.0-alpha.99",
-    "@cinerino/factory": "1.0.0-alpha.126",
+    "@cinerino/factory": "1.0.0-alpha.140",
     "@motionpicture/gmo-service": "^4.3.0",
     "@waiter/factory": "^2.0.0",
     "debug": "^3.2.6",

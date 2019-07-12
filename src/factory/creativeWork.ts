@@ -1,10 +1,4 @@
-/**
- * 作品ファクトリー
- *
- * @namespace creativeWork
- */
-
-import CreativeWorkType from './creativeWorkType';
+import { creativeWorkType } from '@cinerino/factory';
 
 export interface ICopyrightHolder {
     name: string;
@@ -19,7 +13,7 @@ export interface ICreativeWork {
     datePublished?: Date;
     license?: string;
     thumbnailUrl?: string;
-    typeOf: CreativeWorkType;
+    typeOf: creativeWorkType;
 }
 
 export function create(params: {
@@ -31,7 +25,7 @@ export function create(params: {
     datePublished?: Date;
     license?: URL;
     thumbnailUrl?: URL;
-    typeOf: CreativeWorkType;
+    typeOf: creativeWorkType;
 }): ICreativeWork {
     return {
         identifier: params.identifier,

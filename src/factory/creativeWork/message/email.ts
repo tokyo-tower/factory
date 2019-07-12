@@ -1,7 +1,4 @@
-/**
- * Eメールメッセージファクトリー
- * @namespace creativeWork.message.email
- */
+import { creativeWorkType } from '@cinerino/factory';
 
 import * as validator from 'validator';
 
@@ -9,7 +6,6 @@ import ArgumentError from '../../error/argument';
 import ArgumentNullError from '../../error/argumentNull';
 
 import * as CreativeWorkFactory from '../../creativeWork';
-import CreativeWorkType from '../../creativeWorkType';
 
 export interface IParticipant {
     typeOf?: string;
@@ -67,7 +63,7 @@ export function create(params: {
     }
 
     return {
-        typeOf: CreativeWorkType.EmailMessage,
+        typeOf: creativeWorkType.EmailMessage,
         identifier: params.identifier,
         name: params.identifier,
         sender: params.sender,

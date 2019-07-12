@@ -1,22 +1,17 @@
-/**
- * 組織ファクトリー
- * @namespace organization
- */
+import { organizationType } from '@cinerino/factory';
 
 import { IBilingualString } from './multilingualString';
-import OrganizationType from './organizationType';
-import { IURL } from './url';
 
 /**
  * 組織インターフェース
  */
 export interface IOrganization {
     id: string;
-    identifier: string;
+    identifier?: string;
     name: IBilingualString;
-    legalName: IBilingualString;
-    typeOf: OrganizationType;
+    legalName?: IBilingualString;
+    typeOf: organizationType;
     location?: any;
     telephone?: string;
-    url?: IURL;
+    url?: string;
 }

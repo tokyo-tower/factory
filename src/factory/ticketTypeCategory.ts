@@ -1,11 +1,5 @@
 /**
- * 券種ファクトリー
- * @namespace ticketTypeCategory
- */
-
-/**
- * 券種
- * @enum
+ * 券種カテゴリー
  */
 enum TicketTypeCategory {
     Normal = 'Normal',
