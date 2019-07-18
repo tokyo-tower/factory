@@ -82,16 +82,6 @@ export interface IAcceptedOffer<T extends IItemOffered> extends IOffer {
 }
 
 /**
- * key for inquiry of the order
- * 注文照会キーインターフェース
- */
-export interface IOrderInquiryKey {
-    performanceDay: string;
-    paymentNo: string;
-    telephone: string;
-}
-
-/**
  * 注文照会結果インターフェース
  */
 export type IOrderInquiryResult = IOrder & {
@@ -188,7 +178,6 @@ export interface IOrder {
      * Date order was returned.
      */
     dateReturned?: Date;
-    orderInquiryKey: IOrderInquiryKey;
 }
 
 /**

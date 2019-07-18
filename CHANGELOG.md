@@ -18,6 +18,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v10.0.0 - 2019-07-18
+
+### Changed
+
+- パッケージスコープを変更
+
+### Removed
+
+- 注文照会キーを削除
+
 ## v9.0.0 - 2019-07-12
 
 ### Added
