@@ -33,6 +33,18 @@ export interface IResult {
      * 仮予約リスト
      */
     tmpReservations: ITmpReservation[];
+    /**
+     * 外部リクエストエンドポイント
+     */
+    requestEndpoint?: string;
+    /**
+     * 外部サービスへのリクエスト
+     */
+    requestBody?: any;
+    /**
+     * 外部サービスからのレスポンス
+     */
+    responseBody?: chevre.transaction.reserve.ITransaction;
 }
 
 /**
