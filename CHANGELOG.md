@@ -18,6 +18,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v11.0.0 - 2019-07-22
+
+### Changed
+
+- 座席予約承認アクション結果に、外部サービス連携に関わる属性を追加
+
+### Removed
+
+- 座席予約オファーインターフェースから冗長な属性を削除
+
 ## v10.0.0 - 2019-07-18
 
 ### Changed

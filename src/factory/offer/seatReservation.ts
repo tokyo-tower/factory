@@ -1,6 +1,5 @@
 import { propertyValue } from '@cinerino/factory';
 
-import { IMultilingualString } from '../multilingualString';
 import * as OfferFactory from '../offer';
 
 import { ticketType } from '../../chevre';
@@ -24,9 +23,4 @@ export interface IAcceptedOffer {
  */
 export interface IOffer extends OfferFactory.IOffer {
     additionalProperty?: propertyValue.IPropertyValue<string>[];
-    seat_code?: string;
-    ticket_type: string;
-    ticket_type_name: IMultilingualString;
-    ticket_type_charge: number;
-    watcher_name: string;
 }
