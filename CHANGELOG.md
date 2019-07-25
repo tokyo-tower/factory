@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v11.1.0 - 2019-07-25
+
+### Changed
+
+- 仮予約インターフェースにidを追加
+
 ## v11.0.1 - 2019-07-24
 
 ### Changed
