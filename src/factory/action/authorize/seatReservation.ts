@@ -15,6 +15,7 @@ export type IRecipient = IParticipant;
  * 仮予約インターフェース
  */
 export interface ITmpReservation {
+    id: string;
     reservedTicket: chevre.reservation.ITicket<chevre.reservationType.EventReservation>;
     additionalTicketText: string;
     reservationNumber: string;
