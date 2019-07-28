@@ -1,6 +1,6 @@
 {
   "name": "@tokyotower/factory",
-  "version": "11.1.0",
+  "version": "11.1.1",
   "description": "TTTS Factory Library",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -70,6 +70,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/motionpicture/ttts-factory.git"
+    "url": "https://github.com/tokyo-tower/factory.git"
   }
 }
