@@ -2,7 +2,6 @@
  * factory
  */
 import * as cinerino from '@cinerino/factory';
-import * as chevre from './chevre';
 
 import * as ActionFactory from './factory/action';
 import * as AuthorizeActionFactory from './factory/action/authorize';
@@ -46,7 +45,7 @@ import ErrorCode from './factory/errorCode';
 import * as errors from './factory/errors';
 
 export import cinerino = cinerino;
-export import chevre = chevre;
+export import chevre = cinerino.chevre;
 export import errors = errors;
 export import errorCode = ErrorCode;
 

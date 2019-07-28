@@ -1,13 +1,11 @@
-import { propertyValue } from '@cinerino/factory';
+import { chevre, propertyValue } from '@cinerino/factory';
 
 import * as OfferFactory from '../offer';
-
-import { ticketType } from '../../chevre';
 
 /**
  * 券種インターフェース
  */
-export type ITicketType = ticketType.ITicketType;
+export type ITicketType = chevre.ticketType.ITicketType;
 
 /**
  * 座席予約供給情報インターフェース

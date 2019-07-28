@@ -1,6 +1,6 @@
-import * as ReservationFactory from '../reservation';
+import { chevre } from '@cinerino/factory';
 
-import { reservation, reservationType } from '../../chevre';
+import * as ReservationFactory from '../reservation';
 
 /**
  * 入場履歴インターフェース
@@ -22,7 +22,7 @@ export interface IReservation extends ReservationFactory.IReservation {
 /**
  * 予約検索条件インターフェース
  */
-export interface ISearchConditions extends reservation.ISearchConditions<reservationType.EventReservation> {
+export interface ISearchConditions extends chevre.reservation.ISearchConditions<chevre.reservationType.EventReservation> {
     sort?: any;
     checkins?: { $size: number };
 }

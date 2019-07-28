@@ -1,6 +1,6 @@
 {
   "name": "@tokyotower/factory",
-  "version": "11.1.0",
+  "version": "11.1.1",
   "description": "TTTS Factory Library",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -59,8 +59,7 @@
     "typescript": "^3.2.2"
   },
   "dependencies": {
-    "@chevre/factory": "1.0.0-alpha.100",
-    "@cinerino/factory": "1.0.0-alpha.140",
+    "@cinerino/factory": "1.0.0-alpha.141",
     "@motionpicture/gmo-service": "^4.3.0",
     "@waiter/factory": "^2.0.0",
     "debug": "^3.2.6",
@@ -71,6 +70,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/motionpicture/ttts-factory.git"
+    "url": "https://github.com/tokyo-tower/factory.git"
   }
 }
