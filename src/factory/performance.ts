@@ -1,5 +1,4 @@
-import { reservationStatusType } from '@chevre/factory';
-import { propertyValue } from '@cinerino/factory';
+import { chevre, propertyValue } from '@cinerino/factory';
 
 import { IBilingualString } from './multilingualString';
 import { ITicketType } from './offer/seatReservation';
@@ -8,8 +7,6 @@ import { Group as PersonGroup, IPerson } from './person';
 import { IScreen } from './place/movieTheater';
 import { ICheckin, IReservation } from './reservation/event';
 import TicketTypeCategory from './ticketTypeCategory';
-
-import * as chevre from '../chevre';
 
 /**
  * 検索条件インターフェース
@@ -105,7 +102,7 @@ export interface IExtension {
  */
 export interface IReservationAtLastupdateDate {
     id: string;
-    status: reservationStatusType;
+    status: chevre.reservationStatusType;
     purchaser_group: PersonGroup;
     transaction_agent: IPerson;
     payment_method: PaymentMethodType;
