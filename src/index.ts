@@ -7,11 +7,8 @@ import * as ActionFactory from './factory/action';
 import * as AuthorizeActionFactory from './factory/action/authorize';
 import * as CreditCardAuthorizeActionFactory from './factory/action/authorize/creditCard';
 import * as seatReservationAuthorizeActionFactory from './factory/action/authorize/seatReservation';
-import * as PrintActionFactory from './factory/action/transfer/print';
-import * as PrintTicketActionFactory from './factory/action/transfer/print/ticket';
 import * as MultilingualStringFactory from './factory/multilingualString';
 import * as OrderFactory from './factory/order';
-import * as CreditCardFactory from './factory/paymentMethod/paymentCard/creditCard';
 import PaymentMethodType from './factory/paymentMethodType';
 import * as PerformanceFactory from './factory/performance';
 import * as PersonFactory from './factory/person';
@@ -57,21 +54,9 @@ export namespace action {
         export import creditCard = CreditCardAuthorizeActionFactory;
         export import seatReservation = seatReservationAuthorizeActionFactory;
     }
-    export namespace transfer {
-        export namespace print {
-            export import IAction = PrintActionFactory.IAction;
-            export import IAttributes = PrintActionFactory.IAttributes;
-            export import IRecipient = PrintActionFactory.IRecipient;
-            export import ticket = PrintTicketActionFactory;
-        }
-    }
 }
 export import clientUser = cinerino.clientUser;
-export namespace paymentMethod {
-    export namespace paymentCard {
-        export import creditCard = CreditCardFactory;
-    }
-}
+export import paymentMethod = cinerino.paymentMethod;
 export import creativeWork = cinerino.creativeWork;
 export import creativeWorkType = cinerino.creativeWorkType;
 export import monetaryAmount = cinerino.monetaryAmount;

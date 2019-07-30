@@ -18,6 +18,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v13.2.0 - 2019-07-30
+
+### Changed
+
+- 決済方法インターフェースをCinerino化
+
+### Deprecated
+
+### Removed
+
+- 印刷アクションインターフェースを削除
+
 ## v13.1.0 - 2019-07-30
 
 ### Changed
