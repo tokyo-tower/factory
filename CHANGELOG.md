@@ -18,6 +18,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v13.0.0 - 2019-07-30
+
+### Removed
+
+- 座席予約オファーインターフェース削除
+- 企業インターフェース削除
+- 予約タイプを削除
+- 予約ステータスタイプを削除
+- 在庫状況タイプを削除
+
 ## v12.0.0 - 2019-07-30
 
 ### Added

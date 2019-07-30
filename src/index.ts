@@ -1,5 +1,5 @@
 /**
- * factory
+ * index module
  */
 import * as cinerino from '@cinerino/factory';
 
@@ -9,11 +9,8 @@ import * as CreditCardAuthorizeActionFactory from './factory/action/authorize/cr
 import * as seatReservationAuthorizeActionFactory from './factory/action/authorize/seatReservation';
 import * as PrintActionFactory from './factory/action/transfer/print';
 import * as PrintTicketActionFactory from './factory/action/transfer/print/ticket';
-import * as EmailMessageFactory from './factory/creativeWork/message/email';
 import * as MultilingualStringFactory from './factory/multilingualString';
-import * as SeatReservationOfferFactory from './factory/offer/seatReservation';
 import * as OrderFactory from './factory/order';
-import * as CorporationOrganizationFactory from './factory/organization/corporation';
 import * as CreditCardFactory from './factory/paymentMethod/paymentCard/creditCard';
 import PaymentMethodType from './factory/paymentMethodType';
 import * as PerformanceFactory from './factory/performance';
@@ -75,24 +72,12 @@ export namespace paymentMethod {
         export import creditCard = CreditCardFactory;
     }
 }
-export namespace creativeWork {
-    export namespace message {
-        export import email = EmailMessageFactory;
-    }
-}
+export import creativeWork = cinerino.creativeWork;
 export import creativeWorkType = cinerino.creativeWorkType;
-export import itemAvailability = chevre.itemAvailability;
-
 export import monetaryAmount = cinerino.monetaryAmount;
 export import multilingualString = MultilingualStringFactory;
-export namespace offer {
-    export import seatReservation = SeatReservationOfferFactory;
-}
 export import order = OrderFactory;
 export import orderStatus = cinerino.orderStatus;
-export namespace organization {
-    export import corporation = CorporationOrganizationFactory;
-}
 export import organizationType = cinerino.organizationType;
 export import priceCurrency = cinerino.priceCurrency;
 export import paymentMethodType = PaymentMethodType;
@@ -104,14 +89,12 @@ export import propertyValue = cinerino.propertyValue;
 export namespace reservation {
     export import event = EventReservationFactory;
 }
-export import reservationType = chevre.reservationType;
 export import seller = cinerino.seller;
 export import sortType = cinerino.sortType;
 export namespace place {
     export import checkinGate = CheckinGateFactory;
     export import movieTheater = MovieTheaterFactory;
 }
-export import reservationStatusType = chevre.reservationStatusType;
 export namespace task {
     export import IAttributes = TaskFactory.IAttributes;
     export import ITask = TaskFactory.ITask;
