@@ -18,6 +18,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v12.0.0 - 2019-07-30
+
+### Added
+
+- 販売者インターフェースを追加
+
+### Changed
+
+- 注文インターフェースをCinerino化
+
 ## v11.1.1 - 2019-07-28
 
 ### Changed
