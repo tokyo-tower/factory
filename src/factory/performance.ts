@@ -1,7 +1,6 @@
 import { chevre, propertyValue } from '@cinerino/factory';
 
 import { IBilingualString } from './multilingualString';
-import { ITicketType } from './offer/seatReservation';
 import PaymentMethodType from './paymentMethodType';
 import { Group as PersonGroup, IPerson } from './person';
 import { IScreen } from './place/movieTheater';
@@ -114,7 +113,7 @@ export interface IReservationAtLastupdateDate {
  */
 export interface ITicketTypeGroup {
     id: string;
-    ticket_types: ITicketType[];
+    ticket_types: chevre.ticketType.ITicketType[];
     name: IBilingualString;
 }
 
@@ -165,7 +164,7 @@ export interface ICheckinCountByWhere {
 /**
  * 残席数つきの券種インターフェース
  */
-export type ITicketTypeWithAvailability = ITicketType & {
+export type ITicketTypeWithAvailability = chevre.ticketType.ITicketType & {
     remainingAttendeeCapacity?: number;
 };
 
