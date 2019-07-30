@@ -10,9 +10,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+- 決済方法インターフェースをCinerino化
+
 ### Deprecated
 
 ### Removed
+
+- 印刷アクションインターフェースを削除
 
 ### Fixed
 
