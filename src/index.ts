@@ -105,6 +105,7 @@ export namespace reservation {
     export import event = EventReservationFactory;
 }
 export import reservationType = chevre.reservationType;
+export import seller = cinerino.seller;
 export import sortType = cinerino.sortType;
 export namespace place {
     export import checkinGate = CheckinGateFactory;

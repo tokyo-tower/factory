@@ -1,17 +1,9 @@
-import { organizationType } from '@cinerino/factory';
+import { organizationType, seller } from '@cinerino/factory';
+import PaymentMethodType from './paymentMethodType';
 
-import { IBilingualString } from './multilingualString';
+export type IPaymentAccepted<T extends PaymentMethodType> = seller.IPaymentAccepted<T>;
 
 /**
  * 組織インターフェース
  */
-export interface IOrganization {
-    id: string;
-    identifier?: string;
-    name: IBilingualString;
-    legalName?: IBilingualString;
-    typeOf: organizationType;
-    location?: any;
-    telephone?: string;
-    url?: string;
-}
+export type IOrganization = seller.IOrganization<seller.IAttributes<organizationType>>;

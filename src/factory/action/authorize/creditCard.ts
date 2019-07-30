@@ -21,6 +21,14 @@ export interface IObject {
 }
 
 export interface IResult {
+    /**
+     * The identifier for the account the payment will be applied to.
+     */
+    accountId: string;
+    /**
+     * 金額
+     */
+    amount: number;
     price: number;
     entryTranArgs: GMO.services.credit.IEntryTranArgs;
     execTranArgs: GMO.services.credit.IExecTranArgs;

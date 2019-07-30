@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
+- 販売者インターフェースを追加
+
 ### Changed
+
+- 注文インターフェースをCinerino化
 
 ### Deprecated
 
