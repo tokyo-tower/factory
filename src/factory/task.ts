@@ -1,4 +1,4 @@
-import { taskStatus } from '@cinerino/factory';
+import { project, taskStatus } from '@cinerino/factory';
 
 import * as _ from 'lodash';
 import * as validator from 'validator';
@@ -13,49 +13,32 @@ import TaskName from './taskName';
 export type ITask = IExtendId<IAttributes>;
 
 export interface IAttributes {
+    project?: project.IProject;
     name: TaskName;
     status: taskStatus;
     /**
      * いつ実行するか
-     *
-     * @type {Date}
-     * @memberof ITask
      */
     runsAt: Date;
     /**
      * あと何回トライできるか
-     *
-     * @type {number}
-     * @memberof ITask
      */
     remainingNumberOfTries: number;
     /**
      * 最終トライ日時
-     *
-     * @type {(Date | null)}
-     * @memberof ITask
      */
     lastTriedAt: Date | null;
     /**
      * すでにトライした回数
-     *
-     * @type {number}
-     * @memberof ITask
      */
     numberOfTried: number;
     /**
      * 実行結果リスト
-     *
-     * @type {TaskExecutionResult.ITaskExecutionResult[]}
-     * @memberof ITask
      */
     executionResults: TaskExecutionResult.ITaskExecutionResult[];
     /**
      * データ
      * TaskNameによってインターフェースが決定する
-     *
-     * @type {*}
-     * @memberof ITask
      */
     data: any;
 }

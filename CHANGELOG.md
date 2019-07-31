@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+- アクション、タスク、取引にプロジェクト属性を追加
+
 ### Deprecated
 
 ### Removed

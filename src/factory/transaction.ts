@@ -9,6 +9,7 @@ export type ITransaction = IExtendId<IAttributes>;
  * 取引インターフェース
  */
 export interface IAttributes {
+    project?: cinerino.project.IProject;
     /**
      * 取引タイプ
      */
