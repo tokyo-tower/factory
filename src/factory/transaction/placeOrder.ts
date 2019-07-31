@@ -22,12 +22,7 @@ export type ICustomerContact = IContact;
 /**
  * 販売者インターフェース
  */
-export interface ISeller {
-    typeOf: cinerino.organizationType | cinerino.personType;
-    id: string;
-    name: string;
-    url?: string;
-}
+export import ISeller = cinerino.transaction.placeOrder.ISeller;
 
 /**
  * 購入者インターフェース
