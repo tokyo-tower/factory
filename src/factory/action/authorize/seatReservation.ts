@@ -59,8 +59,9 @@ export interface IResult {
  */
 export interface IObject {
     typeOf: cinerino.action.authorize.offer.seatReservation.ObjectType.SeatReservation;
-    performance: IPerformanceWithDetails;
-    offers: IAcceptedOffer[];
+    event: IPerformanceWithDetails;
+    acceptedOffer: cinerino.chevre.event.screeningEvent.IAcceptedTicketOfferWithoutDetail[];
+    // offers: IAcceptedOffer[];
 }
 
 export type IError = any;
