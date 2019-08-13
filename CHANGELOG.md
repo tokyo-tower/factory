@@ -18,6 +18,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v14.0.0 - 2019-08-13
+
+### Changed
+
+- クレジットカード決済承認アクションインターフェースをCinerino化
+- 座席予約承認アクションインターフェースをCinerino化
+
 ## v13.3.0 - 2019-07-31
 
 ### Changed
