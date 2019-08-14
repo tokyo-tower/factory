@@ -14,6 +14,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Deprecated
 
+- 注文取引の購入者区分を非必須化
+
 ### Removed
 
 - CreateOrderタスクを削除
