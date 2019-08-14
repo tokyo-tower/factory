@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Removed
 
 - CreateOrderタスクを削除
+- SettleCreditCardタスクを削除
 
 ### Fixed
 

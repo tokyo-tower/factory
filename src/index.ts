@@ -24,7 +24,6 @@ import * as CreateReturnOrderReportTaskFactory from './factory/task/createReturn
 import * as ReturnOrderTaskFactory from './factory/task/returnOrder';
 import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrdersByPerformance';
 import * as SendEmailNotificationTaskFactory from './factory/task/sendEmailNotification';
-import * as SettleCreditCardTaskFactory from './factory/task/settleCreditCard';
 import * as SettleSeatReservationTaskFactory from './factory/task/settleSeatReservation';
 import * as TriggerWebhookTaskFactory from './factory/task/triggerWebhook';
 import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
@@ -90,7 +89,6 @@ export namespace task {
     export import returnOrder = ReturnOrderTaskFactory;
     export import returnOrdersByPerformance = ReturnOrdersByPerformanceTaskFactory;
     export import sendEmailNotification = SendEmailNotificationTaskFactory;
-    export import settleCreditCard = SettleCreditCardTaskFactory;
     export import settleSeatReservation = SettleSeatReservationTaskFactory;
     export import triggerWebhook = TriggerWebhookTaskFactory;
     export import updateOrderReportByReservation = UpdateOrderReportByReservationTaskFactory;

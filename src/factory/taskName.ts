@@ -23,10 +23,6 @@ enum TaskName {
      */
     SettleSeatReservation = 'settleSeatReservation',
     /**
-     * クレジットカード実売上
-     */
-    SettleCreditCard = 'settleCreditCard',
-    /**
      * 返品タスク
      */
     ReturnOrder = 'returnOrder',
