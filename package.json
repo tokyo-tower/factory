@@ -1,6 +1,6 @@
 {
   "name": "@tokyotower/factory",
-  "version": "14.0.0",
+  "version": "15.0.0-alpha.2",
   "description": "TTTS Factory Library",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
