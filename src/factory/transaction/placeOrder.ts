@@ -73,10 +73,12 @@ export interface IObject {
     clientUser?: cinerino.clientUser.IClientUser;
     /**
      * 購入者区分
+     * @deprecated
      */
-    purchaser_group: PersonGroup;
+    purchaser_group?: PersonGroup;
     /**
      * customer contact
+     * @deprecated
      */
     customerContact?: ICustomerContact;
     /**
@@ -85,6 +87,7 @@ export interface IObject {
     authorizeActions: IAuthorizeAction[];
     /**
      * 決済方法
+     * @deprecated
      */
     paymentMethod?: PaymentMethodType;
 }

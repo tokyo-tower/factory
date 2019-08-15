@@ -18,6 +18,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v15.0.0 - 2019-08-15
+
+### Changed
+
+- update @cinerino/factory
+
+### Deprecated
+
+- 注文取引の購入者区分を非必須化
+
+### Removed
+
+- CreateOrderタスクを削除
+- SettleCreditCardタスクを削除
+
 ## v14.0.0 - 2019-08-13
 
 ### Changed

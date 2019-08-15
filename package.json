@@ -1,6 +1,6 @@
 {
   "name": "@tokyotower/factory",
-  "version": "14.0.0",
+  "version": "15.0.0",
   "description": "TTTS Factory Library",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -59,7 +59,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@cinerino/factory": "1.0.0-alpha.141",
+    "@cinerino/factory": "1.0.0-alpha.146",
     "@motionpicture/gmo-service": "^4.3.0",
     "@waiter/factory": "^2.1.0",
     "debug": "^3.2.6",
