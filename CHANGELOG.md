@@ -10,6 +10,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## v15.0.0 - 2019-08-15
+
+### Changed
+
 - update @cinerino/factory
 
 ### Deprecated
@@ -20,10 +32,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 - CreateOrderタスクを削除
 - SettleCreditCardタスクを削除
-
-### Fixed
-
-### Security
 
 ## v14.0.0 - 2019-08-13
 
