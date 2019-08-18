@@ -60,7 +60,6 @@ export enum RefundStatus {
 }
 
 /**
- * tttsExtensionPerformance.ts
  * ttts拡張・パフォーマンス情報mongooseスキーマタイプ
  * ttts独自の機能拡張用フィールド定義
  */
@@ -130,8 +129,8 @@ export interface IPerformanceWithDetails {
     additionalProperty?: propertyValue.IPropertyValue<string>[];
     duration: string;
 
-    ticket_type_group: ITicketTypeGroup;
-    ttts_extension: IExtension;
+    ticket_type_group?: ITicketTypeGroup;
+    ttts_extension?: IExtension;
 }
 
 /**
