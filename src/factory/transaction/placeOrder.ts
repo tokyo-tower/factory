@@ -44,10 +44,6 @@ export interface IResult extends cinerino.transaction.IResult<cinerino.transacti
      * GMO売上結果
      */
     creditCardSales?: ICreditCardSales;
-    /**
-     * 印刷トークン(印刷に必要な期限付きトークン)
-     */
-    // printToken: string;
 }
 
 /**
@@ -71,16 +67,6 @@ export interface IObject {
      * user object of the client where a transaction is processing.
      */
     clientUser?: cinerino.clientUser.IClientUser;
-    /**
-     * 購入者区分
-     * @deprecated
-     */
-    purchaser_group?: PersonGroup;
-    /**
-     * customer contact
-     * @deprecated
-     */
-    // customerContact?: ICustomerContact;
     /**
      * 認可アクションリスト
      */
