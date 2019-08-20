@@ -18,6 +18,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v16.0.0 - 2019-08-20
+
+### Removed
+
+- 注文取引から購入者区分属性を削除
+- 注文取引から顧客連絡先属性を削除
+
 ## v15.0.1 - 2019-08-18
 
 ### Changed
