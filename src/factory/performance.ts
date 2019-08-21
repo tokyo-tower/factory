@@ -1,8 +1,7 @@
-import { chevre, propertyValue } from '@cinerino/factory';
+import { chevre, person, propertyValue } from '@cinerino/factory';
 
 import { IBilingualString } from './multilingualString';
 import PaymentMethodType from './paymentMethodType';
-import { Group as PersonGroup, IPerson } from './person';
 import { IScreen } from './place/movieTheater';
 import { ICheckin, IReservation } from './reservation/event';
 import TicketTypeCategory from './ticketTypeCategory';
@@ -101,8 +100,8 @@ export interface IExtension {
 export interface IReservationAtLastupdateDate {
     id: string;
     status: chevre.reservationStatusType;
-    purchaser_group: PersonGroup;
-    transaction_agent: IPerson;
+    // purchaser_group: PersonGroup;
+    transaction_agent: person.IPerson;
     payment_method: PaymentMethodType;
     order_number: string;
 }
