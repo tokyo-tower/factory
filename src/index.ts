@@ -3,15 +3,11 @@
  */
 import * as cinerino from '@cinerino/factory';
 
-import * as ActionFactory from './factory/action';
-import * as AuthorizeActionFactory from './factory/action/authorize';
-import * as CreditCardAuthorizeActionFactory from './factory/action/authorize/creditCard';
 import * as seatReservationAuthorizeActionFactory from './factory/action/authorize/seatReservation';
 import * as MultilingualStringFactory from './factory/multilingualString';
 import * as OrderFactory from './factory/order';
 import PaymentMethodType from './factory/paymentMethodType';
 import * as PerformanceFactory from './factory/performance';
-import * as PersonFactory from './factory/person';
 import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as MovieTheaterFactory from './factory/place/movieTheater';
 import * as EventReservationFactory from './factory/reservation/event';
@@ -27,7 +23,6 @@ import * as SendEmailNotificationTaskFactory from './factory/task/sendEmailNotif
 import * as SettleSeatReservationTaskFactory from './factory/task/settleSeatReservation';
 import * as TriggerWebhookTaskFactory from './factory/task/triggerWebhook';
 import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
-import * as TaskExecutionResultFactory from './factory/taskExecutionResult';
 import TaskName from './factory/taskName';
 import TicketTypeCategory from './factory/ticketTypeCategory';
 import * as PlaceOrderTransactionFactory from './factory/transaction/placeOrder';
@@ -44,12 +39,11 @@ export import errorCode = ErrorCode;
 export import actionStatusType = cinerino.actionStatusType;
 export import actionType = cinerino.actionType;
 export namespace action {
-    export import IParticipant = ActionFactory.IParticipant;
+    export import IParticipant = cinerino.action.IParticipant;
     export namespace authorize {
-        export import IAction = AuthorizeActionFactory.IAction;
-        export import IAttributes = AuthorizeActionFactory.IAttributes;
-        export import authorizeActionPurpose = AuthorizeActionFactory.AuthorizeActionPurpose;
-        export import creditCard = CreditCardAuthorizeActionFactory;
+        export import IAction = cinerino.action.authorize.IAction;
+        export import IAttributes = cinerino.action.authorize.IAttributes;
+        export import creditCard = cinerino.action.authorize.paymentMethod.creditCard;
         export import seatReservation = seatReservationAuthorizeActionFactory;
     }
 }
@@ -65,7 +59,7 @@ export import organizationType = cinerino.organizationType;
 export import priceCurrency = cinerino.priceCurrency;
 export import paymentMethodType = PaymentMethodType;
 export import performance = PerformanceFactory;
-export import person = PersonFactory;
+export import person = cinerino.person;
 export import personType = cinerino.personType;
 export import project = cinerino.project;
 export import propertyValue = cinerino.propertyValue;
@@ -93,7 +87,6 @@ export namespace task {
     export import triggerWebhook = TriggerWebhookTaskFactory;
     export import updateOrderReportByReservation = UpdateOrderReportByReservationTaskFactory;
 }
-export import taskExecutionResult = TaskExecutionResultFactory;
 export import taskName = TaskName;
 export import taskStatus = cinerino.taskStatus;
 export import ticketTypeCategory = TicketTypeCategory;
