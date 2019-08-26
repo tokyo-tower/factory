@@ -9,8 +9,7 @@ export interface IData {
     id: string;
 }
 
-export interface IAttributes extends TaskFactory.IAttributes {
-    name: TaskName.AggregateEventReservations;
+export interface IAttributes extends TaskFactory.IAttributes<TaskName.AggregateEventReservations> {
     data: IData;
 }
 

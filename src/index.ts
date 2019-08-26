@@ -13,7 +13,6 @@ import * as MovieTheaterFactory from './factory/place/movieTheater';
 import * as EventReservationFactory from './factory/reservation/event';
 import * as TaskFactory from './factory/task';
 import * as AggregateEventReservationsTaskFactory from './factory/task/aggregateEventReservations';
-import * as CancelCreditCardTaskFactory from './factory/task/cancelCreditCard';
 import * as CancelSeatReservationTaskFactory from './factory/task/cancelSeatReservation';
 import * as CreatePlaceOrderReportTaskFactory from './factory/task/createPlaceOrderReport';
 import * as CreateReturnOrderReportTaskFactory from './factory/task/createReturnOrderReport';
@@ -21,7 +20,6 @@ import * as ReturnOrderTaskFactory from './factory/task/returnOrder';
 import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrdersByPerformance';
 import * as SendEmailNotificationTaskFactory from './factory/task/sendEmailNotification';
 import * as SettleSeatReservationTaskFactory from './factory/task/settleSeatReservation';
-import * as TriggerWebhookTaskFactory from './factory/task/triggerWebhook';
 import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
 import TaskName from './factory/taskName';
 import TicketTypeCategory from './factory/ticketTypeCategory';
@@ -76,7 +74,6 @@ export namespace task {
     export import IAttributes = TaskFactory.IAttributes;
     export import ITask = TaskFactory.ITask;
     export import aggregateEventReservations = AggregateEventReservationsTaskFactory;
-    export import cancelCreditCard = CancelCreditCardTaskFactory;
     export import cancelSeatReservation = CancelSeatReservationTaskFactory;
     export import createPlaceOrderReport = CreatePlaceOrderReportTaskFactory;
     export import createReturnOrderReport = CreateReturnOrderReportTaskFactory;
@@ -84,7 +81,6 @@ export namespace task {
     export import returnOrdersByPerformance = ReturnOrdersByPerformanceTaskFactory;
     export import sendEmailNotification = SendEmailNotificationTaskFactory;
     export import settleSeatReservation = SettleSeatReservationTaskFactory;
-    export import triggerWebhook = TriggerWebhookTaskFactory;
     export import updateOrderReportByReservation = UpdateOrderReportByReservationTaskFactory;
 }
 export import taskName = TaskName;

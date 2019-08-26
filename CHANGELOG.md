@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 
 - 注文の決済方法をCinerino化
+- タスクインターフェースをCinerino化
 
 ### Deprecated
 
