@@ -10,11 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- 注文の決済方法をCinerino化
-- タスクインターフェースをCinerino化
-- 注文インターフェースをCinerino化
-- 注文取引インターフェースをCinerino化
-
 ### Deprecated
 
 ### Removed
@@ -22,6 +17,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v18.0.0 - 2019-08-27
+
+### Changed
+
+- 注文の決済方法をCinerino化
+- タスクインターフェースをCinerino化
+- 注文インターフェースをCinerino化
+- 注文取引インターフェースをCinerino化
 
 ## v17.0.0 - 2019-08-21
 
