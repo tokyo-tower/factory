@@ -11,10 +11,6 @@ enum TaskName {
      */
     CancelSeatReservation = 'cancelSeatReservation',
     /**
-     * クレジットカードのオーソリ取消
-     */
-    CancelCreditCard = 'cancelCreditCard',
-    /**
      * メール通知送信
      */
     SendEmailNotification = 'sendEmailNotification',
@@ -41,11 +37,7 @@ enum TaskName {
     /**
      * 予約から注文レポート更新
      */
-    UpdateOrderReportByReservation = 'updateOrderReportByReservation',
-    /**
-     * ウェブフックをたたく
-     */
-    TriggerWebhook = 'triggerWebhook'
+    UpdateOrderReportByReservation = 'updateOrderReportByReservation'
 }
 
 export default TaskName;
