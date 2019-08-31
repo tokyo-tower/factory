@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+- 注文レポート作成元データーを取引から注文へ変更
+- 注文返品レポート作成元データーを取引から注文へ変更
+
 ### Deprecated
 
 ### Removed
