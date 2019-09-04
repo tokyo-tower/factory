@@ -16,8 +16,6 @@ import * as CreatePlaceOrderReportTaskFactory from './factory/task/createPlaceOr
 import * as CreateReturnOrderReportTaskFactory from './factory/task/createReturnOrderReport';
 import * as ReturnOrderTaskFactory from './factory/task/returnOrder';
 import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrdersByPerformance';
-import * as SendEmailNotificationTaskFactory from './factory/task/sendEmailNotification';
-import * as SettleSeatReservationTaskFactory from './factory/task/settleSeatReservation';
 import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
 import TaskName from './factory/taskName';
 import TicketTypeCategory from './factory/ticketTypeCategory';
@@ -78,13 +76,13 @@ export namespace task {
     export import createReturnOrderReport = CreateReturnOrderReportTaskFactory;
     export import returnOrder = ReturnOrderTaskFactory;
     export import returnOrdersByPerformance = ReturnOrdersByPerformanceTaskFactory;
-    export import sendEmailNotification = SendEmailNotificationTaskFactory;
-    export import settleSeatReservation = SettleSeatReservationTaskFactory;
     export import updateOrderReportByReservation = UpdateOrderReportByReservationTaskFactory;
 }
 export import taskName = TaskName;
 export import taskStatus = cinerino.taskStatus;
+
 export import ticketTypeCategory = TicketTypeCategory;
+
 export namespace transaction {
     export type ISearchConditions<T extends cinerino.transactionType> =
         T extends cinerino.transactionType.PlaceOrder ? cinerino.transaction.ISearchConditions<T> :

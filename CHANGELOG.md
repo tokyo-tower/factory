@@ -18,6 +18,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v19.0.0 - 2019-09-04
+
+### Changed
+
+- 注文レポート作成元データーを取引から注文へ変更
+- 注文返品レポート作成元データーを取引から注文へ変更
+
+### Removed
+
+- SettleSeatReservationタスクを削除
+- SendEmailNotificationタスクを削除
+
 ## v18.0.1 - 2019-08-28
 
 ### Changed
