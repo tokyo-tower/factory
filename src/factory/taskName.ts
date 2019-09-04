@@ -11,10 +11,6 @@ enum TaskName {
      */
     CancelSeatReservation = 'cancelSeatReservation',
     /**
-     * メール通知送信
-     */
-    SendEmailNotification = 'sendEmailNotification',
-    /**
      * 返品タスク
      */
     ReturnOrder = 'returnOrder',

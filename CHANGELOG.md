@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Removed
 
 - SettleSeatReservationタスクを削除
+- SendEmailNotificationタスクを削除
 
 ### Fixed
 
