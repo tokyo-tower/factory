@@ -17,6 +17,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Removed
 
+- SettleSeatReservationタスクを削除
+
 ### Fixed
 
 ### Security

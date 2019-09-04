@@ -15,10 +15,6 @@ enum TaskName {
      */
     SendEmailNotification = 'sendEmailNotification',
     /**
-     * 座席予約の資産移動
-     */
-    SettleSeatReservation = 'settleSeatReservation',
-    /**
      * 返品タスク
      */
     ReturnOrder = 'returnOrder',
