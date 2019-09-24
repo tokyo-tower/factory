@@ -11,7 +11,6 @@ import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as MovieTheaterFactory from './factory/place/movieTheater';
 import * as EventReservationFactory from './factory/reservation/event';
 import * as AggregateEventReservationsTaskFactory from './factory/task/aggregateEventReservations';
-import * as CancelSeatReservationTaskFactory from './factory/task/cancelSeatReservation';
 import * as CreatePlaceOrderReportTaskFactory from './factory/task/createPlaceOrderReport';
 import * as CreateReturnOrderReportTaskFactory from './factory/task/createReturnOrderReport';
 import * as ReturnOrderTaskFactory from './factory/task/returnOrder';
@@ -71,7 +70,6 @@ export namespace task {
     export import ISearchConditions = cinerino.task.ISearchConditions;
     export import ITask = cinerino.task.ITask;
     export import aggregateEventReservations = AggregateEventReservationsTaskFactory;
-    export import cancelSeatReservation = CancelSeatReservationTaskFactory;
     export import createPlaceOrderReport = CreatePlaceOrderReportTaskFactory;
     export import createReturnOrderReport = CreateReturnOrderReportTaskFactory;
     export import returnOrder = ReturnOrderTaskFactory;
