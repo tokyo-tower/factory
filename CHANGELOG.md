@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v20.1.0 - 2019-09-24
+
+### Changed
+
+- イベント指定での注文返品タスクに注文返品取引確定後アクション属性を追加
+
 ## v20.0.0 - 2019-09-24
 
 ### Changed
