@@ -7,10 +7,6 @@ enum TaskName {
      */
     AggregateEventReservations = 'aggregateEventReservations',
     /**
-     * 座席の仮予約削除
-     */
-    CancelSeatReservation = 'cancelSeatReservation',
-    /**
      * 返品タスク
      */
     ReturnOrder = 'returnOrder',

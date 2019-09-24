@@ -16,6 +16,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Removed
 
+- 座席予約承認取消タスクを削除
+
 ### Fixed
 
 ### Security
