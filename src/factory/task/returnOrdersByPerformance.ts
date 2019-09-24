@@ -16,6 +16,10 @@ export interface IData {
      * 返品対象の注文クライアントID
      */
     clientIds: string[];
+    /**
+     * 注文返品取引確定後アクション
+     */
+    potentialActions?: cinerino.transaction.returnOrder.IPotentialActionsParams;
 }
 
 export interface IAttributes extends cinerino.task.IAttributes<TaskName.ReturnOrdersByPerformance> {
