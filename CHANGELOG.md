@@ -10,17 +10,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- update @cinerino/factory
-
 ### Deprecated
 
 ### Removed
 
-- 座席予約承認取消タスクを削除
-
 ### Fixed
 
 ### Security
+
+## v20.0.0 - 2019-09-24
+
+### Changed
+
+- update @cinerino/factory
+
+### Removed
+
+- 座席予約承認取消タスクを削除
 
 ## v19.0.0 - 2019-09-04
 
