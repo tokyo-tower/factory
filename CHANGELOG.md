@@ -18,6 +18,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v21.0.0 - 2019-09-26
+
+### Changed
+
+- update @cinerino/factory
+- 決済方法タイプをCinerino化
+
 ## v20.1.0 - 2019-09-24
 
 ### Changed
