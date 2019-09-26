@@ -5,7 +5,6 @@ import * as cinerino from '@cinerino/factory';
 
 import * as seatReservationAuthorizeActionFactory from './factory/action/authorize/seatReservation';
 import * as MultilingualStringFactory from './factory/multilingualString';
-import PaymentMethodType from './factory/paymentMethodType';
 import * as PerformanceFactory from './factory/performance';
 import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as MovieTheaterFactory from './factory/place/movieTheater';
@@ -49,7 +48,8 @@ export import order = cinerino.order;
 export import orderStatus = cinerino.orderStatus;
 export import organizationType = cinerino.organizationType;
 export import priceCurrency = cinerino.priceCurrency;
-export import paymentMethodType = PaymentMethodType;
+// export import paymentMethodType = PaymentMethodType;
+export import paymentMethodType = cinerino.paymentMethodType;
 export import performance = PerformanceFactory;
 export import person = cinerino.person;
 export import personType = cinerino.personType;
