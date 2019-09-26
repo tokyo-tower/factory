@@ -10,9 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- update @cinerino/factory
-- 決済方法タイプをCinerino化
-
 ### Deprecated
 
 ### Removed
@@ -20,6 +17,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v21.0.0 - 2019-09-26
+
+### Changed
+
+- update @cinerino/factory
+- 決済方法タイプをCinerino化
 
 ## v20.1.0 - 2019-09-24
 
