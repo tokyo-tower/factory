@@ -18,6 +18,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v22.0.0 - 2019-10-01
+
+### Changed
+
+- update @cinerino/factory
+- 座席予約承認結果をCinerino化
+
 ## v21.0.0 - 2019-09-26
 
 ### Changed
