@@ -29,29 +29,7 @@ export interface ITmpReservation {
 /**
  * 座席予約承認アクション結果
  */
-export interface IResult {
-    /**
-     * 承認価格
-     */
-    price: number;
-    priceCurrency: cinerino.priceCurrency;
-    /**
-     * 仮予約リスト
-     */
-    tmpReservations: ITmpReservation[];
-    /**
-     * 外部リクエストエンドポイント
-     */
-    requestEndpoint?: string;
-    /**
-     * 外部サービスへのリクエスト
-     */
-    requestBody?: any;
-    /**
-     * 外部サービスからのレスポンス
-     */
-    responseBody?: cinerino.chevre.transaction.reserve.ITransaction;
-}
+export type IResult = cinerino.action.authorize.offer.seatReservation.IResult<cinerino.service.webAPI.Identifier.Chevre>;
 
 /**
  * 座席予約承認アクションオブジェクト
