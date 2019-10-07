@@ -18,7 +18,6 @@ export import IAgent = cinerino.transaction.returnOrder.IAgent;
  * result interface
  * 取引結果インターフェース
  */
-// tslint:disable-next-line:no-empty-interface
 export interface IResult {
     returnCreditCardResult?: IReturnCreditCardResult;
     changeCreditCardAmountResult?: IChangeCreditCardAmountResult;
@@ -33,28 +32,24 @@ export type IError = any;
 /**
  * 返品理由
  */
-export enum Reason {
-    /**
-     * 購入者自身の都合での返品
-     */
-    Customer = 'Customer',
-    /**
-     * 販売者都合での返品
-     */
-    Seller = 'Seller'
-}
+export import Reason = cinerino.transaction.returnOrder.Reason;
 
 /**
  * object of a transaction interface
  * 取引対象物インターフェース
  */
-export interface IObject {
-    clientUser?: cinerino.clientUser.IClientUser;
-    order: cinerino.order.IOrder;
+export interface IObject extends cinerino.transaction.returnOrder.IObject {
     transaction: cinerino.transaction.ITransaction<cinerino.transactionType.PlaceOrder>;
     cancelName: string;
-    cancellationFee: number;
-    reason: Reason;
+}
+
+export import IPotentialActionsParams = cinerino.transaction.returnOrder.IPotentialActionsParams;
+
+export interface IPotentialActions {
+    /**
+     * 注文返品アクション属性
+     */
+    returnOrder: cinerino.action.transfer.returnAction.order.IAttributes;
 }
 
 export type ITransaction = IExtendId<IAttributes>;
@@ -64,21 +59,14 @@ export type ITransaction = IExtendId<IAttributes>;
  */
 export interface IAttributes extends cinerino.transaction.IAttributes<cinerino.transactionType.ReturnOrder> {
     /**
-     * 購入者
-     */
-    agent: IAgent;
-    /**
      * 取引の結果発生するもの
      */
     result?: IResult;
     /**
-     * 取引に関するエラー
-     */
-    error?: IError;
-    /**
      * 取引の対象物
      */
     object: IObject;
+    potentialActions?: IPotentialActions;
 }
 
 export type ISearchConditions = cinerino.transaction.ISearchConditions<cinerino.transactionType.ReturnOrder>;
