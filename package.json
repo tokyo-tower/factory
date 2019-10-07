@@ -1,6 +1,6 @@
 {
   "name": "@tokyotower/factory",
-  "version": "22.0.0",
+  "version": "23.0.0",
   "description": "TTTS Factory Library",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -42,6 +42,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/mocha": "^2.2.48",
+    "@types/node": "^8.10.54",
     "@types/power-assert": "^1.5.0",
     "@types/sinon": "^2.3.7",
     "coveralls": "^3.0.6",
@@ -53,10 +54,10 @@
     "ts-node": "^7.0.1",
     "tslint": "^5.20.0",
     "tslint-microsoft-contrib": "^6.2.0",
-    "typescript": "3.5.3"
+    "typescript": "^3.6.3"
   },
   "dependencies": {
-    "@cinerino/factory": "1.0.0-alpha.184",
+    "@cinerino/factory": "1.0.0-alpha.185",
     "@motionpicture/gmo-service": "^4.3.0",
     "setprototypeof": "^1.2.0"
   },

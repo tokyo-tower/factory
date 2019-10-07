@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v23.0.0 - 2019-10-07
+
+### Changed
+
+- 座席予約承認結果からtmpReservationsを削除
+
 ## v22.0.0 - 2019-10-01
 
 ### Changed

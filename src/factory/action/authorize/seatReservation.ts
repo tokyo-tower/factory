@@ -16,17 +16,6 @@ export interface IAcceptedOffer {
 }
 
 /**
- * 仮予約インターフェース
- */
-export interface ITmpReservation {
-    id: string;
-    reservedTicket: cinerino.chevre.reservation.ITicket<cinerino.chevre.reservationType.EventReservation>;
-    additionalTicketText: string;
-    reservationNumber: string;
-    additionalProperty?: cinerino.propertyValue.IPropertyValue<string>[];
-}
-
-/**
  * 座席予約承認アクション結果
  */
 export type IResult = cinerino.action.authorize.offer.seatReservation.IResult<cinerino.service.webAPI.Identifier.Chevre>;
