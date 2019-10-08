@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v23.2.0 - 2019-10-08
+
+### Added
+
+- クレジットカード返金後アクションに注文通知アクションを追加
+
 ## v23.1.0 - 2019-10-07
 
 ### Changed
