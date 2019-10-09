@@ -12,7 +12,6 @@ import * as EventReservationFactory from './factory/reservation/event';
 import * as AggregateEventReservationsTaskFactory from './factory/task/aggregateEventReservations';
 import * as CreatePlaceOrderReportTaskFactory from './factory/task/createPlaceOrderReport';
 import * as CreateReturnOrderReportTaskFactory from './factory/task/createReturnOrderReport';
-import * as ReturnOrderTaskFactory from './factory/task/returnOrder';
 import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrdersByPerformance';
 import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
 import TaskName from './factory/taskName';
@@ -72,7 +71,6 @@ export namespace task {
     export import aggregateEventReservations = AggregateEventReservationsTaskFactory;
     export import createPlaceOrderReport = CreatePlaceOrderReportTaskFactory;
     export import createReturnOrderReport = CreateReturnOrderReportTaskFactory;
-    export import returnOrder = ReturnOrderTaskFactory;
     export import returnOrdersByPerformance = ReturnOrdersByPerformanceTaskFactory;
     export import updateOrderReportByReservation = UpdateOrderReportByReservationTaskFactory;
 }
