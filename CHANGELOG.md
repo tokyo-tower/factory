@@ -8,11 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
-- Eメールカスタマイズに変数変換の必要がない場合の本文指定を追加
-
 ### Changed
-
-- 注文返品タスクをCinerino化
 
 ### Deprecated
 
@@ -21,6 +17,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v24.0.0 - 2019-10-09
+
+### Added
+
+- Eメールカスタマイズに変数変換の必要がない場合の本文指定を追加
+
+### Changed
+
+- 注文返品タスクをCinerino化
 
 ## v23.2.0 - 2019-10-08
 
