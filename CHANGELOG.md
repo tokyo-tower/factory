@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
+- Eメールカスタマイズに変数変換の必要がない場合の本文指定を追加
+
 ### Changed
 
 ### Deprecated
