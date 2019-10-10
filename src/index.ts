@@ -16,7 +16,6 @@ import * as ReturnOrdersByPerformanceTaskFactory from './factory/task/returnOrde
 import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
 import TaskName from './factory/taskName';
 import TicketTypeCategory from './factory/ticketTypeCategory';
-import * as ReturnOrderTransactionFactory from './factory/transaction/returnOrder';
 
 import ErrorCode from './factory/errorCode';
 import * as errors from './factory/errors';
@@ -79,22 +78,7 @@ export import taskStatus = cinerino.taskStatus;
 
 export import ticketTypeCategory = TicketTypeCategory;
 
-export namespace transaction {
-    export type ISearchConditions<T extends cinerino.transactionType> =
-        T extends cinerino.transactionType.PlaceOrder ? cinerino.transaction.ISearchConditions<T> :
-        T extends cinerino.transactionType.ReturnOrder ? ReturnOrderTransactionFactory.ISearchConditions :
-        never;
-    export type IAttributes<T extends cinerino.transactionType> =
-        T extends cinerino.transactionType.PlaceOrder ? cinerino.transaction.IAttributes<T> :
-        T extends cinerino.transactionType.ReturnOrder ? ReturnOrderTransactionFactory.IAttributes :
-        never;
-    export type ITransaction<T extends cinerino.transactionType> =
-        T extends cinerino.transactionType.PlaceOrder ? cinerino.transaction.ITransaction<T> :
-        T extends cinerino.transactionType.ReturnOrder ? ReturnOrderTransactionFactory.ITransaction :
-        never;
-    export import placeOrder = cinerino.transaction.placeOrder;
-    export import returnOrder = ReturnOrderTransactionFactory;
-}
+export import transaction = cinerino.transaction;
 export import transactionStatusType = cinerino.transactionStatusType;
 export import transactionTasksExportationStatus = cinerino.transactionTasksExportationStatus;
 export import transactionType = cinerino.transactionType;
