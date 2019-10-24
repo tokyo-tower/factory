@@ -14,16 +14,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Removed
 
+### Fixed
+
+### Security
+
+## v26.0.0 - 2019-10-24
+
+### Removed
+
 - アクションインターフェースを削除
 - 販売者インターフェースを削除
 - 決済方法インターフェースを削除
 - 取引インターフェースを削除
 - 注文インターフェースを削除
 - 承認アクションインターフェースを削除
-
-### Fixed
-
-### Security
 
 ## v25.0.0 - 2019-10-10
 
