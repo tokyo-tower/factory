@@ -3,7 +3,6 @@
  */
 import * as cinerino from '@cinerino/factory';
 
-import * as seatReservationAuthorizeActionFactory from './factory/action/authorize/seatReservation';
 import * as MultilingualStringFactory from './factory/multilingualString';
 import * as PerformanceFactory from './factory/performance';
 import * as CheckinGateFactory from './factory/place/checkinGate';
@@ -20,34 +19,12 @@ import TicketTypeCategory from './factory/ticketTypeCategory';
 import ErrorCode from './factory/errorCode';
 import * as errors from './factory/errors';
 
-export import cinerino = cinerino;
 export import chevre = cinerino.chevre;
 export import errors = errors;
 export import errorCode = ErrorCode;
 
-export import actionStatusType = cinerino.actionStatusType;
-export import actionType = cinerino.actionType;
-export namespace action {
-    export import IParticipant = cinerino.action.IParticipant;
-    export namespace authorize {
-        export import IAction = cinerino.action.authorize.IAction;
-        export import IAttributes = cinerino.action.authorize.IAttributes;
-        export import creditCard = cinerino.action.authorize.paymentMethod.creditCard;
-        export import seatReservation = seatReservationAuthorizeActionFactory;
-    }
-}
-export import clientUser = cinerino.clientUser;
-export import paymentMethod = cinerino.paymentMethod;
-export import creativeWork = cinerino.creativeWork;
-export import creativeWorkType = cinerino.creativeWorkType;
-export import monetaryAmount = cinerino.monetaryAmount;
 export import multilingualString = MultilingualStringFactory;
-export import order = cinerino.order;
-export import orderStatus = cinerino.orderStatus;
-export import organizationType = cinerino.organizationType;
 export import priceCurrency = cinerino.priceCurrency;
-// export import paymentMethodType = PaymentMethodType;
-export import paymentMethodType = cinerino.paymentMethodType;
 export import performance = PerformanceFactory;
 export import person = cinerino.person;
 export import personType = cinerino.personType;
@@ -56,7 +33,6 @@ export import propertyValue = cinerino.propertyValue;
 export namespace reservation {
     export import event = EventReservationFactory;
 }
-export import seller = cinerino.seller;
 export import sortType = cinerino.sortType;
 export namespace place {
     export import checkinGate = CheckinGateFactory;
@@ -77,8 +53,3 @@ export import taskName = TaskName;
 export import taskStatus = cinerino.taskStatus;
 
 export import ticketTypeCategory = TicketTypeCategory;
-
-export import transaction = cinerino.transaction;
-export import transactionStatusType = cinerino.transactionStatusType;
-export import transactionTasksExportationStatus = cinerino.transactionTasksExportationStatus;
-export import transactionType = cinerino.transactionType;
