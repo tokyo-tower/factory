@@ -5,6 +5,19 @@ import TaskName from '../taskName';
 
 export interface IData {
     /**
+     * Cinerino API認証情報
+     */
+    credentials: {
+        /**
+         * リフレッシュトークン
+         */
+        refresh_token?: string;
+        /**
+         * アクセストークン
+         */
+        access_token?: string;
+    };
+    /**
      * 返品アクションを起こした主体ID
      */
     agentId: string;
