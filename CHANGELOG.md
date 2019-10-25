@@ -8,11 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
-- イベントに対する注文返品タスクデータにCinerino API認証情報を追加
-
 ### Changed
-
-- update @cinerino/factory
 
 ### Deprecated
 
@@ -21,6 +17,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v26.1.0 - 2019-10-25
+
+### Added
+
+- イベントに対する注文返品タスクデータにCinerino API認証情報を追加
+
+### Changed
+
+- update @cinerino/factory
 
 ## v26.0.0 - 2019-10-24
 
