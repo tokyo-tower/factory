@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
+- イベントに対する注文返品タスクデータにCinerino API認証情報を追加
+
 ### Changed
+
+- update @cinerino/factory
 
 ### Deprecated
 

@@ -57,8 +57,7 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "@cinerino/factory": "1.0.0-alpha.189",
-    "@motionpicture/gmo-service": "^4.3.0",
+    "@cinerino/factory": "1.0.0-alpha.190",
     "setprototypeof": "^1.2.0"
   },
   "repository": {
