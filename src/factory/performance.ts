@@ -110,7 +110,7 @@ export interface IReservationAtLastupdateDate {
  */
 export interface ITicketTypeGroup {
     id: string;
-    ticket_types: chevre.ticketType.ITicketType[];
+    ticket_types: chevre.offer.IUnitPriceOffer[];
     name: IBilingualString;
 }
 
@@ -161,7 +161,7 @@ export interface ICheckinCountByWhere {
 /**
  * 残席数つきの券種インターフェース
  */
-export type ITicketTypeWithAvailability = chevre.ticketType.ITicketType & {
+export type ITicketTypeWithAvailability = chevre.offer.IUnitPriceOffer & {
     remainingAttendeeCapacity?: number;
 };
 
