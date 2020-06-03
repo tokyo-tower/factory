@@ -8,9 +8,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
-- イベントインポートタスクを追加
-- Eメール送信タスクを追加
-
 ### Changed
 
 ### Deprecated
@@ -20,6 +17,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v26.8.0 - 2020-06-03
+
+### Added
+
+- イベントインポートタスクを追加
+- Eメール送信タスクを追加
 
 ## v26.7.0 - 2020-05-24
 
