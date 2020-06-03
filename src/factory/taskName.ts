@@ -7,10 +7,6 @@ enum TaskName {
      */
     AggregateEventReservations = 'aggregateEventReservations',
     /**
-     * パフォーマンスに対する注文返品タスク
-     */
-    ReturnOrdersByPerformance = 'returnOrdersByPerformance',
-    /**
      * 注文取引レポート作成
      */
     CreatePlaceOrderReport = 'createPlaceOrderReport',
@@ -18,6 +14,18 @@ enum TaskName {
      * 注文返品取引レポート作成
      */
     CreateReturnOrderReport = 'createReturnOrderReport',
+    /**
+     * Cinerinoイベントインポート
+     */
+    ImportEvent = 'importEvent',
+    /**
+     * パフォーマンスに対する注文返品タスク
+     */
+    ReturnOrdersByPerformance = 'returnOrdersByPerformance',
+    /**
+     * Eメール送信
+     */
+    SendEmailMessage = 'sendEmailMessage',
     /**
      * 予約から注文レポート更新
      */
