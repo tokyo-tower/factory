@@ -99,7 +99,6 @@ export interface IExtension {
 export interface IReservationAtLastupdateDate {
     id: string;
     status: chevre.reservationStatusType;
-    // purchaser_group: PersonGroup;
     transaction_agent: person.IPerson;
     payment_method: paymentMethodType;
     order_number: string;
@@ -126,7 +125,6 @@ export interface IPerformanceWithDetails {
     location: IScreen;
     additionalProperty?: propertyValue.IPropertyValue<string>[];
     duration: string;
-
     ticket_type_group?: ITicketTypeGroup;
     ttts_extension?: IExtension;
 }
