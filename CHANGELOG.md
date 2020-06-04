@@ -14,6 +14,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Removed
 
+- イベントに対する注文返品タスクを削除
+
 ### Fixed
 
 ### Security

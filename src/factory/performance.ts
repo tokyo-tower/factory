@@ -12,6 +12,7 @@ export interface ISearchConditions {
     limit?: number;
     page?: number;
     sort?: any;
+    ids?: string[];
     startFrom?: Date;
     startThrough?: Date;
     ttts_extension?: {
