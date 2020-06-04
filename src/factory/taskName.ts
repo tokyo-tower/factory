@@ -19,10 +19,6 @@ enum TaskName {
      */
     ImportEvent = 'importEvent',
     /**
-     * パフォーマンスに対する注文返品タスク
-     */
-    ReturnOrdersByPerformance = 'returnOrdersByPerformance',
-    /**
      * Eメール送信
      */
     SendEmailMessage = 'sendEmailMessage',

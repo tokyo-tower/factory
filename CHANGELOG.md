@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v27.0.0 - 2020-06-04
+
+### Removed
+
+- イベントに対する注文返品タスクを削除
+
 ## v26.8.0 - 2020-06-03
 
 ### Added
