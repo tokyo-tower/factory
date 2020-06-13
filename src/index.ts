@@ -26,12 +26,8 @@ export import errors = errors;
 export import errorCode = ErrorCode;
 
 export import multilingualString = MultilingualStringFactory;
-export import priceCurrency = cinerino.priceCurrency;
 export import performance = PerformanceFactory;
-export import person = cinerino.person;
-export import personType = cinerino.personType;
 export import project = cinerino.project;
-export import propertyValue = cinerino.propertyValue;
 export namespace reservation {
     export import event = EventReservationFactory;
 }
