@@ -57,7 +57,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "@cinerino/factory": "^6.2.0",
+    "@cinerino/factory": "^6.7.0",
     "setprototypeof": "^1.2.0"
   },
   "repository": {
