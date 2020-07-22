@@ -1,7 +1,5 @@
 import { chevre } from '@cinerino/factory';
 
-import * as ReservationFactory from '../reservation';
-
 /**
  * 入場履歴インターフェース
  */
@@ -15,7 +13,7 @@ export interface ICheckin {
 /**
  * イベント予約インターフェース
  */
-export interface IReservation extends ReservationFactory.IReservation {
+export interface IReservation extends chevre.reservation.IReservation<chevre.reservationType.EventReservation> {
     checkins: ICheckin[];
 }
 
