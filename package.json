@@ -1,6 +1,6 @@
 {
   "name": "@tokyotower/factory",
-  "version": "27.3.0",
+  "version": "27.3.1",
   "description": "TTTS Factory Library",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -57,7 +57,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@cinerino/factory": "^8.3.5",
+    "@cinerino/factory": "^8.3.6",
     "setprototypeof": "^1.2.0"
   },
   "repository": {
