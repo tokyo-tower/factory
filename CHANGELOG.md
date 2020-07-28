@@ -10,9 +10,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+- パフォーマンスインターフェースを最適化
+
 ### Deprecated
 
 ### Removed
+
+- 劇場インターフェースを削除
+- 券種カテゴリーを削除
 
 ### Fixed
 

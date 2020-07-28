@@ -1,12 +1,5 @@
 /**
- * 入場ゲートファクトリー
- * @namespace place.checkinGate
- */
-
-/**
  * 入場ゲートインターフェース
- * @interface
- * @memberof place.checkinGate
  */
 export interface IPlace {
     /**
