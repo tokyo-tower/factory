@@ -1,4 +1,4 @@
-import { chevre, paymentMethodType, person, propertyValue } from '@cinerino/factory';
+import { chevre, person, propertyValue } from '@cinerino/factory';
 
 import { IBilingualString } from './multilingualString';
 import { ICheckin } from './reservation/event';
@@ -104,8 +104,6 @@ export interface IReservationAtLastupdateDate {
     id: string;
     status: chevre.reservationStatusType;
     transaction_agent: person.IPerson;
-    payment_method: paymentMethodType;
-    order_number: string;
 }
 
 /**
