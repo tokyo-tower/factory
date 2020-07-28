@@ -10,8 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- パフォーマンス販売ステータス最終更新時の予約データインターフェースを最適化
-
 ### Deprecated
 
 ### Removed
@@ -19,6 +17,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v28.1.0 - 2020-07-28
+
+### Changed
+
+- パフォーマンス販売ステータス最終更新時の予約データインターフェースを最適化
 
 ## v28.0.0 - 2020-07-28
 
