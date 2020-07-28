@@ -10,18 +10,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- パフォーマンスインターフェースを最適化
-
 ### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## v28.0.0 - 2020-07-28
+
+### Changed
+
+- パフォーマンスインターフェースを最適化
 
 ### Removed
 
 - 劇場インターフェースを削除
 - 券種カテゴリーを削除
-
-### Fixed
-
-### Security
 
 ## v27.3.1 - 2020-07-26
 
