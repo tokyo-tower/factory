@@ -6,7 +6,6 @@ import * as cinerino from '@cinerino/factory';
 import * as MultilingualStringFactory from './factory/multilingualString';
 import * as PerformanceFactory from './factory/performance';
 import * as CheckinGateFactory from './factory/place/checkinGate';
-import * as MovieTheaterFactory from './factory/place/movieTheater';
 import * as EventReservationFactory from './factory/reservation/event';
 import * as AggregateEventReservationsTaskFactory from './factory/task/aggregateEventReservations';
 import * as CreatePlaceOrderReportTaskFactory from './factory/task/createPlaceOrderReport';
@@ -16,7 +15,6 @@ import * as SendEmailMessageTaskFactory from './factory/task/sendEmailMessage';
 import * as UpdateOrderReportByReservationTaskFactory from './factory/task/updateOrderReportByReservation';
 
 import TaskName from './factory/taskName';
-import TicketTypeCategory from './factory/ticketTypeCategory';
 
 import ErrorCode from './factory/errorCode';
 import * as errors from './factory/errors';
@@ -34,7 +32,6 @@ export namespace reservation {
 export import sortType = cinerino.sortType;
 export namespace place {
     export import checkinGate = CheckinGateFactory;
-    export import movieTheater = MovieTheaterFactory;
 }
 export namespace task {
     export import IAttributes = cinerino.task.IAttributes;
@@ -50,5 +47,3 @@ export namespace task {
 }
 export import taskName = TaskName;
 export import taskStatus = cinerino.taskStatus;
-
-export import ticketTypeCategory = TicketTypeCategory;

@@ -1,9 +1,7 @@
 import { chevre, paymentMethodType, person, propertyValue } from '@cinerino/factory';
 
 import { IBilingualString } from './multilingualString';
-import { IScreen } from './place/movieTheater';
-import { ICheckin, IReservation } from './reservation/event';
-import TicketTypeCategory from './ticketTypeCategory';
+import { ICheckin } from './reservation/event';
 
 /**
  * 検索条件インターフェース
@@ -20,6 +18,12 @@ export interface ISearchConditions {
         online_sales_update_at?: any;
         refund_status?: string;
     };
+}
+
+export interface IScreen {
+    id: string;
+    branchCode: string;
+    name: IBilingualString;
 }
 
 /**
@@ -59,8 +63,7 @@ export enum RefundStatus {
 }
 
 /**
- * ttts拡張・パフォーマンス情報mongooseスキーマタイプ
- * ttts独自の機能拡張用フィールド定義
+ * ttts拡張インターフェース
  */
 export interface IExtension {
     // ツアーナンバー
@@ -115,9 +118,9 @@ export interface ITicketTypeGroup {
 }
 
 /**
- * 詳細情報つきのパフォーマンスインターフェース
+ * パフォーマンスインターフェース
  */
-export interface IPerformanceWithDetails {
+export interface IPerformance {
     id: string;
     doorTime: Date;
     startDate: Date;
@@ -130,19 +133,14 @@ export interface IPerformanceWithDetails {
     ttts_extension?: IExtension;
 }
 
-/**
- * パフォーマンスインターフェース
- */
-export type IPerformance = IPerformanceWithDetails;
-
 export type ICheckinWithTicketType = ICheckin & {
     ticketType: string;
-    ticketCategory: TicketTypeCategory;
+    ticketCategory: string;
 };
 
 export interface ICheckinCountsByTicketType {
     ticketType: string;
-    ticketCategory: TicketTypeCategory;
+    ticketCategory: string;
     count: number;
 }
 
@@ -167,49 +165,12 @@ export type ITicketTypeWithAvailability = chevre.offer.IUnitPriceOffer & {
 /**
  * 在庫状況つきのパフォーマンスインターフェース
  */
-export interface IPerformanceWithAvailability {
-    id: string;
-    /**
-     * 入場日時
-     */
-    doorTime: Date;
-    /**
-     * 開演日時
-     */
-    startDate: Date;
-    /**
-     * 終演日時
-     */
-    endDate: Date;
-    /**
-     * 上演時間
-     */
-    duration: string;
-    additionalProperty?: propertyValue.IPropertyValue<string>[];
-
-    /**
-     * エレベータ運行ステータス
-     */
+export interface IPerformanceWithAvailability extends IPerformance {
     evServiceStatus: EvServiceStatus;
-    /**
-     * オンライン販売ステータス
-     */
     onlineSalesStatus: OnlineSalesStatus;
-    /**
-     * 最大収容人数
-     */
     maximumAttendeeCapacity: number;
-    /**
-     * 残収容人数
-     */
     remainingAttendeeCapacity?: number;
-    /**
-     * 車椅子客にとっての残収容人数
-     */
     remainingAttendeeCapacityForWheelchair?: number;
-    /**
-     * 券種情報
-     */
     ticketTypes?: ITicketTypeWithAvailability[];
     extension: IExtension;
 }
@@ -226,139 +187,25 @@ export interface IOfferAggregation {
  */
 export interface IPerformanceWithAggregation {
     id: string;
-    /**
-     * 入場日時
-     */
     doorTime: Date;
-    /**
-     * 開演日時
-     */
     startDate: Date;
-    /**
-     * 終演日時
-     */
     endDate: Date;
-    /**
-     * 上演時間
-     */
     duration: string;
     additionalProperty?: propertyValue.IPropertyValue<string>[];
 
-    /**
-     * エレベータ運行ステータス
-     */
     evServiceStatus: EvServiceStatus;
-    /**
-     * オンライン販売ステータス
-     */
     onlineSalesStatus: OnlineSalesStatus;
-    /**
-     * 最大収容人数
-     */
     maximumAttendeeCapacity: number;
-    /**
-     * 残収容人数
-     */
     remainingAttendeeCapacity: number;
-    /**
-     * 車椅子客にとっての残収容人数
-     */
     remainingAttendeeCapacityForWheelchair: number;
-    /**
-     * 全予約数
-     */
     reservationCount: number;
-    /**
-     * 全入場数
-     */
     checkinCount: number;
-    /**
-     * 券種ごとの予約数
-     */
     reservationCountsByTicketType: IReservationCountByTicketType[];
-    /**
-     * 場所ごとの入場数
-     */
     checkinCountsByWhere: ICheckinCountByWhere[];
-    /**
-     * オファーごとの集計
-     */
     offers?: IOfferAggregation[];
 }
 
-export interface ICheckpoint {
-    where: string;
-    description: string;
-}
-
-export interface IReservedExtra {
-    ticketType: string;
-    reservedNum: number;
-}
 export interface IReservationCountByTicketType {
     ticketType: string;
     count: number;
-}
-export interface IReservationAggregation {
-    /**
-     * パフォーマンス情報
-     */
-    performance: IPerformanceWithDetails;
-    /**
-     * 予約リスト
-     */
-    reservations: IReservation[];
-    /**
-     * 券種ごとの予約数
-     */
-    reservationCountsByTicketType: IReservationCountByTicketType[];
-}
-
-export type IReservationAggregations = IReservationAggregation[];
-
-/**
- * 券種ごとの入場数インターフェース
- */
-export interface IArrivedCountByTicketType {
-    ticketType: string;
-    ticketCategory: TicketTypeCategory;
-    count: number;
-}
-/**
- * 入場場所ごとの入場履歴情報
- */
-export interface ICheckinInfoByWhere {
-    /**
-     * 入場場所
-     */
-    where: string;
-    /**
-     * 入場履歴
-     */
-    checkins: ICheckinWithTicketType[];
-    /**
-     * 券種ごとの入場数
-     */
-    arrivedCountsByTicketType: IArrivedCountByTicketType[];
-}
-
-export type ICheckinInfosByWhere = ICheckinInfoByWhere[];
-
-/**
- * パフォーマンスごとの入場情報インターフェース
- */
-export interface ICheckinInfoByPerformance {
-    performanceId: string;
-    /**
-     * 場所ごとの入場情報
-     */
-    checkinInfosByWhere: ICheckinInfosByWhere;
-}
-
-/**
- * 在庫状況インターフェース
- */
-export interface IAvailability {
-    id: string;
-    remainingAttendeeCapacity: number;
 }
