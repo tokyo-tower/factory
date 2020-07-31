@@ -166,11 +166,11 @@ export type ITicketTypeWithAvailability = chevre.offer.IUnitPriceOffer & {
 export interface IPerformanceWithAvailability extends IPerformance {
     evServiceStatus: EvServiceStatus;
     onlineSalesStatus: OnlineSalesStatus;
-    maximumAttendeeCapacity: number;
+    maximumAttendeeCapacity?: number;
     remainingAttendeeCapacity?: number;
     remainingAttendeeCapacityForWheelchair?: number;
     ticketTypes?: ITicketTypeWithAvailability[];
-    extension: IExtension;
+    extension?: IExtension;
 }
 
 export interface IOfferAggregation {
