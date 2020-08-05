@@ -18,6 +18,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v29.0.0 - 2020-08-05
+
+### Removed
+
+- パフォーマンスからtour_numberを削除
+- パフォーマンスからticket_type_groupを削除
+
 ## v28.2.0 - 2020-07-31
 
 ### Changed

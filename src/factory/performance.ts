@@ -66,9 +66,6 @@ export enum RefundStatus {
  * ttts拡張インターフェース
  */
 export interface IExtension {
-    // ツアーナンバー
-    // 例）10:00の枠:「101」など
-    tour_number: string;
     // エレベータ運行ステータス
     ev_service_status: EvServiceStatus;
     // エレベータ運行ステータス変更者
@@ -107,15 +104,6 @@ export interface IReservationAtLastupdateDate {
 }
 
 /**
- * 券種グループインターフェース
- */
-export interface ITicketTypeGroup {
-    id: string;
-    ticket_types: chevre.offer.IUnitPriceOffer[];
-    name: IBilingualString;
-}
-
-/**
  * パフォーマンスインターフェース
  */
 export interface IPerformance {
@@ -123,11 +111,11 @@ export interface IPerformance {
     doorTime: Date;
     startDate: Date;
     endDate: Date;
+    eventStatus?: chevre.eventStatusType;
     superEvent: chevre.event.IEvent<chevre.eventType.ScreeningEventSeries>;
     location: IScreen;
     additionalProperty?: propertyValue.IPropertyValue<string>[];
     duration: string;
-    ticket_type_group?: ITicketTypeGroup;
     ttts_extension?: IExtension;
 }
 
@@ -190,6 +178,7 @@ export interface IPerformanceWithAggregation {
     endDate: Date;
     duration: string;
     additionalProperty?: propertyValue.IPropertyValue<string>[];
+    eventStatus?: chevre.eventStatusType;
 
     evServiceStatus: EvServiceStatus;
     onlineSalesStatus: OnlineSalesStatus;
