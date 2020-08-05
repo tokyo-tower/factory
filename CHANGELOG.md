@@ -14,6 +14,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Removed
 
+- パフォーマンスからtour_numberを削除
+- パフォーマンスからticket_type_groupを削除
+
 ### Fixed
 
 ### Security
