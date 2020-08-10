@@ -10,8 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- パフォーマンスインターフェースを最適化
-
 ### Deprecated
 
 ### Removed
@@ -19,6 +17,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v29.1.0 - 2020-08-10
+
+### Changed
+
+- パフォーマンスインターフェースを最適化
 
 ## v29.0.0 - 2020-08-05
 
