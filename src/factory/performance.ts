@@ -103,22 +103,6 @@ export interface IReservationAtLastupdateDate {
     transaction_agent: person.IPerson;
 }
 
-/**
- * パフォーマンスインターフェース
- */
-export interface IPerformance {
-    id: string;
-    doorTime: Date;
-    startDate: Date;
-    endDate: Date;
-    eventStatus?: chevre.eventStatusType;
-    superEvent: chevre.event.IEvent<chevre.eventType.ScreeningEventSeries>;
-    location: IScreen;
-    additionalProperty?: propertyValue.IPropertyValue<string>[];
-    duration: string;
-    ttts_extension?: IExtension;
-}
-
 export type ICheckinWithTicketType = ICheckin & {
     ticketType: string;
     ticketCategory: string;
@@ -148,19 +132,6 @@ export type ITicketTypeWithAvailability = chevre.offer.IUnitPriceOffer & {
     remainingAttendeeCapacity?: number;
 };
 
-/**
- * 在庫状況つきのパフォーマンスインターフェース
- */
-export interface IPerformanceWithAvailability extends IPerformance {
-    evServiceStatus: EvServiceStatus;
-    onlineSalesStatus: OnlineSalesStatus;
-    maximumAttendeeCapacity?: number;
-    remainingAttendeeCapacity?: number;
-    remainingAttendeeCapacityForWheelchair?: number;
-    ticketTypes?: ITicketTypeWithAvailability[];
-    extension?: IExtension;
-}
-
 export interface IOfferAggregation {
     id: string;
     remainingAttendeeCapacity?: number;
@@ -168,31 +139,40 @@ export interface IOfferAggregation {
     checkinCount?: number;
 }
 
-/**
- * 集計データつきのパフォーマンスインターフェース
- */
-export interface IPerformanceWithAggregation {
-    id: string;
-    doorTime: Date;
-    startDate: Date;
-    endDate: Date;
-    duration: string;
-    additionalProperty?: propertyValue.IPropertyValue<string>[];
-    eventStatus?: chevre.eventStatusType;
-
-    evServiceStatus: EvServiceStatus;
-    onlineSalesStatus: OnlineSalesStatus;
-    maximumAttendeeCapacity: number;
-    remainingAttendeeCapacity: number;
-    remainingAttendeeCapacityForWheelchair: number;
-    reservationCount: number;
-    checkinCount: number;
-    reservationCountsByTicketType: IReservationCountByTicketType[];
-    checkinCountsByWhere: ICheckinCountByWhere[];
-    offers?: IOfferAggregation[];
-}
-
 export interface IReservationCountByTicketType {
     ticketType: string;
     count: number;
 }
+
+/**
+ * パフォーマンス集計データインターフェース
+ */
+export interface IPerformanceAggregation {
+    id: string;
+    maximumAttendeeCapacity?: number;
+    remainingAttendeeCapacity?: number;
+    remainingAttendeeCapacityForWheelchair?: number;
+    reservationCount?: number;
+    checkinCount?: number;
+    reservationCountsByTicketType?: IReservationCountByTicketType[];
+    checkinCountsByWhere?: ICheckinCountByWhere[];
+    offers?: IOfferAggregation[];
+}
+
+/**
+ * パフォーマンスインターフェース
+ */
+export type IPerformance = {
+    id: string;
+    doorTime: Date;
+    startDate: Date;
+    endDate: Date;
+    eventStatus: chevre.eventStatusType;
+    superEvent: chevre.event.IEvent<chevre.eventType.ScreeningEventSeries>;
+    location: IScreen;
+    additionalProperty?: propertyValue.IPropertyValue<string>[];
+    duration: string;
+    ttts_extension?: IExtension;
+    evServiceStatus: EvServiceStatus;
+    onlineSalesStatus: OnlineSalesStatus;
+} & IPerformanceAggregation;
