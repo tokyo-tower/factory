@@ -66,14 +66,10 @@ export enum RefundStatus {
  * ttts拡張インターフェース
  */
 export interface IExtension {
-    // エレベータ運行ステータス
-    ev_service_status: EvServiceStatus;
     // エレベータ運行ステータス変更者
     ev_service_update_user?: string;
     // エレベータ運行ステータス更新日時
     ev_service_update_at?: Date;
-    // オンライン販売ステータス
-    online_sales_status: OnlineSalesStatus;
     // オンライン販売ステータス変更者
     online_sales_update_user?: string;
     // オンライン販売ステータス更新日時
@@ -173,6 +169,4 @@ export type IPerformance = {
     additionalProperty?: propertyValue.IPropertyValue<string>[];
     duration: string;
     ttts_extension?: IExtension;
-    evServiceStatus: EvServiceStatus;
-    onlineSalesStatus: OnlineSalesStatus;
 } & IPerformanceAggregation;
