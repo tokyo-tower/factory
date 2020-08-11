@@ -18,6 +18,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v30.0.0 - 2020-08-11
+
+### Removed
+
+- パフォーマンスからエレベータ運行ステータスを削除
+- パフォーマンスからオンライン販売ステータスを削除
+
 ## v29.1.0 - 2020-08-10
 
 ### Changed
