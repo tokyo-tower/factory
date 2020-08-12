@@ -18,6 +18,9 @@ export interface ISearchConditions {
         online_sales_update_at?: any;
         refund_status?: string;
     };
+    eventStatus?: {
+        $in?: chevre.eventStatusType[];
+    };
 }
 
 export interface IScreen {
