@@ -13,7 +13,6 @@ export interface ISearchConditions {
     startFrom?: Date;
     startThrough?: Date;
     ttts_extension?: {
-        online_sales_status?: OnlineSalesStatus;
         online_sales_update_at?: any;
         refund_status?: string;
     };
@@ -103,7 +102,7 @@ export type ICheckinWithTicketType = ICheckin & {
 export interface ICheckinCountsByTicketType {
     ticketType: string;
     ticketCategory: string;
-    count: number;
+    count?: number;
 }
 
 export interface ICheckinCountByWhere {
@@ -133,7 +132,7 @@ export interface IOfferAggregation {
 
 export interface IReservationCountByTicketType {
     ticketType: string;
-    count: number;
+    count?: number;
 }
 
 /**
@@ -148,7 +147,6 @@ export interface IPerformanceAggregation {
     checkinCount?: number;
     reservationCountsByTicketType?: IReservationCountByTicketType[];
     checkinCountsByWhere?: ICheckinCountByWhere[];
-    offers?: IOfferAggregation[];
 }
 
 /**
