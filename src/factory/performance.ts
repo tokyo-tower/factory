@@ -1,6 +1,5 @@
 import { chevre, person, propertyValue } from '@cinerino/factory';
 
-import { IBilingualString } from './multilingualString';
 import { ICheckin } from './reservation/event';
 
 /**
@@ -21,12 +20,6 @@ export interface ISearchConditions {
     eventStatus?: {
         $in?: chevre.eventStatusType[];
     };
-}
-
-export interface IScreen {
-    id: string;
-    branchCode: string;
-    name: IBilingualString;
 }
 
 /**
@@ -167,8 +160,6 @@ export type IPerformance = {
     startDate: Date;
     endDate: Date;
     eventStatus: chevre.eventStatusType;
-    superEvent: chevre.event.IEvent<chevre.eventType.ScreeningEventSeries>;
-    location: IScreen;
     additionalProperty?: propertyValue.IPropertyValue<string>[];
     duration: string;
     ttts_extension?: IExtension;
