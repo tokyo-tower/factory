@@ -154,11 +154,9 @@ export interface IPerformanceAggregation {
  */
 export type IPerformance = {
     id: string;
-    doorTime: Date;
     startDate: Date;
     endDate: Date;
     eventStatus: chevre.eventStatusType;
     additionalProperty?: propertyValue.IPropertyValue<string>[];
-    duration: string;
     ttts_extension?: IExtension;
 } & IPerformanceAggregation;
