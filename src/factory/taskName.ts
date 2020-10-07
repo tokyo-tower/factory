@@ -19,10 +19,6 @@ enum TaskName {
      */
     ImportEvent = 'importEvent',
     /**
-     * Eメール送信
-     */
-    SendEmailMessage = 'sendEmailMessage',
-    /**
      * 予約から注文レポート更新
      */
     UpdateOrderReportByReservation = 'updateOrderReportByReservation'

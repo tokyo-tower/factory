@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v31.0.0 - 2020-10-07
+
+### Removed
+
+- Eメール送信タスクを削除
+
 ## v30.4.0 - 2020-08-15
 
 ### Changed
