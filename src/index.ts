@@ -3,9 +3,7 @@
  */
 import * as cinerino from '@cinerino/factory';
 
-import * as MultilingualStringFactory from './factory/multilingualString';
 import * as PerformanceFactory from './factory/performance';
-import * as CheckinGateFactory from './factory/place/checkinGate';
 import * as EventReservationFactory from './factory/reservation/event';
 import * as AggregateEventReservationsTaskFactory from './factory/task/aggregateEventReservations';
 import * as CreatePlaceOrderReportTaskFactory from './factory/task/createPlaceOrderReport';
@@ -21,17 +19,12 @@ import * as errors from './factory/errors';
 export import chevre = cinerino.chevre;
 export import errors = errors;
 export import errorCode = ErrorCode;
-
-export import multilingualString = MultilingualStringFactory;
 export import performance = PerformanceFactory;
 export import project = cinerino.project;
 export namespace reservation {
     export import event = EventReservationFactory;
 }
 export import sortType = cinerino.sortType;
-export namespace place {
-    export import checkinGate = CheckinGateFactory;
-}
 export namespace task {
     export import IAttributes = cinerino.task.IAttributes;
     export import IExecutionResult = cinerino.task.IExecutionResult;

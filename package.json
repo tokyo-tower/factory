@@ -1,6 +1,6 @@
 {
   "name": "@tokyotower/factory",
-  "version": "31.2.0",
+  "version": "31.3.0",
   "description": "TTTS Factory Library",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -44,6 +44,8 @@
     "@types/mocha": "^2.2.48",
     "@types/node": "^8.10.61",
     "@types/power-assert": "^1.5.3",
+    "@types/request": "^2.48.5",
+    "@types/request-promise-native": "^1.0.17",
     "@types/sinon": "^2.3.7",
     "coveralls": "^3.1.0",
     "mocha": "^3.5.3",
@@ -57,7 +59,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@cinerino/factory": "^9.26.0",
+    "@cinerino/factory": "9.31.2",
     "setprototypeof": "^1.2.0"
   },
   "repository": {
