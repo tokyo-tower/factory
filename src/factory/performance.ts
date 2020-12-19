@@ -34,16 +34,6 @@ export enum EvServiceStatus {
 }
 
 /**
- * オンライン販売ステータス
- */
-export enum OnlineSalesStatus {
-    // 販売
-    Normal = 'Normal',
-    // 停止
-    Suspended = 'Suspended'
-}
-
-/**
  * 返金ステータス
  */
 export enum RefundStatus {
