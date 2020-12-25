@@ -131,6 +131,7 @@ export interface IReservationCountByTicketType {
 export interface IPerformanceAggregation {
     id: string;
     aggregateOffer?: chevre.event.screeningEvent.IAggregateOffer;
+    aggregateReservation?: chevre.event.screeningEvent.IAggregateReservation;
     maximumAttendeeCapacity?: number;
     remainingAttendeeCapacity?: number;
     remainingAttendeeCapacityForWheelchair?: number;
