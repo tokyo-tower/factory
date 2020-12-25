@@ -10,8 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- パフォーマンスインターフェースに予約集計属性を追加
-
 ### Deprecated
 
 ### Removed
@@ -19,6 +17,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v31.5.0 - 2020-12-25
+
+### Changed
+
+- パフォーマンスインターフェースに予約集計属性を追加
 
 ## v31.4.0 - 2020-12-25
 
