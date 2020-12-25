@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+- パフォーマンスインターフェースにオファー集計属性を追加
+
 ### Deprecated
 
 ### Removed
