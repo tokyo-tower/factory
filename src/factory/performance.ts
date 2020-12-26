@@ -22,18 +22,6 @@ export interface ISearchConditions {
 }
 
 /**
- * エレベータ運行ステータス
- */
-export enum EvServiceStatus {
-    // 正常運行
-    Normal = 'Normal',
-    // 減速
-    Slowdown = 'Slowdown',
-    // 停止
-    Suspended = 'Suspended'
-}
-
-/**
  * 返金ステータス
  */
 export enum RefundStatus {
@@ -106,20 +94,6 @@ export interface ICheckinCountByWhere {
     checkinCountsByTicketType: ICheckinCountsByTicketType[];
 }
 
-/**
- * 残席数つきの券種インターフェース
- */
-export type ITicketTypeWithAvailability = chevre.offer.IUnitPriceOffer & {
-    remainingAttendeeCapacity?: number;
-};
-
-export interface IOfferAggregation {
-    id: string;
-    remainingAttendeeCapacity?: number;
-    reservationCount?: number;
-    checkinCount?: number;
-}
-
 export interface IReservationCountByTicketType {
     ticketType: string;
     count?: number;
@@ -132,12 +106,7 @@ export interface IPerformanceAggregation {
     id: string;
     aggregateOffer?: chevre.event.screeningEvent.IAggregateOffer;
     aggregateReservation?: chevre.event.screeningEvent.IAggregateReservation;
-    maximumAttendeeCapacity?: number;
-    remainingAttendeeCapacity?: number;
-    remainingAttendeeCapacityForWheelchair?: number;
-    reservationCount?: number;
     checkinCount?: number;
-    reservationCountsByTicketType?: IReservationCountByTicketType[];
     checkinCountsByWhere?: ICheckinCountByWhere[];
 }
 
