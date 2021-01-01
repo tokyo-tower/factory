@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+- パフォーマンス集計インターフェース拡張
+
 ### Deprecated
 
 ### Removed

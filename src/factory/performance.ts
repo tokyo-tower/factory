@@ -104,6 +104,7 @@ export interface IReservationCountByTicketType {
  */
 export interface IPerformanceAggregation {
     id: string;
+    aggregateEntranceGate?: chevre.event.screeningEvent.IAggregateEntranceGate;
     aggregateOffer?: chevre.event.screeningEvent.IAggregateOffer;
     aggregateReservation?: chevre.event.screeningEvent.IAggregateReservation;
     checkinCount?: number;
