@@ -18,6 +18,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v31.7.0 - 2021-01-01
+
+### Changed
+
+- パフォーマンスにproject属性を追加
+- 予約の入場履歴インターフェースを拡張
+
 ## v31.6.0 - 2020-12-26
 
 ### Changed

@@ -114,6 +114,7 @@ export interface IPerformanceAggregation {
  * パフォーマンスインターフェース
  */
 export type IPerformance = {
+    project: chevre.project.IProject;
     id: string;
     startDate: Date;
     endDate: Date;
