@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+- パフォーマンスにproject属性を追加
+- 予約の入場履歴インターフェースを拡張
+
 ### Deprecated
 
 ### Removed

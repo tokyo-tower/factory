@@ -8,6 +8,16 @@ export interface ICheckin {
     where: string; // どこで
     why: string; // 何のために
     how: string; // どうやって
+    /**
+     * アクションID
+     */
+    id?: string;
+    instrument?: {
+        /**
+         * 入場に使用するトークン
+         */
+        token?: string;
+    };
 }
 
 /**
