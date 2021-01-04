@@ -1,7 +1,5 @@
 import { chevre, person, propertyValue } from '@cinerino/factory';
 
-import { ICheckin } from './reservation/event';
-
 /**
  * 検索条件インターフェース
  */
@@ -61,6 +59,10 @@ export interface IExtension {
      * 販売ステータス最終更新時の予約データリスト
      */
     reservationsAtLastUpdateDate?: IReservationAtLastupdateDate[];
+    /**
+     * 入場済予約リスト
+     */
+    checkedReservations?: { id: string }[];
 }
 
 /**
@@ -72,49 +74,10 @@ export interface IReservationAtLastupdateDate {
     transaction_agent: person.IPerson;
 }
 
-export type ICheckinWithTicketType = ICheckin & {
-    ticketType: string;
-    ticketCategory: string;
-};
-
-export interface ICheckinCountsByTicketType {
-    ticketType: string;
-    ticketCategory: string;
-    count?: number;
-}
-
-export interface ICheckinCountByWhere {
-    /**
-     * 入場場所
-     */
-    where: string;
-    /**
-     * 券種ごとの入場数
-     */
-    checkinCountsByTicketType: ICheckinCountsByTicketType[];
-}
-
-export interface IReservationCountByTicketType {
-    ticketType: string;
-    count?: number;
-}
-
-/**
- * パフォーマンス集計データインターフェース
- */
-export interface IPerformanceAggregation {
-    id: string;
-    aggregateEntranceGate?: chevre.event.screeningEvent.IAggregateEntranceGate;
-    aggregateOffer?: chevre.event.screeningEvent.IAggregateOffer;
-    aggregateReservation?: chevre.event.screeningEvent.IAggregateReservation;
-    checkinCount?: number;
-    checkinCountsByWhere?: ICheckinCountByWhere[];
-}
-
 /**
  * パフォーマンスインターフェース
  */
-export type IPerformance = {
+export interface IPerformance {
     project: chevre.project.IProject;
     id: string;
     startDate: Date;
@@ -122,4 +85,4 @@ export type IPerformance = {
     eventStatus: chevre.eventStatusType;
     additionalProperty?: propertyValue.IPropertyValue<string>[];
     ttts_extension?: IExtension;
-} & IPerformanceAggregation;
+}
