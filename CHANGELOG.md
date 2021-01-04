@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v31.9.0 - 2021-01-04
+
+### Changed
+
+- パフォーマンスインターフェースから集計属性を削除
+
 ## v31.8.0 - 2021-01-01
 
 ### Changed
