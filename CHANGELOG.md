@@ -8,11 +8,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
-- 注文レポートインターフェースを追加
-
 ### Changed
 
 ### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## v32.0.0 - 2021-01-07
+
+### Added
+
+- 注文レポートインターフェースを追加
 
 ### Removed
 
@@ -22,10 +32,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Cinerinoイベントインポートタスクを削除
 - タスクインターフェースを削除
 - 予約インターフェースを削除
-
-### Fixed
-
-### Security
 
 ## v31.9.0 - 2021-01-04
 
