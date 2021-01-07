@@ -33,6 +33,10 @@ export enum RefundStatus {
     Compeleted = 'Compeleted'
 }
 
+export interface ICheckedReservation {
+    id: string;
+}
+
 /**
  * ttts拡張インターフェース
  */
@@ -62,7 +66,7 @@ export interface IExtension {
     /**
      * 入場済予約リスト
      */
-    checkedReservations?: { id: string }[];
+    checkedReservations?: ICheckedReservation[];
 }
 
 /**

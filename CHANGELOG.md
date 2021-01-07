@@ -18,6 +18,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v32.0.0 - 2021-01-07
+
+### Added
+
+- 注文レポートインターフェースを追加
+
+### Removed
+
+- イベント予約集計タスクを削除
+- 注文取引レポート作成タスクを削除
+- 注文返品取引レポート作成タスクを削除
+- Cinerinoイベントインポートタスクを削除
+- タスクインターフェースを削除
+- 予約インターフェースを削除
+
 ## v31.9.0 - 2021-01-04
 
 ### Changed
