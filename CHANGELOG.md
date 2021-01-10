@@ -10,8 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- update @cinerino/factory
-
 ### Deprecated
 
 ### Removed
@@ -19,6 +17,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v32.0.1 - 2021-01-10
+
+### Changed
+
+- update @cinerino/factory
 
 ## v32.0.0 - 2021-01-07
 
