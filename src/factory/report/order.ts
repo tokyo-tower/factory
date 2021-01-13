@@ -5,7 +5,26 @@ import { chevre } from '@cinerino/factory';
  */
 export interface IReport {
     project: chevre.project.IProject;
-    reservation: { id: string };
+    reservation: {
+        id: string;
+        reservationFor: {
+            id: string;
+            startDate: Date;
+        };
+        reservedTicket?: {
+            ticketedSeat?: {
+                seatNumber?: string;
+            };
+            ticketType?: {
+                csvCode?: string;
+                name?: chevre.multilingualString;
+                priceSpecification?: {
+                    price?: number;
+                };
+            };
+        };
+    };
+    confirmationNumber: string;
     /**
      * 注文の確認番号
      */

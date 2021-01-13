@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v32.1.0 - 2021-01-13
+
+### Changed
+
+- 注文レポートインターフェースを拡張
+
 ## v32.0.2 - 2021-01-12
 
 ### Changed
