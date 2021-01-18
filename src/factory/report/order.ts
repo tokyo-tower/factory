@@ -84,7 +84,7 @@ export interface IReport {
         /**
          * 金額
          */
-        price: string;
+        price: number;
     };
     payment_seat_index?: number;
     project: chevre.project.IProject;
