@@ -53,29 +53,11 @@ export enum ReportCategory {
  * 注文レポートインターフェース
  */
 export interface IReport {
+    amount: number;
     /**
      * レポートカテゴリー
      */
     category: ReportCategory;
-    confirmationNumber: string;
-    /**
-     * 購入者
-     */
-    customer: ICustomer;
-    /**
-     * 注文日時
-     */
-    orderDate: Date;
-    /**
-     * 決済方法名称
-     */
-    paymentMethod: string;
-    /**
-     * 金額
-     */
-    price: string;
-    project: chevre.project.IProject;
-    reservation: IReservation;
     /**
      * 予約の使用フラグ
      */
@@ -84,5 +66,28 @@ export interface IReport {
      * 入場日時
      */
     checkinDate: string;
+    dateRecorded: Date;
+    mainEntity: {
+        confirmationNumber: string;
+        /**
+         * 購入者
+         */
+        customer: ICustomer;
+        /**
+         * 注文日時
+         */
+        orderDate: Date;
+        /**
+         * 決済方法名称
+         */
+        paymentMethod: string;
+        /**
+         * 金額
+         */
+        price: string;
+    };
     payment_seat_index?: number;
+    project: chevre.project.IProject;
+    reservation: IReservation;
+    sortBy: string;
 }
