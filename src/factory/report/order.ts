@@ -49,6 +49,31 @@ export enum ReportCategory {
     CancellationFee = 'CANCELLATION_FEE'
 }
 
+export interface IMainEntity {
+    confirmationNumber: string;
+    /**
+     * 購入者
+     */
+    customer: ICustomer;
+    /**
+     * 注文日時
+     */
+    orderDate: Date;
+    /**
+     * 注文番号
+     */
+    orderNumber: string;
+    /**
+     * 決済方法名称
+     */
+    paymentMethod: string;
+    /**
+     * 金額
+     */
+    price: number;
+    typeOf: string;
+}
+
 /**
  * 注文レポートインターフェース
  */
@@ -67,25 +92,7 @@ export interface IReport {
      */
     checkinDate: string;
     dateRecorded: Date;
-    mainEntity: {
-        confirmationNumber: string;
-        /**
-         * 購入者
-         */
-        customer: ICustomer;
-        /**
-         * 注文日時
-         */
-        orderDate: Date;
-        /**
-         * 決済方法名称
-         */
-        paymentMethod: string;
-        /**
-         * 金額
-         */
-        price: number;
-    };
+    mainEntity: IMainEntity;
     payment_seat_index?: number;
     project: chevre.project.IProject;
     reservation: IReservation;
