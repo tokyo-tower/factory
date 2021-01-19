@@ -10,8 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
-- 売上レポートインターフェースを最適化
-
 ### Deprecated
 
 ### Removed
@@ -19,6 +17,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 
 ### Security
+
+## v33.0.0 - 2021-01-19
+
+### Changed
+
+- 売上レポートインターフェースを最適化
 
 ## v32.1.0 - 2021-01-13
 
