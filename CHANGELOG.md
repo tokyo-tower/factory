@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v33.0.0 - 2021-01-19
+
+### Changed
+
+- 売上レポートインターフェースを最適化
+
 ## v32.1.0 - 2021-01-13
 
 ### Changed

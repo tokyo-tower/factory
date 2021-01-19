@@ -1,110 +1,40 @@
 import { chevre } from '@cinerino/factory';
 
-/**
- * 注文レポートインターフェース
- */
-export interface IReport {
-    project: chevre.project.IProject;
-    reservation: {
+export interface ICustomer {
+    // 購入者（名）
+    givenName: string;
+    // 購入者（姓）
+    familyName: string;
+    // 購入者メール
+    email: string;
+    // 購入者電話
+    telephone: string;
+    // 購入者区分
+    group: string;
+    // ユーザーネーム
+    username: string;
+    // 客層
+    segment: string;
+}
+
+export interface IReservation {
+    id: string;
+    reservationFor: {
         id: string;
-        reservationFor: {
-            id: string;
-            startDate: Date;
+        startDate: Date;
+    };
+    reservedTicket?: {
+        ticketedSeat?: {
+            seatNumber?: string;
         };
-        reservedTicket?: {
-            ticketedSeat?: {
-                seatNumber?: string;
-            };
-            ticketType?: {
-                csvCode?: string;
-                name?: chevre.multilingualString;
-                priceSpecification?: {
-                    price?: number;
-                };
+        ticketType?: {
+            csvCode?: string;
+            name?: chevre.multilingualString;
+            priceSpecification?: {
+                price?: number;
             };
         };
     };
-    confirmationNumber: string;
-    /**
-     * 注文の確認番号
-     */
-    payment_no: string;
-    payment_seat_index?: number;
-    /**
-     * 予約対象イベント
-     */
-    performance: {
-        // パフォーマンスID
-        id: string;
-        // 入塔予約年月日
-        startDay: string;
-        // 入塔予約時刻
-        startTime: string;
-    };
-    /**
-     * 購入者
-     */
-    customer: {
-        // 購入者（名）
-        givenName: string;
-        // 購入者（姓）
-        familyName: string;
-        // 購入者メール
-        email: string;
-        // 購入者電話
-        telephone: string;
-        // 購入者区分
-        group: string;
-        // ユーザーネーム
-        username: string;
-        // 客層
-        segment: string;
-    };
-    /**
-     * 注文日時
-     */
-    orderDate: Date;
-    /**
-     * 決済方法名称
-     */
-    paymentMethod: string;
-    /**
-     * 予約座席
-     */
-    seat: {
-        // 座席コード
-        code: string;
-    };
-    /**
-     * 予約オファー
-     */
-    ticketType: {
-        // 券種名称
-        name: string;
-        // チケットコード
-        csvCode: string;
-        // 券種料金
-        charge: string;
-    };
-    /**
-     * 予約の使用フラグ
-     */
-    checkedin: 'TRUE' | 'FALSE';
-    /**
-     * 入場日時
-     */
-    checkinDate: string;
-    status_sort: string;
-    cancellationFee: number;
-    /**
-     * 予約の単価
-     */
-    price: string;
-    /**
-     * レポートにおける予約ステータス
-     */
-    reservationStatus: ReportCategory;
-    date_bucket: Date;
 }
 
 /**
@@ -117,4 +47,54 @@ export enum ReportCategory {
      * 返品手数料
      */
     CancellationFee = 'CANCELLATION_FEE'
+}
+
+export interface IMainEntity {
+    confirmationNumber: string;
+    /**
+     * 購入者
+     */
+    customer: ICustomer;
+    /**
+     * 注文日時
+     */
+    orderDate: Date;
+    /**
+     * 注文番号
+     */
+    orderNumber: string;
+    /**
+     * 決済方法名称
+     */
+    paymentMethod: string;
+    /**
+     * 金額
+     */
+    price: number;
+    typeOf: string;
+}
+
+/**
+ * 注文レポートインターフェース
+ */
+export interface IReport {
+    amount: number;
+    /**
+     * レポートカテゴリー
+     */
+    category: ReportCategory;
+    /**
+     * 予約の使用フラグ
+     */
+    checkedin: 'TRUE' | 'FALSE';
+    /**
+     * 入場日時
+     */
+    checkinDate: string;
+    dateRecorded: Date;
+    mainEntity: IMainEntity;
+    payment_seat_index?: number;
+    project: chevre.project.IProject;
+    reservation: IReservation;
+    sortBy: string;
 }
