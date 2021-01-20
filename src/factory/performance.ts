@@ -7,6 +7,7 @@ export interface ISearchConditions {
     limit?: number;
     page?: number;
     sort?: any;
+    project?: { id?: { $eq?: string } };
     ids?: string[];
     startFrom?: Date;
     startThrough?: Date;
