@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Security
 
+## v33.1.0 - 2021-01-20
+
+### Changed
+
+- 売上レポートの予約使用日時をreservation.reservedTicket.dateUsedへ移行
+
 ## v33.0.0 - 2021-01-19
 
 ### Changed
