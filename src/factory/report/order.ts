@@ -24,6 +24,10 @@ export interface IReservation {
         startDate: Date;
     };
     reservedTicket?: {
+        /**
+         * 予約使用日時
+         */
+        dateUsed?: Date;
         ticketedSeat?: {
             seatNumber?: string;
         };
@@ -83,14 +87,6 @@ export interface IReport {
      * レポートカテゴリー
      */
     category: ReportCategory;
-    /**
-     * 予約の使用フラグ
-     */
-    checkedin: 'TRUE' | 'FALSE';
-    /**
-     * 入場日時
-     */
-    checkinDate: string;
     dateRecorded: Date;
     mainEntity: IMainEntity;
     payment_seat_index?: number;

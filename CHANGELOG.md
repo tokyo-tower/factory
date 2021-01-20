@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 
+- 売上レポートの予約使用日時をreservation.reservedTicket.dateUsedへ移行
+
 ### Deprecated
 
 ### Removed
